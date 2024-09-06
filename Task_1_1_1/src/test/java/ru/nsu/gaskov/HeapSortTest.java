@@ -1,8 +1,8 @@
 package ru.nsu.gaskov;
 
-import static ru.nsu.gaskov.HeapSort.heapsort;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static ru.nsu.gaskov.HeapSort.heapsort;
 
 import java.util.Comparator;
 import org.junit.jupiter.api.Test;
@@ -284,15 +284,16 @@ class HeapSortTest {
     @Test
     public void testLargeFloatArray() {
         float[] array = {
-                5.0f, 3.0f, 9.0f, 1.0f, 4.0f,
-                10.0f, 2.0f, 8.0f, 6.0f, 0.0f,
-                -1.0f, -3.0f, 12.0f, 15.0f, 14.0f
+            5.0f, 3.0f, 9.0f, 1.0f, 4.0f,
+            10.0f, 2.0f, 8.0f, 6.0f, 0.0f,
+            -1.0f, -3.0f, 12.0f, 15.0f, 14.0f
         };
         heapsort(array);
         float[] expectedArray = {
-                -3.0f, -1.0f, 0.0f, 1.0f, 2.0f,
-                3.0f, 4.0f, 5.0f, 6.0f, 8.0f,
-                9.0f, 10.0f, 12.0f, 14.0f, 15.0f};
+            -3.0f, -1.0f, 0.0f, 1.0f, 2.0f,
+            3.0f, 4.0f, 5.0f, 6.0f, 8.0f,
+            9.0f, 10.0f, 12.0f, 14.0f, 15.0f
+        };
         assertArrayEquals(expectedArray, array);
     }
 
@@ -323,15 +324,15 @@ class HeapSortTest {
     @Test
     public void testLargeDoubleArray() {
         double[] array = {
-                5.0, 3.0, 9.0, 1.0, 4.0,
-                10.0, 2.0, 8.0, 6.0, 0.0,
-                -1.0, -3.0, 12.0, 15.0, 14.0
+            5.0, 3.0, 9.0, 1.0, 4.0,
+            10.0, 2.0, 8.0, 6.0, 0.0,
+            -1.0, -3.0, 12.0, 15.0, 14.0
         };
         heapsort(array);
         double[] expectedArray = {
-                -3.0, -1.0, 0.0, 1.0, 2.0,
-                3.0, 4.0, 5.0, 6.0, 8.0,
-                9.0, 10.0, 12.0, 14.0, 15.0
+            -3.0, -1.0, 0.0, 1.0, 2.0,
+            3.0, 4.0, 5.0, 6.0, 8.0,
+            9.0, 10.0, 12.0, 14.0, 15.0
         };
         assertArrayEquals(expectedArray, array);
     }
@@ -355,13 +356,13 @@ class HeapSortTest {
     @Test
     public void testLargeObjectArray() {
         String[] array = {
-                "banana", "apple", "orange", "grape", "cherry",
-                "kiwi", "mango", "peach", "melon", "berry"
+            "banana", "apple", "orange", "grape", "cherry",
+            "kiwi", "mango", "peach", "melon", "berry"
         };
         heapsort(array);
         String[] expectedArray = {
-                "apple", "banana", "berry", "cherry", "grape",
-                "kiwi", "mango", "melon", "orange", "peach"
+            "apple", "banana", "berry", "cherry", "grape",
+            "kiwi", "mango", "melon", "orange", "peach"
         };
         assertArrayEquals(expectedArray, array);
     }
@@ -465,13 +466,13 @@ class HeapSortTest {
     @Test
     public void testLargeObjectArrayWithRange() {
         String[] array = {
-                "banana", "apple", "orange", "grape", "cherry",
-                "kiwi", "mango", "peach", "melon", "berry"
+            "banana", "apple", "orange", "grape", "cherry",
+            "kiwi", "mango", "peach", "melon", "berry"
         };
         heapsort(array, 0, 3);
         String[] expectedArray = {
-                "apple", "banana", "orange", "grape", "cherry",
-                "kiwi", "mango", "peach", "melon", "berry"
+            "apple", "banana", "orange", "grape", "cherry",
+            "kiwi", "mango", "peach", "melon", "berry"
         };
         assertArrayEquals(expectedArray, array);
     }
@@ -479,8 +480,8 @@ class HeapSortTest {
     @Test
     public void testLargeObjectArrayWithRangeAndComparatorReversedReading() {
         String[] array = {
-                "banana", "apple", "orange", "grape", "cherry",
-                "kiwi", "mango", "peach", "melon", "berry"
+            "banana", "apple", "orange", "grape", "cherry",
+            "kiwi", "mango", "peach", "melon", "berry"
         };
 
         Comparator<String> reverseReadingComparator = (s1, s2) -> {
@@ -490,8 +491,8 @@ class HeapSortTest {
         };
         heapsort(array, 0, 4, reverseReadingComparator);
         String[] expectedArray = {
-                "banana", "orange", "apple", "grape", "cherry",
-                "kiwi", "mango", "peach", "melon", "berry"
+            "banana", "orange", "apple", "grape", "cherry",
+            "kiwi", "mango", "peach", "melon", "berry"
         };
         assertArrayEquals(expectedArray, array);
     }
@@ -501,8 +502,12 @@ class HeapSortTest {
         Integer[] array = {5, 3, 8, 10, 44, 2, 9, 1, 4};
 
         Comparator<Integer> evenFirstComparator = (a, b) -> {
-            if (a % 2 == 0 && b % 2 != 0) return -1;
-            if (a % 2 != 0 && b % 2 == 0) return 1;
+            if (a % 2 == 0 && b % 2 != 0) {
+                return -1;
+            }
+            if (a % 2 != 0 && b % 2 == 0) {
+                return 1;
+            }
             return a.compareTo(b);
         };
 

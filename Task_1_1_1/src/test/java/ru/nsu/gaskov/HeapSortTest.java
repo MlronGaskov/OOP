@@ -1,11 +1,11 @@
 package ru.nsu.gaskov;
 
+import java.util.Comparator;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static ru.nsu.gaskov.HeapSort.heapsort;
-
-import java.util.Comparator;
 
 class HeapSortTest {
 

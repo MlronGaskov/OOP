@@ -2,7 +2,18 @@ package ru.nsu.gaskov;
 
 import java.util.Comparator;
 
+/**
+ * This class provides static methods for performing heap sort on arrays of various types.
+ */
 public class HeapSort {
+
+    /**
+     * Swaps two elements in the specified Object array.
+     *
+     * @param array the array in which to swap elements
+     * @param a     the index of the first element
+     * @param b     the index of the second element
+     */
     private static void swap(Object[] array, int a, int b) {
         Object tmp = array[a];
         array[a] = array[b];
@@ -51,14 +62,37 @@ public class HeapSort {
         array[b] = tmp;
     }
 
+    /**
+     * Gets the left child node index.
+     *
+     * @param fromIndex the starting index of the heap
+     * @param index     the index of the parent node
+     * @return the index of the left child node
+     */
     private static int getLeftNodeIndex(int fromIndex, int index) {
         return fromIndex + 2 * (index - fromIndex) + 1;
     }
 
+    /**
+     * Gets the right child node index.
+     *
+     * @param fromIndex the starting index of the heap
+     * @param index     the index of the parent node
+     * @return the index of the right child node
+     */
     private static int getRightNodeIndex(int fromIndex, int index) {
         return fromIndex + 2 * (index - fromIndex) + 2;
     }
 
+    /**
+     * Pushes the array element down to a heap.
+     *
+     * @param array     the array to heapify
+     * @param fromIndex the starting index
+     * @param toIndex   the end index (exclusive)
+     * @param index     the index to heapify
+     * @param c         the comparator to compare array elements
+     */
     @SuppressWarnings({"unchecked", "rawtypes"})
     private static void heapify(
             Object[] array,
@@ -254,6 +288,14 @@ public class HeapSort {
         heapify(array, fromIndex, toIndex, maxNodeIndex);
     }
 
+    /**
+     * Initializes the heap structure for the specified array using the given comparator.
+     *
+     * @param array     the array to initialize
+     * @param fromIndex the starting index
+     * @param toIndex   the end index (exclusive)
+     * @param c         the comparator to compare array elements
+     */
     @SuppressWarnings({"rawtypes"})
     private static void heapInit(Object[] array, int fromIndex, int toIndex, Comparator c) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
@@ -309,6 +351,14 @@ public class HeapSort {
         }
     }
 
+    /**
+     * Sorts the specified array using the heap sort algorithm with a custom comparator.
+     *
+     * @param a        the array to sort
+     * @param fromIndex the starting index
+     * @param toIndex   the end index (exclusive)
+     * @param c        the comparator used to compare array elements
+     */
     @SuppressWarnings({"rawtypes"})
     public static void heapsort(Object[] a, int fromIndex, int toIndex, Comparator c) {
         heapInit(a, fromIndex, toIndex, c);

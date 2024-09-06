@@ -7,6 +7,7 @@ import static ru.nsu.gaskov.HeapSort.heapsort;
 import java.util.Comparator;
 import org.junit.jupiter.api.Test;
 
+/** Tests for the implemented heap sorting algorithm. */
 class HeapSortTest {
 
     @Test

@@ -60,7 +60,13 @@ public class HeapSort {
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
-    private static void heapify(Object[] array, int fromIndex, int toIndex, int index, Comparator c) {
+    private static void heapify(
+            Object[] array,
+            int fromIndex,
+            int toIndex,
+            int index,
+            Comparator c
+    ) {
         if (c == null) {
             heapify(array, fromIndex, toIndex, index);
             return;
@@ -79,17 +85,24 @@ public class HeapSort {
         }
         if (rightIndex < toIndex) {
             Object right = array[rightIndex];
-            if (c.compare(max, right) < 0)
+            if (c.compare(max, right) < 0) {
                 maxIndex = rightIndex;
+            }
         }
-        if (maxIndex == index)
+        if (maxIndex == index) {
             return;
+        }
         swap(array, index, maxIndex);
         heapify(array, fromIndex, toIndex, maxIndex, c);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
-    private static void heapify(Object[] array, int fromIndex, int toIndex, int index) {
+    private static void heapify(
+            Object[] array,
+            int fromIndex,
+            int toIndex,
+            int index
+    ) {
         int maxIndex = index;
         Comparable max = (Comparable) array[index];
         int leftIndex = getLeftNodeIndex(fromIndex, index);
@@ -104,11 +117,13 @@ public class HeapSort {
         }
         if (rightIndex < toIndex) {
             Comparable right = (Comparable) array[rightIndex];
-            if (max.compareTo(right) < 0)
+            if (max.compareTo(right) < 0) {
                 maxIndex = rightIndex;
+            }
         }
-        if (maxIndex == index)
+        if (maxIndex == index) {
             return;
+        }
         swap(array, index, maxIndex);
         heapify(array, fromIndex, toIndex, maxIndex);
     }
@@ -118,12 +133,15 @@ public class HeapSort {
         int leftIndex = getLeftNodeIndex(fromIndex, index);
         int rightIndex = getRightNodeIndex(fromIndex, index);
 
-        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex])
+        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex]) {
             maxNodeIndex = leftIndex;
-        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex])
+        }
+        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex]) {
             maxNodeIndex = rightIndex;
-        if (maxNodeIndex == index)
+        }
+        if (maxNodeIndex == index) {
             return;
+        }
         swap(array, index, maxNodeIndex);
         heapify(array, fromIndex, toIndex, maxNodeIndex);
     }
@@ -133,12 +151,15 @@ public class HeapSort {
         int leftIndex = getLeftNodeIndex(fromIndex, index);
         int rightIndex = getRightNodeIndex(fromIndex, index);
 
-        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex])
+        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex]) {
             maxNodeIndex = leftIndex;
-        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex])
+        }
+        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex]) {
             maxNodeIndex = rightIndex;
-        if (maxNodeIndex == index)
+        }
+        if (maxNodeIndex == index) {
             return;
+        }
         swap(array, index, maxNodeIndex);
         heapify(array, fromIndex, toIndex, maxNodeIndex);
     }
@@ -148,12 +169,15 @@ public class HeapSort {
         int leftIndex = getLeftNodeIndex(fromIndex, index);
         int rightIndex = getRightNodeIndex(fromIndex, index);
 
-        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex])
+        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex]) {
             maxNodeIndex = leftIndex;
-        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex])
+        }
+        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex]) {
             maxNodeIndex = rightIndex;
-        if (maxNodeIndex == index)
+        }
+        if (maxNodeIndex == index) {
             return;
+        }
         swap(array, index, maxNodeIndex);
         heapify(array, fromIndex, toIndex, maxNodeIndex);
     }
@@ -163,12 +187,15 @@ public class HeapSort {
         int leftIndex = getLeftNodeIndex(fromIndex, index);
         int rightIndex = getRightNodeIndex(fromIndex, index);
 
-        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex])
+        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex]) {
             maxNodeIndex = leftIndex;
-        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex])
+        }
+        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex]) {
             maxNodeIndex = rightIndex;
-        if (maxNodeIndex == index)
+        }
+        if (maxNodeIndex == index) {
             return;
+        }
         swap(array, index, maxNodeIndex);
         heapify(array, fromIndex, toIndex, maxNodeIndex);
     }
@@ -178,12 +205,15 @@ public class HeapSort {
         int leftIndex = getLeftNodeIndex(fromIndex, index);
         int rightIndex = getRightNodeIndex(fromIndex, index);
 
-        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex])
+        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex]) {
             maxNodeIndex = leftIndex;
-        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex])
+        }
+        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex]) {
             maxNodeIndex = rightIndex;
-        if (maxNodeIndex == index)
+        }
+        if (maxNodeIndex == index) {
             return;
+        }
         swap(array, index, maxNodeIndex);
         heapify(array, fromIndex, toIndex, maxNodeIndex);
     }
@@ -193,12 +223,15 @@ public class HeapSort {
         int leftIndex = getLeftNodeIndex(fromIndex, index);
         int rightIndex = getRightNodeIndex(fromIndex, index);
 
-        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex])
+        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex]) {
             maxNodeIndex = leftIndex;
-        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex])
+        }
+        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex]) {
             maxNodeIndex = rightIndex;
-        if (maxNodeIndex == index)
+        }
+        if (maxNodeIndex == index) {
             return;
+        }
         swap(array, index, maxNodeIndex);
         heapify(array, fromIndex, toIndex, maxNodeIndex);
     }
@@ -208,60 +241,72 @@ public class HeapSort {
         int leftIndex = getLeftNodeIndex(fromIndex, index);
         int rightIndex = getRightNodeIndex(fromIndex, index);
 
-        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex])
+        if (leftIndex < toIndex && array[maxNodeIndex] < array[leftIndex]) {
             maxNodeIndex = leftIndex;
-        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex])
+        }
+        if (rightIndex < toIndex && array[maxNodeIndex] < array[rightIndex]) {
             maxNodeIndex = rightIndex;
-        if (maxNodeIndex == index)
+        }
+        if (maxNodeIndex == index) {
             return;
+        }
         swap(array, index, maxNodeIndex);
         heapify(array, fromIndex, toIndex, maxNodeIndex);
     }
 
     @SuppressWarnings({"rawtypes"})
     private static void heapInit(Object[] array, int fromIndex, int toIndex, Comparator c) {
-        for (int i = toIndex - 1; i >= fromIndex; i--)
+        for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i, c);
+        }
     }
 
     private static void heapInit(Object[] array, int fromIndex, int toIndex) {
-        for (int i = toIndex - 1; i >= fromIndex; i--)
+        for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
+        }
     }
 
     private static void heapInit(byte[] array, int fromIndex, int toIndex) {
-        for (int i = toIndex - 1; i >= fromIndex; i--)
+        for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
+        }
     }
 
     private static void heapInit(short[] array, int fromIndex, int toIndex) {
-        for (int i = toIndex - 1; i >= fromIndex; i--)
+        for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
+        }
     }
 
     private static void heapInit(int[] array, int fromIndex, int toIndex) {
-        for (int i = toIndex - 1; i >= fromIndex; i--)
+        for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
+        }
     }
 
     private static void heapInit(long[] array, int fromIndex, int toIndex) {
-        for (int i = toIndex - 1; i >= fromIndex; i--)
+        for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
+        }
     }
 
     private static void heapInit(float[] array, int fromIndex, int toIndex) {
-        for (int i = toIndex - 1; i >= fromIndex; i--)
+        for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
+        }
     }
 
     private static void heapInit(double[] array, int fromIndex, int toIndex) {
-        for (int i = toIndex - 1; i >= fromIndex; i--)
+        for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
+        }
     }
 
     private static void heapInit(char[] array, int fromIndex, int toIndex) {
-        for (int i = toIndex - 1; i >= fromIndex; i--)
+        for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
+        }
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -354,26 +399,21 @@ public class HeapSort {
         heapsort(a, 0, a.length);
     }
 
-
     public static void heapsort(int[] a) {
         heapsort(a, 0, a.length);
     }
-
 
     public static void heapsort(long[] a) {
         heapsort(a, 0, a.length);
     }
 
-
     public static void heapsort(float[] a) {
         heapsort(a, 0, a.length);
     }
 
-
     public static void heapsort(double[] a) {
         heapsort(a, 0, a.length);
     }
-
 
     public static void heapsort(char[] a) {
         heapsort(a, 0, a.length);

@@ -472,6 +472,7 @@ class HeapSortTest {
             if (a % 2 != 0 && b % 2 == 0) return 1;
             return a.compareTo(b);
         };
+
         heapsort(array, evenFirstComparator);
         Integer[] expectedArray = {2, 4, 8, 10, 44, 1, 3, 5, 9};
         assertArrayEquals(expectedArray, array);

@@ -27,14 +27,14 @@ public class HeapSort {
      *
      * <p>This method can be used with arrays of various types including:</p>
      * <ul>
-     * <li>Object[]</li>
-     * <li>byte[]</li>
-     * <li>short[]</li>
-     * <li>int[]</li>
-     * <li>long[]</li>
-     * <li>float[]</li>
-     * <li>double[]</li>
-     * <li>char[]</li>
+     *     <li>Object[]</li>
+     *     <li>byte[]</li>
+     *     <li>short[]</li>
+     *     <li>int[]</li>
+     *     <li>long[]</li>
+     *     <li>float[]</li>
+     *     <li>double[]</li>
+     *     <li>char[]</li>
      * </ul>
      */
     private static void swap(Object[] array, int a, int b) {
@@ -116,7 +116,7 @@ public class HeapSort {
      * Object heap, using the provided comparator if it's not null. This operation ensures
      * that the heap property is maintained for the subtree rooted at the given index.
      *
-     * <p>Time Complexity: O(log n) where n is the number of elements between fromIndex and toIndex.</p>
+     * <p>Time Complexity: O(log n).</p>
      *
      * @param array     the array to heapify
      * @param fromIndex the heap starting index
@@ -126,11 +126,11 @@ public class HeapSort {
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
     private static void heapify(
-        Object[] array,
-        int fromIndex,
-        int toIndex,
-        int index,
-        Comparator c
+            Object[] array,
+            int fromIndex,
+            int toIndex,
+            int index,
+            Comparator c
     ) {
         if (c == null) {
             heapify(array, fromIndex, toIndex, index);
@@ -166,7 +166,7 @@ public class HeapSort {
      * Object heap, using the natural ordering of the elements. This operation ensures
      * that the heap property is maintained for the subtree rooted at the given index.
      *
-     * <p>Time Complexity: O(log n) where n is the number of elements between fromIndex and toIndex.</p>
+     * <p>Time Complexity: O(log n).</p>
      *
      * @param array     the array to heapify
      * @param fromIndex the starting index
@@ -175,10 +175,10 @@ public class HeapSort {
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
     private static void heapify(
-        Object[] array,
-        int fromIndex,
-        int toIndex,
-        int index
+            Object[] array,
+            int fromIndex,
+            int toIndex,
+            int index
     ) {
         int maxIndex = index;
         Comparable max = (Comparable) array[index];
@@ -213,17 +213,17 @@ public class HeapSort {
      * <p>This method operates in place and assumes that the elements can be compared using
      * the natural ordering of their respective types.</p>
      *
-     * <p>Time Complexity: O(log n), where n is the number of elements between fromIndex and toIndex.</p>
+     * <p>Time Complexity: O(log n).</p>
      *
      * <p>This method can be used with arrays of various types including:</p>
      * <ul>
-     * <li>byte[]</li>
-     * <li>short[]</li>
-     * <li>int[]</li>
-     * <li>long[]</li>
-     * <li>float[]</li>
-     * <li>double[]</li>
-     * <li>char[]</li>
+     *     <li>byte[]</li>
+     *     <li>short[]</li>
+     *     <li>int[]</li>
+     *     <li>long[]</li>
+     *     <li>float[]</li>
+     *     <li>double[]</li>
+     *     <li>char[]</li>
      * </ul>
      *
      * @param array the array to heapify

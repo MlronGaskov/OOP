@@ -125,11 +125,11 @@ public class HeapSort {
      * @param c         the comparator to compare array elements
      */
     private static <T> void heapify(
-            T[] array,
-            int fromIndex,
-            int toIndex,
-            int index,
-            Comparator<? super T> c
+        T[] array,
+        int fromIndex,
+        int toIndex,
+        int index,
+        Comparator<? super T> c
     ) {
         int maxIndex = index;
         T max = array[index];
@@ -169,10 +169,10 @@ public class HeapSort {
      * @param index     the index to heapify
      */
     private static <T extends Comparable<T>> void heapify(
-            T[] array,
-            int fromIndex,
-            int toIndex,
-            int index
+        T[] array,
+        int fromIndex,
+        int toIndex,
+        int index
     ) {
         int maxIndex = index;
         T max = array[index];
@@ -361,7 +361,12 @@ public class HeapSort {
      * @param toIndex the end index of the heap (exclusive)
      * @param c the comparator to compare array elements
      */
-    private static <T> void heapInit(T[] array, int fromIndex, int toIndex, Comparator<? super T> c) {
+    private static <T> void heapInit(
+        T[] array,
+        int fromIndex,
+        int toIndex,
+        Comparator<? super T> c
+    ) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i, c);
         }

@@ -126,11 +126,11 @@ public class HeapSort {
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
     private static void heapify(
-            Object[] array,
-            int fromIndex,
-            int toIndex,
-            int index,
-            Comparator c
+        Object[] array,
+        int fromIndex,
+        int toIndex,
+        int index,
+        Comparator c
     ) {
         if (c == null) {
             heapify(array, fromIndex, toIndex, index);
@@ -175,10 +175,10 @@ public class HeapSort {
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
     private static void heapify(
-            Object[] array,
-            int fromIndex,
-            int toIndex,
-            int index
+        Object[] array,
+        int fromIndex,
+        int toIndex,
+        int index
     ) {
         int maxIndex = index;
         Comparable max = (Comparable) array[index];

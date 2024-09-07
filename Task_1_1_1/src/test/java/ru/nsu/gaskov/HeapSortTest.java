@@ -1,13 +1,14 @@
 package ru.nsu.gaskov;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static ru.nsu.gaskov.HeapSort.heapsort;
 
 import java.util.Comparator;
+import java.util.Random;
+
 import org.junit.jupiter.api.Test;
 
-/** Tests for the implemented heap sorting algorithm. */
+/** Tests */
 class HeapSortTest {
 
     @Test
@@ -515,5 +516,41 @@ class HeapSortTest {
         heapsort(array, evenFirstComparator);
         Integer[] expectedArray = {2, 4, 8, 10, 44, 1, 3, 5, 9};
         assertArrayEquals(expectedArray, array);
+    }
+
+    @Test
+    public  void testRandomIntArrays() {
+        Random random = new Random();
+        double constantNlogN = 0;
+        double constantNSquare = 0;
+
+        for (int size = 5000000; size <= 20000000; size *= 2) {
+            int[] array = random.ints(size, 0, size).toArray();
+            long startTime = System.nanoTime();
+            heapsort(array);
+            long finishTime = System.nanoTime();
+
+            boolean isArraySorted = true;
+            for (int i = 0; i < size - 1; ++i) {
+                if (array[i] > array[i + 1]) {
+                    isArraySorted = false;
+                    break;
+                }
+            }
+
+            long timeInMs = (finishTime - startTime) / 1000000;
+            double operationsNlogNCount = size * Math.log(size);
+            double operationsNSquareCount = ((double) size) * size;
+
+            if (size == 5000000) {
+                constantNlogN = timeInMs / operationsNlogNCount;
+                constantNSquare = timeInMs / operationsNSquareCount;
+            }
+
+
+            assertTrue(isArraySorted);
+            System.out.printf("Size: %d, Time: %d ms, Expected time: %f, N^2 expected time: %f\n",
+                size, timeInMs, operationsNlogNCount * constantNlogN, operationsNSquareCount * constantNSquare);
+        }
     }
 }

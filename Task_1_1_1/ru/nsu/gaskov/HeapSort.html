@@ -132,7 +132,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">HeapSort</span>
 extends java.lang.Object</pre>
-<div class="block">This class provides static methods for performing heap sort on arrays of various types.</div>
+<div class="block">This class provides static methods for performing heap sort on arrays of various types.
+
+ <p>Heap sort is a comparison-based sorting algorithm that uses a binary heap data structure.
+ It is efficient for large datasets and has a time complexity of O(n log n) in the average
+ and worst cases. The space complexity is O(1) since it sorts the array in place.</p>
+
+ <p>This class includes methods for sorting arrays of primitive types (such as int,
+ double, and char) as well as object arrays. It also supports custom sorting through
+ comparators for user-defined types.</p>
+
+ <p>Note: The input arrays are modified in place, and the original order of equal elements
+ is not necessarily preserved (unstable sort).</p></div>
 </li>
 </ul>
 </div>
@@ -178,7 +189,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(byte%5B%5D)">heapsort</a></span>&#8203;(byte[]&nbsp;a)</code></th>
 <td class="colLast">
-<div class="block">Sorts the whole byte array using the heap sort algorithm.</div>
+<div class="block">Sorts the whole array using the heap sort algorithm.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -187,104 +198,80 @@ extends java.lang.Object</pre>
         int&nbsp;fromIndex,
         int&nbsp;toIndex)</code></th>
 <td class="colLast">
-<div class="block">Sorts the byte array using the heap sort algorithm.</div>
+<div class="block">Sorts the segment of the array using the heap sort algorithm.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(char%5B%5D)">heapsort</a></span>&#8203;(char[]&nbsp;a)</code></th>
-<td class="colLast">
-<div class="block">Sorts the whole char array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(char%5B%5D,int,int)">heapsort</a></span>&#8203;(char[]&nbsp;a,
         int&nbsp;fromIndex,
         int&nbsp;toIndex)</code></th>
-<td class="colLast">
-<div class="block">Sorts the char array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(double%5B%5D)">heapsort</a></span>&#8203;(double[]&nbsp;a)</code></th>
-<td class="colLast">
-<div class="block">Sorts the whole double array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(double%5B%5D,int,int)">heapsort</a></span>&#8203;(double[]&nbsp;a,
         int&nbsp;fromIndex,
         int&nbsp;toIndex)</code></th>
-<td class="colLast">
-<div class="block">Sorts the double array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(float%5B%5D)">heapsort</a></span>&#8203;(float[]&nbsp;a)</code></th>
-<td class="colLast">
-<div class="block">Sorts the whole float array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(float%5B%5D,int,int)">heapsort</a></span>&#8203;(float[]&nbsp;a,
         int&nbsp;fromIndex,
         int&nbsp;toIndex)</code></th>
-<td class="colLast">
-<div class="block">Sorts the float array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(int%5B%5D)">heapsort</a></span>&#8203;(int[]&nbsp;a)</code></th>
-<td class="colLast">
-<div class="block">Sorts the whole int array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(int%5B%5D,int,int)">heapsort</a></span>&#8203;(int[]&nbsp;a,
         int&nbsp;fromIndex,
         int&nbsp;toIndex)</code></th>
-<td class="colLast">
-<div class="block">Sorts the int array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(long%5B%5D)">heapsort</a></span>&#8203;(long[]&nbsp;a)</code></th>
-<td class="colLast">
-<div class="block">Sorts the whole long array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(long%5B%5D,int,int)">heapsort</a></span>&#8203;(long[]&nbsp;a,
         int&nbsp;fromIndex,
         int&nbsp;toIndex)</code></th>
-<td class="colLast">
-<div class="block">Sorts the long array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(short%5B%5D)">heapsort</a></span>&#8203;(short[]&nbsp;a)</code></th>
-<td class="colLast">
-<div class="block">Sorts the whole short array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(short%5B%5D,int,int)">heapsort</a></span>&#8203;(short[]&nbsp;a,
         int&nbsp;fromIndex,
         int&nbsp;toIndex)</code></th>
-<td class="colLast">
-<div class="block">Sorts the short array using the heap sort algorithm.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>static void</code></td>
@@ -303,21 +290,21 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(java.lang.Object%5B%5D,int,int,java.util.Comparator)">heapsort</a></span>&#8203;(java.lang.Object[]&nbsp;a,
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(T%5B%5D,int,int,java.util.Comparator)">heapsort</a></span>&#8203;(T[]&nbsp;a,
         int&nbsp;fromIndex,
         int&nbsp;toIndex,
-        java.util.Comparator&nbsp;c)</code></th>
+        java.util.Comparator&lt;? super T&gt;&nbsp;c)</code></th>
 <td class="colLast">
 <div class="block">Sorts the specified array using the heap sort algorithm with a custom comparator.</div>
 </td>
 </tr>
 <tr id="i17" class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(java.lang.Object%5B%5D,java.util.Comparator)">heapsort</a></span>&#8203;(java.lang.Object[]&nbsp;a,
-        java.util.Comparator&nbsp;c)</code></th>
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapsort(T%5B%5D,java.util.Comparator)">heapsort</a></span>&#8203;(T[]&nbsp;a,
+        java.util.Comparator&lt;? super T&gt;&nbsp;c)</code></th>
 <td class="colLast">
-<div class="block">Sorts the whole specified array using the heap sort algorithm using the comparator.</div>
+<div class="block">Sorts the whole specified array using the heap sort algorithm and a custom comparator.</div>
 </td>
 </tr>
 </table>
@@ -365,20 +352,27 @@ extends java.lang.Object</pre>
 <h3>Method Detail</h3>
 <a id="heapsort(java.lang.Object[],int,int,java.util.Comparator)">
 <!--   -->
+</a><a id="heapsort(T[],int,int,java.util.Comparator)">
+<!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>heapsort</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(java.lang.Object[]&nbsp;a,
-                            int&nbsp;fromIndex,
-                            int&nbsp;toIndex,
-                            java.util.Comparator&nbsp;c)</pre>
-<div class="block">Sorts the specified array using the heap sort algorithm with a custom comparator.</div>
+<pre class="methodSignature">public static&nbsp;&lt;T&gt;&nbsp;void&nbsp;heapsort&#8203;(T[]&nbsp;a,
+                                int&nbsp;fromIndex,
+                                int&nbsp;toIndex,
+                                java.util.Comparator&lt;? super T&gt;&nbsp;c)</pre>
+<div class="block">Sorts the specified array using the heap sort algorithm with a custom comparator.
+ This method transforms the array into a heap and then extracts the largest elements
+ in order to sort the array.
+
+ <p>The array is sorted in-place, meaning no additional arrays are created during
+ the sorting process.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>a</code> - the array to sort</dd>
-<dd><code>fromIndex</code> - the starting index</dd>
-<dd><code>toIndex</code> - the end index (exclusive)</dd>
+<dd><code>fromIndex</code> - the starting index of the portion of the array to sort (inclusive)</dd>
+<dd><code>toIndex</code> - the end index of the portion of the array to sort (exclusive)</dd>
 <dd><code>c</code> - the comparator used to compare array elements</dd>
 </dl>
 </li>
@@ -392,12 +386,17 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(java.lang.Object[]&nbsp;a,
                             int&nbsp;fromIndex,
                             int&nbsp;toIndex)</pre>
-<div class="block">Sorts the specified array using the heap sort algorithm.</div>
+<div class="block">Sorts the specified array using the heap sort algorithm.
+ This method transforms the array into a heap and then extracts the largest elements
+ in order to sort the array using the natural ordering of elements.
+
+ <p>The array is sorted in-place, meaning no additional arrays are created during
+ the sorting process.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>a</code> - the array to sort</dd>
-<dd><code>fromIndex</code> - the starting index</dd>
-<dd><code>toIndex</code> - the end index (exclusive)</dd>
+<dd><code>fromIndex</code> - the starting index of the portion of the array to sort (inclusive)</dd>
+<dd><code>toIndex</code> - the end index of the portion of the array to sort (exclusive)</dd>
 </dl>
 </li>
 </ul>
@@ -410,12 +409,22 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(byte[]&nbsp;a,
                             int&nbsp;fromIndex,
                             int&nbsp;toIndex)</pre>
-<div class="block">Sorts the byte array using the heap sort algorithm.</div>
+<div class="block">Sorts the segment of the array using the heap sort algorithm.
+ This method transforms the array into a heap and
+ then extracts the largest elements in order to sort the array.
+
+ <p>The array is sorted in-place, meaning no additional arrays are created
+ during the sorting process.</p>
+
+ <p>
+ The specific implementation of this method depends on the type of the array:
+ it can handle byte, short, int, long, float, double, and char arrays.
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>a</code> - the array to sort</dd>
-<dd><code>fromIndex</code> - the starting index</dd>
-<dd><code>toIndex</code> - the end index (exclusive)</dd>
+<dd><code>fromIndex</code> - the starting index of the portion of the array to sort (inclusive)</dd>
+<dd><code>toIndex</code> - the end index of the portion of the array to sort (exclusive)</dd>
 </dl>
 </li>
 </ul>
@@ -428,13 +437,6 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(short[]&nbsp;a,
                             int&nbsp;fromIndex,
                             int&nbsp;toIndex)</pre>
-<div class="block">Sorts the short array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-<dd><code>fromIndex</code> - the starting index</dd>
-<dd><code>toIndex</code> - the end index (exclusive)</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(int[],int,int)">
@@ -446,13 +448,6 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(int[]&nbsp;a,
                             int&nbsp;fromIndex,
                             int&nbsp;toIndex)</pre>
-<div class="block">Sorts the int array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-<dd><code>fromIndex</code> - the starting index</dd>
-<dd><code>toIndex</code> - the end index (exclusive)</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(long[],int,int)">
@@ -464,13 +459,6 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(long[]&nbsp;a,
                             int&nbsp;fromIndex,
                             int&nbsp;toIndex)</pre>
-<div class="block">Sorts the long array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-<dd><code>fromIndex</code> - the starting index</dd>
-<dd><code>toIndex</code> - the end index (exclusive)</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(float[],int,int)">
@@ -482,13 +470,6 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(float[]&nbsp;a,
                             int&nbsp;fromIndex,
                             int&nbsp;toIndex)</pre>
-<div class="block">Sorts the float array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-<dd><code>fromIndex</code> - the starting index</dd>
-<dd><code>toIndex</code> - the end index (exclusive)</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(double[],int,int)">
@@ -500,13 +481,6 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(double[]&nbsp;a,
                             int&nbsp;fromIndex,
                             int&nbsp;toIndex)</pre>
-<div class="block">Sorts the double array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-<dd><code>fromIndex</code> - the starting index</dd>
-<dd><code>toIndex</code> - the end index (exclusive)</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(char[],int,int)">
@@ -518,27 +492,27 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(char[]&nbsp;a,
                             int&nbsp;fromIndex,
                             int&nbsp;toIndex)</pre>
-<div class="block">Sorts the char array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-<dd><code>fromIndex</code> - the starting index</dd>
-<dd><code>toIndex</code> - the end index (exclusive)</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(java.lang.Object[],java.util.Comparator)">
+<!--   -->
+</a><a id="heapsort(T[],java.util.Comparator)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>heapsort</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(java.lang.Object[]&nbsp;a,
-                            java.util.Comparator&nbsp;c)</pre>
-<div class="block">Sorts the whole specified array using the heap sort algorithm using the comparator.</div>
+<pre class="methodSignature">public static&nbsp;&lt;T&gt;&nbsp;void&nbsp;heapsort&#8203;(T[]&nbsp;a,
+                                java.util.Comparator&lt;? super T&gt;&nbsp;c)</pre>
+<div class="block">Sorts the whole specified array using the heap sort algorithm and a custom comparator.
+ This method initializes the sorting process on the entire array, allowing
+ for custom ordering of the elements.
+
+ <p>The sorting is performed in-place without using additional storage.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>a</code> - the array to sort</dd>
+<dd><code>c</code> - the comparator used to compare array elements</dd>
 </dl>
 </li>
 </ul>
@@ -549,7 +523,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>heapsort</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(java.lang.Object[]&nbsp;a)</pre>
-<div class="block">Sorts the whole specified array using the heap sort algorithm.</div>
+<div class="block">Sorts the whole specified array using the heap sort algorithm.
+ This method initializes the sorting process on the entire array,
+ relying on the natural ordering of the elements.
+
+ <p>The sorting is performed in-place without using additional storage.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>a</code> - the array to sort</dd>
@@ -563,7 +541,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>heapsort</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(byte[]&nbsp;a)</pre>
-<div class="block">Sorts the whole byte array using the heap sort algorithm.</div>
+<div class="block">Sorts the whole array using the heap sort algorithm.
+ This method sorts the entire array in-place, meaning no additional arrays
+ are created during the sorting process.
+
+ <p>The specific implementation of this method depends on the type of the array,
+ which can be byte, short, int, long, float, double, or char.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>a</code> - the array to sort</dd>
@@ -577,11 +560,6 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>heapsort</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(short[]&nbsp;a)</pre>
-<div class="block">Sorts the whole short array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(int[])">
@@ -591,11 +569,6 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>heapsort</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(int[]&nbsp;a)</pre>
-<div class="block">Sorts the whole int array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(long[])">
@@ -605,11 +578,6 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>heapsort</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(long[]&nbsp;a)</pre>
-<div class="block">Sorts the whole long array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(float[])">
@@ -619,11 +587,6 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>heapsort</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(float[]&nbsp;a)</pre>
-<div class="block">Sorts the whole float array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(double[])">
@@ -633,11 +596,6 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>heapsort</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(double[]&nbsp;a)</pre>
-<div class="block">Sorts the whole double array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-</dl>
 </li>
 </ul>
 <a id="heapsort(char[])">
@@ -647,11 +605,6 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>heapsort</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;heapsort&#8203;(char[]&nbsp;a)</pre>
-<div class="block">Sorts the whole char array using the heap sort algorithm.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>a</code> - the array to sort</dd>
-</dl>
 </li>
 </ul>
 </li>

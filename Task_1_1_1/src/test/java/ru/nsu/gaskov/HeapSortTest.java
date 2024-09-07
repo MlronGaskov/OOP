@@ -8,7 +8,6 @@ import static ru.nsu.gaskov.HeapSort.heapsort;
 import java.util.Comparator;
 import java.util.Random;
 import java.util.function.Function;
-
 import org.junit.jupiter.api.Test;
 
 /** Tests. */

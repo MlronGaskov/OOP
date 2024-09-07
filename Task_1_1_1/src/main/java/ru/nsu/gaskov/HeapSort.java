@@ -37,8 +37,8 @@ public class HeapSort {
      *     <li>char[]</li>
      * </ul>
      */
-    private static void swap(Object[] array, int a, int b) {
-        Object tmp = array[a];
+    private static <T> void swap(T[] array, int a, int b) {
+        T tmp = array[a];
         array[a] = array[b];
         array[b] = tmp;
     }
@@ -124,32 +124,27 @@ public class HeapSort {
      * @param index     the index to heapify
      * @param c         the comparator to compare array elements
      */
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    private static void heapify(
-            Object[] array,
+    private static <T> void heapify(
+            T[] array,
             int fromIndex,
             int toIndex,
             int index,
-            Comparator c
+            Comparator<? super T> c
     ) {
-        if (c == null) {
-            heapify(array, fromIndex, toIndex, index);
-            return;
-        }
         int maxIndex = index;
-        Object max = array[index];
+        T max = array[index];
         int leftIndex = getLeftNodeIndex(fromIndex, index);
         int rightIndex = getRightNodeIndex(fromIndex, index);
 
         if (leftIndex < toIndex) {
-            Object left = array[leftIndex];
+            T left = array[leftIndex];
             if (c.compare(max, left) < 0) {
                 maxIndex = leftIndex;
                 max = array[maxIndex];
             }
         }
         if (rightIndex < toIndex) {
-            Object right = array[rightIndex];
+            T right = array[rightIndex];
             if (c.compare(max, right) < 0) {
                 maxIndex = rightIndex;
             }
@@ -173,27 +168,26 @@ public class HeapSort {
      * @param toIndex   the end index (exclusive)
      * @param index     the index to heapify
      */
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    private static void heapify(
-            Object[] array,
+    private static <T extends Comparable<T>> void heapify(
+            T[] array,
             int fromIndex,
             int toIndex,
             int index
     ) {
         int maxIndex = index;
-        Comparable max = (Comparable) array[index];
+        T max = array[index];
         int leftIndex = getLeftNodeIndex(fromIndex, index);
         int rightIndex = getRightNodeIndex(fromIndex, index);
 
         if (leftIndex < toIndex) {
-            Comparable left = (Comparable) array[leftIndex];
+            T left = array[leftIndex];
             if (max.compareTo(left) < 0) {
                 maxIndex = leftIndex;
-                max = (Comparable) array[maxIndex];
+                max = array[maxIndex];
             }
         }
         if (rightIndex < toIndex) {
-            Comparable right = (Comparable) array[rightIndex];
+            T right = array[rightIndex];
             if (max.compareTo(right) < 0) {
                 maxIndex = rightIndex;
             }
@@ -367,8 +361,7 @@ public class HeapSort {
      * @param toIndex the end index of the heap (exclusive)
      * @param c the comparator to compare array elements
      */
-    @SuppressWarnings({"rawtypes"})
-    private static void heapInit(Object[] array, int fromIndex, int toIndex, Comparator c) {
+    private static <T> void heapInit(T[] array, int fromIndex, int toIndex, Comparator<? super T> c) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i, c);
         }
@@ -383,7 +376,7 @@ public class HeapSort {
      * @param fromIndex the starting index of the heap (inclusive)
      * @param toIndex the end index of the heap (exclusive)
      */
-    private static void heapInit(Object[] array, int fromIndex, int toIndex) {
+    private static <T extends Comparable<T>> void heapInit(T[] array, int fromIndex, int toIndex) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
         }
@@ -484,7 +477,7 @@ public class HeapSort {
      * @param fromIndex the starting index of the portion of the array to sort (inclusive)
      * @param toIndex the end index of the portion of the array to sort (exclusive)
      */
-    public static void heapsort(Object[] a, int fromIndex, int toIndex) {
+    public static <T extends Comparable<T>> void heapsort(T[] a, int fromIndex, int toIndex) {
         heapInit(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
@@ -588,7 +581,7 @@ public class HeapSort {
      *
      * @param a the array to sort
      */
-    public static void heapsort(Object[] a) {
+    public static <T extends Comparable<T>> void heapsort(T[] a) {
         heapsort(a, 0, a.length);
     }
 

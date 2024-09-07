@@ -1,13 +1,12 @@
 package ru.nsu.gaskov;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static ru.nsu.gaskov.HeapSort.heapsort;
 
 import java.util.Comparator;
 import java.util.Random;
-
 import org.junit.jupiter.api.Test;
 
 /** Tests. */
@@ -523,8 +522,8 @@ class HeapSortTest {
     @Test
     public  void testRandomIntArrays() {
         Random random = new Random();
-        double constantN_log_N = 0;
-        double constantN_Square = 0;
+        double constantNlogN = 0;
+        double constantNsquare = 0;
 
         for (int size = 5000000; size <= 20000000; size *= 2) {
             int[] array = random.ints(size, 0, size).toArray();
@@ -541,12 +540,12 @@ class HeapSortTest {
             }
 
             long timeInMs = (finishTime - startTime) / 1000000;
-            double operationsNlogNCount = size * Math.log(size);
-            double operationsNSquareCount = ((double) size) * size;
+            double operationsNlogN = size * Math.log(size);
+            double operationsNsquare = ((double) size) * size;
 
             if (size == 5000000) {
-                constantN_log_N = timeInMs / operationsNlogNCount;
-                constantN_Square = timeInMs / operationsNSquareCount;
+                constantNlogN = timeInMs / operationsNlogN;
+                constantNsquare = timeInMs / operationsNsquare;
             }
 
 
@@ -555,8 +554,8 @@ class HeapSortTest {
                 "Size: %d, Time: %d ms, Expected time: %f, N^2 expected time: %f\n",
                 size,
                 timeInMs,
-                operationsNlogNCount * constantN_log_N,
-                operationsNSquareCount * constantN_Square
+                operationsNlogN * constantNlogN,
+                operationsNsquare * constantNsquare
             );
         }
     }

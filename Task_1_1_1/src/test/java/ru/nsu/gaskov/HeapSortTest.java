@@ -7,6 +7,8 @@ import static ru.nsu.gaskov.HeapSort.heapsort;
 
 import java.util.Comparator;
 import java.util.Random;
+import java.util.function.Function;
+
 import org.junit.jupiter.api.Test;
 
 /** Tests. */
@@ -471,18 +473,17 @@ class HeapSortTest {
     @Test
     public void testLargeObjectArrayWithRangeAndComparatorReversedReading() {
         String[] array = {
-            "banana", "apple", "orange", "grape", "cherry",
-            "kiwi", "mango", "peach", "melon", "berry"
+            "banana", "apple", "orange", null, "grape", "cherry",
+            "kiwi", "mango", "peach", "melon", "berry",
         };
 
-        Comparator<String> reverseReadingComparator = (s1, s2) -> {
-            String reversedS1 = new StringBuilder(s1).reverse().toString();
-            String reversedS2 = new StringBuilder(s2).reverse().toString();
-            return reversedS1.compareTo(reversedS2);
-        };
+        Comparator<String> reverseReadingComparator = Comparator.nullsFirst(Comparator.comparing(
+            f -> new StringBuilder(f).reverse().toString()
+        ));
+
         heapsort(array, 0, 4, reverseReadingComparator);
         String[] expectedArray = {
-            "banana", "orange", "apple", "grape", "cherry",
+            null, "banana", "orange", "apple", "grape", "cherry",
             "kiwi", "mango", "peach", "melon", "berry"
         };
         assertArrayEquals(expectedArray, array);
@@ -491,17 +492,9 @@ class HeapSortTest {
     @Test
     public void testIntegerArrayEvenOdd() {
         Integer[] array = {5, 3, 8, 10, 44, 2, 9, 1, 4};
-
-        Comparator<Integer> evenFirstComparator = (a, b) -> {
-            if (a % 2 == 0 && b % 2 != 0) {
-                return -1;
-            }
-            if (a % 2 != 0 && b % 2 == 0) {
-                return 1;
-            }
-            return a.compareTo(b);
-        };
-
+        Comparator<Integer> evenFirstComparator = Comparator.comparingInt(
+            (Integer x) -> x % 2
+        ).thenComparing(Function.identity());
         heapsort(array, evenFirstComparator);
         Integer[] expectedArray = {2, 4, 8, 10, 44, 1, 3, 5, 9};
         assertArrayEquals(expectedArray, array);

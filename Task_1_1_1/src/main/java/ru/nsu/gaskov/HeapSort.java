@@ -361,7 +361,7 @@ public class HeapSort {
      * @param toIndex the end index of the heap (exclusive)
      * @param c the comparator to compare array elements
      */
-    private static <T> void heapInit(
+    private static <T> void initHeap(
         T[] array,
         int fromIndex,
         int toIndex,
@@ -381,7 +381,7 @@ public class HeapSort {
      * @param fromIndex the starting index of the heap (inclusive)
      * @param toIndex the end index of the heap (exclusive)
      */
-    private static <T extends Comparable<T>> void heapInit(T[] array, int fromIndex, int toIndex) {
+    private static <T extends Comparable<T>> void initHeap(T[] array, int fromIndex, int toIndex) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
         }
@@ -407,43 +407,43 @@ public class HeapSort {
      * @param fromIndex the starting index of the heap (inclusive)
      * @param toIndex the end index of the heap (exclusive)
      */
-    private static void heapInit(byte[] array, int fromIndex, int toIndex) {
+    private static void initHeap(byte[] array, int fromIndex, int toIndex) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
         }
     }
 
-    private static void heapInit(short[] array, int fromIndex, int toIndex) {
+    private static void initHeap(short[] array, int fromIndex, int toIndex) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
         }
     }
 
-    private static void heapInit(int[] array, int fromIndex, int toIndex) {
+    private static void initHeap(int[] array, int fromIndex, int toIndex) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
         }
     }
 
-    private static void heapInit(long[] array, int fromIndex, int toIndex) {
+    private static void initHeap(long[] array, int fromIndex, int toIndex) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
         }
     }
 
-    private static void heapInit(float[] array, int fromIndex, int toIndex) {
+    private static void initHeap(float[] array, int fromIndex, int toIndex) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
         }
     }
 
-    private static void heapInit(double[] array, int fromIndex, int toIndex) {
+    private static void initHeap(double[] array, int fromIndex, int toIndex) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
         }
     }
 
-    private static void heapInit(char[] array, int fromIndex, int toIndex) {
+    private static void initHeap(char[] array, int fromIndex, int toIndex) {
         for (int i = toIndex - 1; i >= fromIndex; i--) {
             heapify(array, fromIndex, toIndex, i);
         }
@@ -463,7 +463,7 @@ public class HeapSort {
      * @param c the comparator used to compare array elements
      */
     public static <T> void heapsort(T[] a, int fromIndex, int toIndex, Comparator<? super T> c) {
-        heapInit(a, fromIndex, toIndex, c);
+        initHeap(a, fromIndex, toIndex, c);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
             heapify(a, fromIndex, toIndex - 1 - i, fromIndex, c);
@@ -483,7 +483,7 @@ public class HeapSort {
      * @param toIndex the end index of the portion of the array to sort (exclusive)
      */
     public static <T extends Comparable<T>> void heapsort(T[] a, int fromIndex, int toIndex) {
-        heapInit(a, fromIndex, toIndex);
+        initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
             heapify(a, fromIndex, toIndex - 1 - i, fromIndex);
@@ -508,7 +508,7 @@ public class HeapSort {
      * @param toIndex the end index of the portion of the array to sort (exclusive)
      */
     public static void heapsort(byte[] a, int fromIndex, int toIndex) {
-        heapInit(a, fromIndex, toIndex);
+        initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
             heapify(a, fromIndex, toIndex - 1 - i, fromIndex);
@@ -516,7 +516,7 @@ public class HeapSort {
     }
 
     public static void heapsort(short[] a, int fromIndex, int toIndex) {
-        heapInit(a, fromIndex, toIndex);
+        initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
             heapify(a, fromIndex, toIndex - 1 - i, fromIndex);
@@ -524,7 +524,7 @@ public class HeapSort {
     }
 
     public static void heapsort(int[] a, int fromIndex, int toIndex) {
-        heapInit(a, fromIndex, toIndex);
+        initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
             heapify(a, fromIndex, toIndex - 1 - i, fromIndex);
@@ -532,7 +532,7 @@ public class HeapSort {
     }
 
     public static void heapsort(long[] a, int fromIndex, int toIndex) {
-        heapInit(a, fromIndex, toIndex);
+        initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
             heapify(a, fromIndex, toIndex - 1 - i, fromIndex);
@@ -540,7 +540,7 @@ public class HeapSort {
     }
 
     public static void heapsort(float[] a, int fromIndex, int toIndex) {
-        heapInit(a, fromIndex, toIndex);
+        initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
             heapify(a, fromIndex, toIndex - 1 - i, fromIndex);
@@ -548,7 +548,7 @@ public class HeapSort {
     }
 
     public static void heapsort(double[] a, int fromIndex, int toIndex) {
-        heapInit(a, fromIndex, toIndex);
+        initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
             heapify(a, fromIndex, toIndex - 1 - i, fromIndex);
@@ -556,7 +556,7 @@ public class HeapSort {
     }
 
     public static void heapsort(char[] a, int fromIndex, int toIndex) {
-        heapInit(a, fromIndex, toIndex);
+        initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
             swap(a, fromIndex, toIndex - 1 - i);
             heapify(a, fromIndex, toIndex - 1 - i, fromIndex);

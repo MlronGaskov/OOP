@@ -91,20 +91,8 @@ class HeapSortTest {
     }
 
     @Test
-    public void testDifferentTypesArray() {
-        Object[] array = {"banana", "apple", "orange", "grape", 4};
-        assertThrows(ClassCastException.class, () -> heapsort(array));
-    }
-
-    @Test
-    public void testNotComparableArray() {
-        Object[] array = {new Object(), new Object()};
-        assertThrows(ClassCastException.class, () -> heapsort(array));
-    }
-
-    @Test
     public void testNullArray() {
-        Object[] array = null;
+        String[] array = null;
         assertThrows(NullPointerException.class, () -> heapsort(array));
     }
 

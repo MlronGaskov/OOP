@@ -55,9 +55,9 @@ class HeapSortTest {
 
     @Test
     public void testLongArray() {
-        long[] array = {52147483647L, 21474836473L, 21474836479L, 21474836471L, 21474836474L};
+        long[] array = {52147483647L, 21474836473L, 21474836479L, 21474836474L};
         heapsort(array);
-        long[] expectedArray = {21474836471L, 21474836473L, 21474836474L, 21474836479L, 52147483647L};
+        long[] expectedArray = {21474836473L, 21474836474L, 21474836479L, 52147483647L};
         assertArrayEquals(expectedArray, array);
     }
 

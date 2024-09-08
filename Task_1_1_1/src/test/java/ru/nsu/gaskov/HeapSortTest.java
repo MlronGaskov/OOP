@@ -55,9 +55,9 @@ class HeapSortTest {
 
     @Test
     public void testLongArray() {
-        long[] array = {5L, 3L, 9L, 1L, 4L};
+        long[] array = {52147483647L, 21474836473L, 21474836479L, 21474836471L, 21474836474L};
         heapsort(array);
-        long[] expectedArray = {1L, 3L, 4L, 5L, 9L};
+        long[] expectedArray = {21474836471L, 21474836473L, 21474836474L, 52147483647L, 21474836479L};
         assertArrayEquals(expectedArray, array);
     }
 
@@ -504,8 +504,9 @@ class HeapSortTest {
         Random random = new Random();
         double constantNlogN = 0;
         double constantNsquare = 0;
+        int startSize = 5000000;
 
-        for (int size = 5000000; size <= 20000000; size *= 2) {
+        for (int size = startSize; size <= 4 * startSize; size *= 2) {
             int[] array = random.ints(size, 0, size).toArray();
             long startTime = System.nanoTime();
             heapsort(array);

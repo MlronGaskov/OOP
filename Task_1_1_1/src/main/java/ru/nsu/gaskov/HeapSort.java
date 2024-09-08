@@ -24,18 +24,6 @@ public class HeapSort {
      * @param array the array in which to swap elements
      * @param a     the index of the first element
      * @param b     the index of the second element
-     *
-     * <p>This method can be used with arrays of various types including:</p>
-     * <ul>
-     *     <li>Object[]</li>
-     *     <li>byte[]</li>
-     *     <li>short[]</li>
-     *     <li>int[]</li>
-     *     <li>long[]</li>
-     *     <li>float[]</li>
-     *     <li>double[]</li>
-     *     <li>char[]</li>
-     * </ul>
      */
     private static <T> void swap(T[] array, int a, int b) {
         T tmp = array[a];
@@ -498,11 +486,6 @@ public class HeapSort {
      * <p>The array is sorted in-place, meaning no additional arrays are created
      * during the sorting process.</p>
      *
-     * <p>
-     * The specific implementation of this method depends on the type of the array:
-     * it can handle byte, short, int, long, float, double, and char arrays.
-     * </p>
-     *
      * @param a the array to sort
      * @param fromIndex the starting index of the portion of the array to sort (inclusive)
      * @param toIndex the end index of the portion of the array to sort (exclusive)
@@ -515,6 +498,15 @@ public class HeapSort {
         }
     }
 
+    /**
+     * Sorts the segment of the array using the heap sort algorithm.
+     * This method transforms the array into a heap and
+     * then extracts the largest elements in order to sort the array.
+     *
+     * @param a the array to sort
+     * @param fromIndex the starting index of the portion of the array to sort (inclusive)
+     * @param toIndex the end index of the portion of the array to sort (exclusive)
+     */
     public static void heapsort(short[] a, int fromIndex, int toIndex) {
         initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
@@ -523,6 +515,15 @@ public class HeapSort {
         }
     }
 
+    /**
+     * Sorts the segment of the array using the heap sort algorithm.
+     * This method transforms the array into a heap and
+     * then extracts the largest elements in order to sort the array.
+     *
+     * @param a the array to sort
+     * @param fromIndex the starting index of the portion of the array to sort (inclusive)
+     * @param toIndex the end index of the portion of the array to sort (exclusive)
+     */
     public static void heapsort(int[] a, int fromIndex, int toIndex) {
         initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
@@ -531,6 +532,15 @@ public class HeapSort {
         }
     }
 
+    /**
+     * Sorts the segment of the array using the heap sort algorithm.
+     * This method transforms the array into a heap and
+     * then extracts the largest elements in order to sort the array.
+     *
+     * @param a the array to sort
+     * @param fromIndex the starting index of the portion of the array to sort (inclusive)
+     * @param toIndex the end index of the portion of the array to sort (exclusive)
+     */
     public static void heapsort(long[] a, int fromIndex, int toIndex) {
         initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
@@ -539,6 +549,15 @@ public class HeapSort {
         }
     }
 
+    /**
+     * Sorts the segment of the array using the heap sort algorithm.
+     * This method transforms the array into a heap and
+     * then extracts the largest elements in order to sort the array.
+     *
+     * @param a the array to sort
+     * @param fromIndex the starting index of the portion of the array to sort (inclusive)
+     * @param toIndex the end index of the portion of the array to sort (exclusive)
+     */
     public static void heapsort(float[] a, int fromIndex, int toIndex) {
         initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
@@ -547,6 +566,15 @@ public class HeapSort {
         }
     }
 
+    /**
+     * Sorts the segment of the array using the heap sort algorithm.
+     * This method transforms the array into a heap and
+     * then extracts the largest elements in order to sort the array.
+     *
+     * @param a the array to sort
+     * @param fromIndex the starting index of the portion of the array to sort (inclusive)
+     * @param toIndex the end index of the portion of the array to sort (exclusive)
+     */
     public static void heapsort(double[] a, int fromIndex, int toIndex) {
         initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {
@@ -555,6 +583,15 @@ public class HeapSort {
         }
     }
 
+    /**
+     * Sorts the segment of the array using the heap sort algorithm.
+     * This method transforms the array into a heap and
+     * then extracts the largest elements in order to sort the array.
+     *
+     * @param a the array to sort
+     * @param fromIndex the starting index of the portion of the array to sort (inclusive)
+     * @param toIndex the end index of the portion of the array to sort (exclusive)
+     */
     public static void heapsort(char[] a, int fromIndex, int toIndex) {
         initHeap(a, fromIndex, toIndex);
         for (int i = 0; i < toIndex - fromIndex; ++i) {

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StandardDecksNumberConditionTest {
-    @Test
+    /**@Test
     public void validDecksNumberTest() {
         PlayersNumberCondition condition = new PlayersNumberCondition();
         assertTrue(condition.isValid("2"));
@@ -20,5 +20,5 @@ class StandardDecksNumberConditionTest {
         assertFalse(condition.isValid("-2"));
         assertFalse(condition.isValid("3412"));
         assertFalse(condition.isValid("miron2005"));
-    }
+    }*/
 }

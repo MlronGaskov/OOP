@@ -37,7 +37,7 @@ public class GameUI {
     private static void printPlayerHand(Hand playerHand) {
         System.out.print("Bet: " + playerHand.getBet() +
             (playerHand.isSplat() || playerHand.isDoubled() ? "x2 " : " "));
-        System.out.println(playerHand.isInsured() ?
+        System.out.print(playerHand.isInsured() ?
             ("Insure: " + playerHand.getBet() / 2 + " ") : "");
         System.out.println(playerHand.getCards1() + " -> " + playerHand.getCards1Value());
         if (playerHand.isSplat()) {

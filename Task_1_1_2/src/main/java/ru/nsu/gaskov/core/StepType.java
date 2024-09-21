@@ -1,5 +1,8 @@
 package ru.nsu.gaskov.core;
 
+/**
+ * Enum representing the types of steps that can occur during a card game.
+ */
 public enum StepType {
     PLAYER_BETS,
     INITIAL_CARDS_DEAL,

@@ -1,11 +1,12 @@
 package ru.nsu.gaskov.ui;
 
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 public class InputValidator {
     public static String getValidInput(
         Scanner scanner,
-        InputCondition condition,
+        Predicate<String> condition,
         String promptMessage,
         String errorMessage
     ) {
@@ -16,7 +17,7 @@ public class InputValidator {
             do {
                 input = scanner.nextLine();
             } while (input.isEmpty());
-            if (condition.isValid(input)) {
+            if (condition.test(input)) {
                 return input;
             }
             System.out.println(errorMessage);

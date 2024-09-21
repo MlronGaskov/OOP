@@ -1,26 +1,33 @@
 package ru.nsu.gaskov.core;
 
 import ru.nsu.gaskov.ui.InputValidator;
-import ru.nsu.gaskov.ui.PlayersNumberCondition;
-import ru.nsu.gaskov.ui.StandardDecksNumberCondition;
 import ru.nsu.gaskov.ui.HumanPlayer;
 
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * The Game class represents a card game, managing players,
+ * the deck of cards, and player money.
+ */
 public class Game {
-    public Player[] players;
-    public int playersNumber;
-    public Deck deck;
-    private final int[] money;
+    public final Player[] players;
+    public final int playersNumber;
+    public final Deck deck;
+    public final int[] money;
 
+    /**
+     * Constructs a new Game instance, initializing players, deck,
+     * and their respective starting money based on user input.
+     *
+     * @param scanner a Scanner instance used for input validation
+     */
     public Game(Scanner scanner) {
-        PlayersNumberCondition condition = new PlayersNumberCondition();
         String answer = InputValidator.getValidInput(
             scanner,
-            condition,
-            "Enter player number: ",
-            "Error: The player number must be a positive number not more than 3."
+            n -> n != null && n.matches("\\d") && Integer.parseInt(n) <= 3,
+            "Enter players number: ",
+            "The players number must be a positive number not more than 3."
         );
         playersNumber = (answer != null) ? Integer.parseInt(answer) : 1;
         players = new Player[playersNumber];
@@ -29,12 +36,11 @@ public class Game {
             players[i] = new HumanPlayer(scanner);
             money[i] = 1000;
         }
-        StandardDecksNumberCondition decksCondition = new StandardDecksNumberCondition();
         String decksAnswer = InputValidator.getValidInput(
             scanner,
-            decksCondition,
+            n -> n != null && n.matches("\\d") && Integer.parseInt(n) <= 8,
             "Enter standard decks number: ",
-            "Error: The player number must be a positive number not more than 8."
+            "The standard decks number must be a positive number not more than 8."
         );
         if (Objects.equals(decksAnswer, "1") || decksAnswer == null) {
             deck = new SmallDeck();
@@ -43,12 +49,13 @@ public class Game {
         }
     }
 
+    /**
+     * Starts a new round of the game.
+     *
+     * @return a new {@link Round} object representing the current round
+     */
     public Round PlayRound() {
         return new Round(deck, players);
-    }
-
-    public int[] getMoney() {
-        return money;
     }
 
     public void countMoney(int[] roundOutcomes) {

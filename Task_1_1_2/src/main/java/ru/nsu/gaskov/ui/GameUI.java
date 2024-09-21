@@ -14,7 +14,7 @@ public class GameUI {
     }
 
     private static void printDealerCards(Round round) {
-        List<Card> dealerCards = round.getDealerOpenCards();
+        List<Card> dealerCards = round.dealerOpenCards;
         if (dealerCards.size() == 1) {
             System.out.println("Dealer cards: \n[" + dealerCards.getFirst() + ", <closed card>]");
         } else {
@@ -30,11 +30,11 @@ public class GameUI {
 
     private static void printPlayerHand(Hand playerHand) {
         System.out.print("Bet: " + playerHand.getBet() +
-            (playerHand.isSplat() || playerHand.isDoubled() ? "x2 " : " "));
+            (playerHand.isSplit() || playerHand.isDoubled() ? "x2 " : " "));
         System.out.println(playerHand.isInsured() ?
             ("Insure: " + playerHand.getBet() / 2 + " ") : "");
         System.out.println(playerHand.getCards1() + " -> " + playerHand.getCards1Value());
-        if (playerHand.isSplat()) {
+        if (playerHand.isSplit()) {
             System.out.println(playerHand.getCards2() + " -> " + playerHand.getCards2Value());
         }
     }
@@ -51,19 +51,18 @@ public class GameUI {
         Game game = new Game(scanner);
         for (int i = 1; i <= 10; ++i) {
             System.out.println("Round " + i);
-            printMoney(game.players, game.getMoney());
             Round round = game.PlayRound();
             while (round.currentStep != null) {
                 if (round.currentStep == StepType.PLAYER_BETS) {
                     Step act = round.step();
                     System.out.println(game.players[act.playerIndex()].getName() +
-                        " BETS " + round.getHands()[act.playerIndex()].getBet());
+                        " BETS " + round.hands[act.playerIndex()].getBet());
                 } else if (round.currentStep == StepType.INITIAL_CARDS_DEAL) {
                     round.step();
                     System.out.println("INITIAL CARDS HAVE BEEN DEALT");
                     for (int j = 0; j < game.playersNumber; ++j) {
                         System.out.println(game.players[j].getName() + " cards: ");
-                        printPlayerHand(round.getHands()[j]);
+                        printPlayerHand(round.hands[j]);
                     }
                     printDealerCards(round);
                 } else if (isPlayerHandPlayStep(round.currentStep)) {
@@ -79,12 +78,12 @@ public class GameUI {
                     } else if (act.act() == StepType.PLAYER_STANDS) {
                         System.out.println(game.players[act.playerIndex()].getName() + ": stand");
                     }
-                    printPlayerHand(round.getHands()[act.playerIndex()]);
+                    printPlayerHand(round.hands[act.playerIndex()]);
                 } else if (round.currentStep == StepType.OUTCOME_CALCULATION) {
                     round.step();
                     printDealerCards(round);
-                    printMoney(round.players, round.getOutcomes());
-                    game.countMoney(round.getOutcomes());
+                    printMoney(round.players, round.outcomes);
+                    game.countMoney(round.outcomes);
                     game.deck.collect();
                     System.out.println("ROUND ENDED");
                 }

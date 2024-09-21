@@ -4,10 +4,21 @@ import ru.nsu.gaskov.core.Player;
 
 import java.util.Scanner;
 
+/**
+ * The HumanPlayer class represents a human player in the blackjack game.
+ * It manages input from the player through the console, enabling actions
+ * such as betting, taking insurance, splitting cards, doubling bets,
+ * and hitting.
+ */
 public class HumanPlayer implements Player {
     private final Scanner scanner;
     private final String name;
 
+    /**
+     * Constructs a HumanPlayer and prompts the user for their name.
+     *
+     * @param scanner the Scanner instance used for user input
+     */
     public HumanPlayer(Scanner scanner) {
         this.scanner = scanner;
         System.out.println("Enter player name: ");
@@ -22,60 +33,55 @@ public class HumanPlayer implements Player {
 
     @Override
     public boolean insurance() {
-        AnswerCondition condition = new AnswerCondition();
         String answer = InputValidator.getValidInput(
             scanner,
-            condition,
+            n -> n != null && n.matches("(?i)^(yes|no|y|n)$"),
             name + ", insurance?: ",
-            "Error: Enter <Y/N> or <YES/NO>."
+            "Enter <Y/N> or <YES/NO>."
         );
-        return condition.isAnswerYes(answer);
+        return answer != null && answer.matches("(?i)^(yes|y)$");
     }
 
     @Override
     public boolean split() {
-        AnswerCondition condition = new AnswerCondition();
         String answer = InputValidator.getValidInput(
             scanner,
-            condition,
+            n -> n != null && n.matches("(?i)^(yes|no|y|n)$"),
             name + ", split?: ",
-            "Error: Enter <Y/N> or <YES/NO>."
+            "Enter <Y/N> or <YES/NO>."
         );
-        return condition.isAnswerYes(answer);
+        return answer != null && answer.matches("(?i)^(yes|y)$");
     }
 
     @Override
     public boolean doubleBet() {
-        AnswerCondition condition = new AnswerCondition();
         String answer = InputValidator.getValidInput(
             scanner,
-            condition,
+            n -> n != null && n.matches("(?i)^(yes|no|y|n)$"),
             name + ", double?: ",
-            "Error: Enter <Y/N> or <YES/NO>."
+            "Enter <Y/N> or <YES/NO>."
         );
-        return condition.isAnswerYes(answer);
+        return answer != null && answer.matches("(?i)^(yes|y)$");
     }
 
     @Override
     public boolean hit() {
-        AnswerCondition condition = new AnswerCondition();
         String answer = InputValidator.getValidInput(
             scanner,
-            condition,
+            n -> n != null && n.matches("(?i)^(yes|no|y|n)$"),
             name + ", hit?: ",
-            "Error: Enter <Y/N> or <YES/NO>."
+            "Enter <Y/N> or <YES/NO>."
         );
-        return condition.isAnswerYes(answer);
+        return answer != null && answer.matches("(?i)^(yes|y)$");
     }
 
     @Override
     public int makeStartingBet() {
-        BetCondition condition = new BetCondition();
         String answer = InputValidator.getValidInput(
             scanner,
-            condition,
-            name + ", enter your bet?: ",
-            "Error: The bet must be a positive number."
+            n -> n != null && n.matches("\\d+"),
+            name + ", enter your bet: ",
+            "Enter a positive number."
         );
         if (answer != null) {
             return Integer.parseInt(answer);

@@ -105,7 +105,7 @@ class RoundTest {
         assertTrue(round.hands[0].isInsured());
 
         assertEquals(new Step(StepType.PLAYER_MAKES_SPLIT_DECISION, 0), round.step());
-        assertTrue(round.hands[0].isSplat());
+        assertTrue(round.hands[0].isSplit());
         assertIterableEquals(round.getHands()[0].getCards1(),
             Arrays.stream(new Card[]{
                 new Card(Suit.HEARTS, Rank.ACE),

@@ -8,6 +8,34 @@
       <change beforePath="$PROJECT_DIR$/../Task_1_1_1/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_1_1_1/build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/AbstractDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/AbstractDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/LargeDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/LargeDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/OutcomeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/OutcomeCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Rank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/SmallDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/SmallDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Step.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/StepType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/StepType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Suit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/ValueCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/ValueCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/AnswerCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/BetCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/GameUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/InputCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/InputValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/PlayersNumberCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/StandardDecksNumberCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/RoundTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/RoundTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/AnswerConditionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/BetConditionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/PlayersNumberConditionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/StandardDecksNumberConditionTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +122,20 @@
       <recent name="ru.nsu.gaskov" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.StandardDecksNumberConditionTest">
+  <component name="RunManager" selected="Application.GameUI">
+    <configuration name="GameUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.gaskov.ui.GameUI" />
+      <module name="Task_1_1_2.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.gaskov.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AnswerConditionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -191,37 +232,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ValueCalculatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.nsu.gaskov.core.ValueCalculatorTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GameUI" />
         <item itemvalue="Gradle.StandardDecksNumberConditionTest" />
         <item itemvalue="Gradle.PlayersNumberConditionTest" />
         <item itemvalue="Gradle.BetConditionTest" />
         <item itemvalue="Gradle.AnswerConditionTest" />
-        <item itemvalue="Gradle.ValueCalculatorTest" />
       </list>
     </recent_temporary>
   </component>

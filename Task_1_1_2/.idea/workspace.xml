@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ebd3e794-6fac-4ce9-accf-eddcea6d3054" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Task_1_1_1/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_1_1_1/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/LargeDeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/LargeDeckTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/InputValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/OutcomeCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/OutcomeCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/RoundTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/RoundTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/SmallDeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/SmallDeckTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/ValueCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/ValueCalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

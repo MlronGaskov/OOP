@@ -178,6 +178,7 @@ class RoundTest {
                 return true;
             }
         }
+
         DoublerPlayer player = new DoublerPlayer();
         Deck deck = new FixedDeck(new Card[]{
             new Card(Suit.HEARTS, Rank.ACE),

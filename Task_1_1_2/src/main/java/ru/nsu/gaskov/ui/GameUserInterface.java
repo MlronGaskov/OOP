@@ -70,8 +70,8 @@ public class GameUserInterface {
     public static void printDealerCards(Round round) {
         List<Card> dealerCards = round.dealerOpenCards;
         if (dealerCards.size() == 1) {
-            System.out.println("\nDealer cards: \n[" +
-                printCard(dealerCards.getFirst()) + ", <closed card>]");
+            System.out.println("\nDealer cards: \n["
+                + printCard(dealerCards.getFirst()) + ", <closed card>]");
         } else {
             System.out.println("\nDealer opens: " + printCard(dealerCards.get(1)));
             for (int i = 2; i < dealerCards.size(); ++i) {
@@ -93,10 +93,12 @@ public class GameUserInterface {
             + (playerHand.isSplit() || playerHand.isDoubled() ? "x2 " : " "));
         System.out.println(playerHand.isInsured()
             ? ("Insure: " + playerHand.getBet() / 2 + " ") : "");
-        System.out.println(playerHand.getCards1().stream().map(GameUserInterface::printCard).toList()
+        System.out.println(playerHand
+            .getCards1().stream().map(GameUserInterface::printCard).toList()
             + " -> " + playerHand.getCards1Value());
         if (playerHand.isSplit()) {
-            System.out.println(playerHand.getCards2().stream().map(GameUserInterface::printCard).toList()
+            System.out.println(playerHand
+                .getCards2().stream().map(GameUserInterface::printCard).toList()
                 + " -> " + playerHand.getCards2Value());
         }
         System.out.println();

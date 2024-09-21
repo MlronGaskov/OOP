@@ -127,6 +127,27 @@ loadScripts(document, 'script');</script>
 <div class="block">The main method that initiates the game UI, prompting players for
  their actions, and managing the flow of the game for multiple rounds.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printCard(ru.nsu.gaskov.core.Card)" class="member-name-link">printCard</a><wbr>(<a href="../core/Card.html" title="class in ru.nsu.gaskov.core">Card</a>&nbsp;card)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Prints the card.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printDealerCards(ru.nsu.gaskov.core.Round)" class="member-name-link">printDealerCards</a><wbr>(<a href="../core/Round.html" title="class in ru.nsu.gaskov.core">Round</a>&nbsp;round)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Displays the dealer's cards and their values.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printMoney(ru.nsu.gaskov.core.Player%5B%5D,int%5B%5D)" class="member-name-link">printMoney</a><wbr>(<a href="../core/Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]&nbsp;players,
+ int[]&nbsp;money)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Prints the current amount of money for each player.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printPlayerHand(ru.nsu.gaskov.core.Hand)" class="member-name-link">printPlayerHand</a><wbr>(<a href="../core/Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>&nbsp;playerHand)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Prints the details of a player's hand including bets and card values.</div>
+</div>
 </div>
 </div>
 </div>
@@ -158,6 +179,52 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="printMoney(ru.nsu.gaskov.core.Player[],int[])">
+<h3>printMoney</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">printMoney</span><wbr><span class="parameters">(<a href="../core/Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]&nbsp;players,
+ int[]&nbsp;money)</span></div>
+<div class="block">Prints the current amount of money for each player.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>players</code> - an array of Player objects</dd>
+<dd><code>money</code> - an array of integers representing the money for each player</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="printCard(ru.nsu.gaskov.core.Card)">
+<h3>printCard</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">printCard</span><wbr><span class="parameters">(<a href="../core/Card.html" title="class in ru.nsu.gaskov.core">Card</a>&nbsp;card)</span></div>
+<div class="block">Prints the card.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>card</code> - a card to print;</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="printDealerCards(ru.nsu.gaskov.core.Round)">
+<h3>printDealerCards</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">printDealerCards</span><wbr><span class="parameters">(<a href="../core/Round.html" title="class in ru.nsu.gaskov.core">Round</a>&nbsp;round)</span></div>
+<div class="block">Displays the dealer's cards and their values.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>round</code> - the current Round object containing dealer card info</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="printPlayerHand(ru.nsu.gaskov.core.Hand)">
+<h3>printPlayerHand</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">printPlayerHand</span><wbr><span class="parameters">(<a href="../core/Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>&nbsp;playerHand)</span></div>
+<div class="block">Prints the details of a player's hand including bets and card values.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerHand</code> - the Hand object representing the player's hand</dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="main(java.lang.String[])">
 <h3>main</h3>

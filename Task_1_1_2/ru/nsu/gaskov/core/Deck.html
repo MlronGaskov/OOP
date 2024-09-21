@@ -91,6 +91,9 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Deck</span></div>
+<div class="block">An interface representing a deck of cards.
+ This interface provides methods for dealing cards
+ and managing the deck's state.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,13 +110,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#collect()" class="member-name-link">collect</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Resets the deck, allowing cards to be dealt again.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCardsInDeckCount()" class="member-name-link">getCardsInDeckCount</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the count of remaining cards in the deck.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOne()" class="member-name-link">getOne</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Retrieves the next card from the deck.</div>
+</div>
 </div>
 </div>
 </div>
@@ -132,18 +141,31 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getOne()">
 <h3>getOne</h3>
 <div class="member-signature"><span class="return-type"><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></span>&nbsp;<span class="element-name">getOne</span>()</div>
+<div class="block">Retrieves the next card from the deck.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the next card in the deck</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="collect()">
 <h3>collect</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">collect</span>()</div>
+<div class="block">Resets the deck, allowing cards to be dealt again.
+ This method prepares the deck for a new game or round
+ by collecting all dealt cards back to the beginning of the deck.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getCardsInDeckCount()">
 <h3>getCardsInDeckCount</h3>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getCardsInDeckCount</span>()</div>
+<div class="block">Returns the count of remaining cards in the deck.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the number of cards left in the deck</dd>
+</dl>
 </section>
 </li>
 </ul>

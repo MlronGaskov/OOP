@@ -91,6 +91,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">OutcomeCalculator</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The OutcomeCalculator class is responsible for calculating the outcome of a player's hand
+ in relation to the dealer's hand in a card game. It evaluates insurance payouts, winning conditions,
+ and overall winnings based on the game's rules.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -121,7 +124,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#calculate(ru.nsu.gaskov.core.Hand,java.util.List)" class="member-name-link">calculate</a><wbr>(<a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>&nbsp;playerHand,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;&nbsp;dealerCards)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Calculates the total winning amount for the player based on their hand and the dealer's cards.</div>
+</div>
 </div>
 </div>
 </div>
@@ -158,6 +163,14 @@ loadScripts(document, 'script');</script>
 <h3>calculate</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">calculate</span><wbr><span class="parameters">(<a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>&nbsp;playerHand,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;&nbsp;dealerCards)</span></div>
+<div class="block">Calculates the total winning amount for the player based on their hand and the dealer's cards.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerHand</code> - the player's hand</dd>
+<dd><code>dealerCards</code> - the cards held by the dealer</dd>
+<dt>Returns:</dt>
+<dd>the total winnings for the player, which may be positive or negative</dd>
+</dl>
 </section>
 </li>
 </ul>

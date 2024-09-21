@@ -91,6 +91,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Hand</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The Hand class represents a player's hand in a blackjack game,
+ managing the cards, betting, and game rules related to the hand.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -120,56 +122,90 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changePile()" class="member-name-link">changePile</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Changes the active cards pile to the other pile (if split).</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBet()" class="member-name-link">getBet</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the current bet amount.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCards1()" class="member-name-link">getCards1</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the primary cards in the hand.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCards1Value()" class="member-name-link">getCards1Value</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Calculates and retrieves the total value of the primary cards.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCards2()" class="member-name-link">getCards2</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the secondary cards in the hand (if split).</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCards2Value()" class="member-name-link">getCards2Value</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Calculates and retrieves the total value of the secondary cards.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentCardsPile()" class="member-name-link">getCurrentCardsPile</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets the current cards pile indicator (0 or 1).</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentPileValue()" class="member-name-link">getCurrentPileValue</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets the current total value of the active card pile in the hand.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insure()" class="member-name-link">insure</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Insures the hand, marking it as insured.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDoubled()" class="member-name-link">isDoubled</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the hand is doubled.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHandSplittable()" class="member-name-link">isHandSplittable</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the hand can be split.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInsured()" class="member-name-link">isInsured</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the hand is insured.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSplat()" class="member-name-link">isSplat</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSplit()" class="member-name-link">isSplit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the hand is split into two piles.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBet(int)" class="member-name-link">setBet</a><wbr>(int&nbsp;bet)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the bet amount for the hand.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDoubled()" class="member-name-link">setDoubled</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Marks the hand as doubled.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#split(ru.nsu.gaskov.core.Card,ru.nsu.gaskov.core.Card)" class="member-name-link">split</a><wbr>(<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&nbsp;card1,
  <a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&nbsp;card2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Splits the hand into two separate piles of cards.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#take(ru.nsu.gaskov.core.Card)" class="member-name-link">take</a><wbr>(<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&nbsp;card)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a card to the current pile of cards.</div>
+</div>
 </div>
 </div>
 </div>
@@ -202,81 +238,146 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="isSplat()">
-<h3>isSplat</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSplat</span>()</div>
+<section class="detail" id="isSplit()">
+<h3>isSplit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSplit</span>()</div>
+<div class="block">Checks if the hand is split into two piles.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the hand is split, false otherwise</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setBet(int)">
 <h3>setBet</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBet</span><wbr><span class="parameters">(int&nbsp;bet)</span></div>
+<div class="block">Sets the bet amount for the hand.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>bet</code> - the amount to set as the bet</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the bet is less than 0</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getBet()">
 <h3>getBet</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getBet</span>()</div>
+<div class="block">Retrieves the current bet amount.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current bet amount</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="insure()">
 <h3>insure</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">insure</span>()</div>
+<div class="block">Insures the hand, marking it as insured.</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if the hand is already insured</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setDoubled()">
 <h3>setDoubled</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDoubled</span>()</div>
+<div class="block">Marks the hand as doubled.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="isInsured()">
 <h3>isInsured</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isInsured</span>()</div>
+<div class="block">Checks if the hand is insured.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the hand is insured, false otherwise</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="isDoubled()">
 <h3>isDoubled</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDoubled</span>()</div>
+<div class="block">Checks if the hand is doubled.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the hand is doubled, false otherwise</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getCards1()">
 <h3>getCards1</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</span>&nbsp;<span class="element-name">getCards1</span>()</div>
+<div class="block">Retrieves the primary cards in the hand.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a list of primary <a href="Card.html" title="class in ru.nsu.gaskov.core"><code>Card</code></a> objects</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getCards2()">
 <h3>getCards2</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</span>&nbsp;<span class="element-name">getCards2</span>()</div>
+<div class="block">Retrieves the secondary cards in the hand (if split).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a list of secondary <a href="Card.html" title="class in ru.nsu.gaskov.core"><code>Card</code></a> objects or null if not split</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getCards1Value()">
 <h3>getCards1Value</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCards1Value</span>()</div>
+<div class="block">Calculates and retrieves the total value of the primary cards.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the total value of cards in cards1</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getCards2Value()">
 <h3>getCards2Value</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCards2Value</span>()</div>
+<div class="block">Calculates and retrieves the total value of the secondary cards.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the total value of cards in cards2</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if cards2 is null (hand is not split)</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getCurrentPileValue()">
 <h3>getCurrentPileValue</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCurrentPileValue</span>()</div>
+<div class="block">Gets the current total value of the active card pile in the hand.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the current cards pile</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="isHandSplittable()">
 <h3>isHandSplittable</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHandSplittable</span>()</div>
+<div class="block">Checks if the hand can be split.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the hand is splittable, false otherwise</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -284,24 +385,49 @@ loadScripts(document, 'script');</script>
 <h3>split</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">split</span><wbr><span class="parameters">(<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&nbsp;card1,
  <a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&nbsp;card2)</span></div>
+<div class="block">Splits the hand into two separate piles of cards.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>card1</code> - the first card for the new pile</dd>
+<dd><code>card2</code> - the second card for the new pile</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if the hand cannot be split</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="take(ru.nsu.gaskov.core.Card)">
 <h3>take</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">take</span><wbr><span class="parameters">(<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&nbsp;card)</span></div>
+<div class="block">Adds a card to the current pile of cards.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>card</code> - the card to add</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if the maximum value of the hand is reached</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getCurrentCardsPile()">
 <h3>getCurrentCardsPile</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCurrentCardsPile</span>()</div>
+<div class="block">Gets the current cards pile indicator (0 or 1).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current cards pile (0 for cards1, 1 for cards2)</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="changePile()">
 <h3>changePile</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">changePile</span>()</div>
+<div class="block">Changes the active cards pile to the other pile (if split).</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if the hand is not split or if the pile is already changed</dd>
+</dl>
 </section>
 </li>
 </ul>

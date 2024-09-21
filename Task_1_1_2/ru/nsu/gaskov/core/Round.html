@@ -91,6 +91,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Round</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The Round class manages a single round of play in a card game.
+ It coordinates the actions of players and the dealer, processes bets, deals cards,
+ and calculates the outcomes for each player at the end of the round.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -103,12 +106,27 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="StepType.html" title="enum class in ru.nsu.gaskov.core">StepType</a></code></div>
-<div class="col-second even-row-color"><code><a href="#currentStep" class="member-name-link">currentStep</a></code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#currentPlayerIndex" class="member-name-link">currentPlayerIndex</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#players" class="member-name-link">players</a></code></div>
+<div class="col-first odd-row-color"><code><a href="StepType.html" title="enum class in ru.nsu.gaskov.core">StepType</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#currentStep" class="member-name-link">currentStep</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></code></div>
+<div class="col-second even-row-color"><code><a href="#dealerClosedCard" class="member-name-link">dealerClosedCard</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#dealerOpenCards" class="member-name-link">dealerOpenCards</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>[]</code></div>
+<div class="col-second even-row-color"><code><a href="#hands" class="member-name-link">hands</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final int[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#outcomes" class="member-name-link">outcomes</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]</code></div>
+<div class="col-second even-row-color"><code><a href="#players" class="member-name-link">players</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -122,7 +140,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.gaskov.core.Deck,ru.nsu.gaskov.core.Player%5B%5D)" class="member-name-link">Round</a><wbr>(<a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a>&nbsp;deck,
  <a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]&nbsp;players)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a Round with the specified deck and player array.</div>
+</div>
 </div>
 </section>
 </li>
@@ -137,21 +157,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDealerClosedCard()" class="member-name-link">getDealerClosedCard</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDealerOpenCards()" class="member-name-link">getDealerOpenCards</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHands()" class="member-name-link">getHands</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOutcomes()" class="member-name-link">getOutcomes</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Step.html" title="class in ru.nsu.gaskov.core">Step</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#step()" class="member-name-link">step</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Executes the current step of the game round.</div>
+</div>
 </div>
 </div>
 </div>
@@ -172,13 +182,43 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="players">
 <h3>players</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]</span>&nbsp;<span class="element-name">players</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]</span>&nbsp;<span class="element-name">players</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="hands">
+<h3>hands</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>[]</span>&nbsp;<span class="element-name">hands</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="dealerOpenCards">
+<h3>dealerOpenCards</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</span>&nbsp;<span class="element-name">dealerOpenCards</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="dealerClosedCard">
+<h3>dealerClosedCard</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></span>&nbsp;<span class="element-name">dealerClosedCard</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="currentStep">
 <h3>currentStep</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="StepType.html" title="enum class in ru.nsu.gaskov.core">StepType</a></span>&nbsp;<span class="element-name">currentStep</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="currentPlayerIndex">
+<h3>currentPlayerIndex</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">currentPlayerIndex</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="outcomes">
+<h3>outcomes</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">outcomes</span></div>
 </section>
 </li>
 </ul>
@@ -194,6 +234,12 @@ loadScripts(document, 'script');</script>
 <h3>Round</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Round</span><wbr><span class="parameters">(<a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a>&nbsp;deck,
  <a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]&nbsp;players)</span></div>
+<div class="block">Constructs a Round with the specified deck and player array.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>deck</code> - the deck of cards to be used in this round</dd>
+<dd><code>players</code> - the players participating in this round</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -205,33 +251,16 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getOutcomes()">
-<h3>getOutcomes</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">getOutcomes</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getHands()">
-<h3>getHands</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>[]</span>&nbsp;<span class="element-name">getHands</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getDealerOpenCards()">
-<h3>getDealerOpenCards</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</span>&nbsp;<span class="element-name">getDealerOpenCards</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getDealerClosedCard()">
-<h3>getDealerClosedCard</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></span>&nbsp;<span class="element-name">getDealerClosedCard</span>()</div>
-</section>
-</li>
-<li>
 <section class="detail" id="step()">
 <h3>step</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Step.html" title="class in ru.nsu.gaskov.core">Step</a></span>&nbsp;<span class="element-name">step</span>()</div>
+<div class="block">Executes the current step of the game round.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a Step object representing the result of the executed step</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if the round state is unknown</dd>
+</dl>
 </section>
 </li>
 </ul>

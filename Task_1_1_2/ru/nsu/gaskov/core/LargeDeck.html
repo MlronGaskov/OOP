@@ -97,6 +97,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LargeDeck</span>
 <span class="extends-implements">extends <a href="AbstractDeck.html" title="class in ru.nsu.gaskov.core">AbstractDeck</a></span></div>
+<div class="block">The LargeDeck class represents a deck of playing cards consisting
+ of multiple standard decks combined into one. It provides functionality
+ to initialize, shuffle, and collect cards from the deck.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -118,7 +121,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">LargeDeck</a><wbr>(int&nbsp;decksCount)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a LargeDeck instance with a specified number of standard decks.</div>
+</div>
 </div>
 </section>
 </li>
@@ -135,7 +140,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#collect()" class="member-name-link">collect</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Collects the cards from the deck.</div>
+</div>
 </div>
 </div>
 </div>
@@ -160,6 +167,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(int)">
 <h3>LargeDeck</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LargeDeck</span><wbr><span class="parameters">(int&nbsp;decksCount)</span></div>
+<div class="block">Constructs a LargeDeck instance with a specified number of standard decks.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>decksCount</code> - the number of standard decks to include in the LargeDeck</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -174,6 +186,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="collect()">
 <h3>collect</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">collect</span>()</div>
+<div class="block">Collects the cards from the deck. If more than half of the cards have
+ been dealt, the index is reset and the deck is shuffled again.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Deck.html#collect()">collect</a></code>&nbsp;in interface&nbsp;<code><a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a></code></dd>

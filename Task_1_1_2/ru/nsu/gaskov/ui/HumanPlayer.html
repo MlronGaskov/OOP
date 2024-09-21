@@ -96,6 +96,10 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">HumanPlayer</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core">Player</a></span></div>
+<div class="block">The HumanPlayer class represents a human player in the blackjack game.
+ It manages input from the player through the console, enabling actions
+ such as betting, taking insurance, splitting cards, doubling bets,
+ and hitting.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,7 +112,9 @@ implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core"
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.Scanner)" class="member-name-link">HumanPlayer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link">Scanner</a>&nbsp;scanner)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a HumanPlayer and prompts the user for their name.</div>
+</div>
 </div>
 </section>
 </li>
@@ -125,22 +131,34 @@ implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core"
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doubleBet()" class="member-name-link">doubleBet</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Decides whether to double the current bet.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the name of the player.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hit()" class="member-name-link">hit</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Decides whether to take another card (hit) from the dealer.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insurance()" class="member-name-link">insurance</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Decides whether to make an insurance bet.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeStartingBet()" class="member-name-link">makeStartingBet</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the initial starting bet for the player.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#split()" class="member-name-link">split</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Decides whether to split the current hand into two separate hands.</div>
+</div>
 </div>
 </div>
 </div>
@@ -165,6 +183,11 @@ implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core"
 <section class="detail" id="&lt;init&gt;(java.util.Scanner)">
 <h3>HumanPlayer</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">HumanPlayer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link">Scanner</a>&nbsp;scanner)</span></div>
+<div class="block">Constructs a HumanPlayer and prompts the user for their name.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>scanner</code> - the Scanner instance used for user input</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -179,9 +202,13 @@ implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core"
 <section class="detail" id="getName()">
 <h3>getName</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../core/Player.html#getName()">Player</a></code></span></div>
+<div class="block">Retrieves the name of the player.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../core/Player.html#getName()">getName</a></code>&nbsp;in interface&nbsp;<code><a href="../core/Player.html" title="interface in ru.nsu.gaskov.core">Player</a></code></dd>
+<dt>Returns:</dt>
+<dd>the name of the player, default is "Player"</dd>
 </dl>
 </section>
 </li>
@@ -189,9 +216,13 @@ implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core"
 <section class="detail" id="insurance()">
 <h3>insurance</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">insurance</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../core/Player.html#insurance()">Player</a></code></span></div>
+<div class="block">Decides whether to make an insurance bet.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../core/Player.html#insurance()">insurance</a></code>&nbsp;in interface&nbsp;<code><a href="../core/Player.html" title="interface in ru.nsu.gaskov.core">Player</a></code></dd>
+<dt>Returns:</dt>
+<dd>true if the player opts for an insurance bet, false otherwise</dd>
 </dl>
 </section>
 </li>
@@ -199,9 +230,13 @@ implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core"
 <section class="detail" id="split()">
 <h3>split</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">split</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../core/Player.html#split()">Player</a></code></span></div>
+<div class="block">Decides whether to split the current hand into two separate hands.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../core/Player.html#split()">split</a></code>&nbsp;in interface&nbsp;<code><a href="../core/Player.html" title="interface in ru.nsu.gaskov.core">Player</a></code></dd>
+<dt>Returns:</dt>
+<dd>true if the player chooses to split their hand, false otherwise</dd>
 </dl>
 </section>
 </li>
@@ -209,9 +244,13 @@ implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core"
 <section class="detail" id="doubleBet()">
 <h3>doubleBet</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">doubleBet</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../core/Player.html#doubleBet()">Player</a></code></span></div>
+<div class="block">Decides whether to double the current bet.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../core/Player.html#doubleBet()">doubleBet</a></code>&nbsp;in interface&nbsp;<code><a href="../core/Player.html" title="interface in ru.nsu.gaskov.core">Player</a></code></dd>
+<dt>Returns:</dt>
+<dd>true if the player opts to double their bet, false otherwise</dd>
 </dl>
 </section>
 </li>
@@ -219,9 +258,13 @@ implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core"
 <section class="detail" id="hit()">
 <h3>hit</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hit</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../core/Player.html#hit()">Player</a></code></span></div>
+<div class="block">Decides whether to take another card (hit) from the dealer.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../core/Player.html#hit()">hit</a></code>&nbsp;in interface&nbsp;<code><a href="../core/Player.html" title="interface in ru.nsu.gaskov.core">Player</a></code></dd>
+<dt>Returns:</dt>
+<dd>true if the player chooses to hit, false otherwise</dd>
 </dl>
 </section>
 </li>
@@ -229,9 +272,13 @@ implements <a href="../core/Player.html" title="interface in ru.nsu.gaskov.core"
 <section class="detail" id="makeStartingBet()">
 <h3>makeStartingBet</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">makeStartingBet</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../core/Player.html#makeStartingBet()">Player</a></code></span></div>
+<div class="block">Sets the initial starting bet for the player.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../core/Player.html#makeStartingBet()">makeStartingBet</a></code>&nbsp;in interface&nbsp;<code><a href="../core/Player.html" title="interface in ru.nsu.gaskov.core">Player</a></code></dd>
+<dt>Returns:</dt>
+<dd>the starting bet amount, default is 50</dd>
 </dl>
 </section>
 </li>

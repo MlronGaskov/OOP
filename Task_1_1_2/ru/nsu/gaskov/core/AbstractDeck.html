@@ -100,6 +100,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">AbstractDeck</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a></span></div>
+<div class="block">An abstract class representing a deck of cards.
+ This class provides basic functionalities to manage a deck,
+ including shuffling and dealing cards.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -147,22 +150,35 @@ implements <a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a><
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#collect()" class="member-name-link">collect</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Resets the index to the beginning of the deck,
+ preparing to collect cards back into the deck.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCardsInDeckCount()" class="member-name-link">getCardsInDeckCount</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the count of remaining cards in the deck.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOne()" class="member-name-link">getOne</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the next card from the deck.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getStandardDeckCards()" class="member-name-link">getStandardDeckCards</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a standard deck of cards (52 cards).</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#init(java.util.List)" class="member-name-link">init</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;&nbsp;cards)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Initializes the deck with a specified list of cards.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shuffle()" class="member-name-link">shuffle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Shuffles the deck of cards into a random order.</div>
+</div>
 </div>
 </div>
 </div>
@@ -218,9 +234,12 @@ implements <a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a><
 <section class="detail" id="getOne()">
 <h3>getOne</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></span>&nbsp;<span class="element-name">getOne</span>()</div>
+<div class="block">Retrieves the next card from the deck.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Deck.html#getOne()">getOne</a></code>&nbsp;in interface&nbsp;<code><a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a></code></dd>
+<dt>Returns:</dt>
+<dd>the next card in the deck</dd>
 </dl>
 </section>
 </li>
@@ -228,6 +247,8 @@ implements <a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a><
 <section class="detail" id="collect()">
 <h3>collect</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">collect</span>()</div>
+<div class="block">Resets the index to the beginning of the deck,
+ preparing to collect cards back into the deck.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Deck.html#collect()">collect</a></code>&nbsp;in interface&nbsp;<code><a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a></code></dd>
@@ -238,27 +259,41 @@ implements <a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a><
 <section class="detail" id="init(java.util.List)">
 <h3>init</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">init</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;&nbsp;cards)</span></div>
+<div class="block">Initializes the deck with a specified list of cards.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cards</code> - a List of Card objects to initialize the deck</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getStandardDeckCards()">
 <h3>getStandardDeckCards</h3>
 <div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</span>&nbsp;<span class="element-name">getStandardDeckCards</span>()</div>
+<div class="block">Creates a standard deck of cards (52 cards).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a List of <a href="Card.html" title="class in ru.nsu.gaskov.core"><code>Card</code></a> objects representing a standard deck</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="shuffle()">
 <h3>shuffle</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">shuffle</span>()</div>
+<div class="block">Shuffles the deck of cards into a random order.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getCardsInDeckCount()">
 <h3>getCardsInDeckCount</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCardsInDeckCount</span>()</div>
+<div class="block">Returns the count of remaining cards in the deck.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Deck.html#getCardsInDeckCount()">getCardsInDeckCount</a></code>&nbsp;in interface&nbsp;<code><a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a></code></dd>
+<dt>Returns:</dt>
+<dd>the number of cards left to deal</dd>
 </dl>
 </section>
 </li>

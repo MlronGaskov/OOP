@@ -33,11 +33,11 @@ class GameUserInterfaceTest {
 
     @Test
     public void testGameEnd() {
+        final ByteArrayOutputStream myOut = new ByteArrayOutputStream();
         String input = "1\nmiron\n1\n100\nno\nno\nend";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         InputStream inputStream = System.in;
         System.setIn(in);
-        final ByteArrayOutputStream myOut = new ByteArrayOutputStream();
         PrintStream outputStream = System.out;
         System.setOut(new PrintStream(myOut));
         GameUserInterface.main(null);

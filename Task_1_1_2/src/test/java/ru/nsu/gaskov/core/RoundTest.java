@@ -9,7 +9,7 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests
+ * Tests.
  */
 class RoundTest {
     static class FixedDeck extends AbstractDeck {
@@ -87,7 +87,7 @@ class RoundTest {
                 return response;
             }
         }
-        ;
+
         CurrentPlayer player = new CurrentPlayer();
         Deck deck = new FixedDeck(new Card[]{
             new Card(Suit.HEARTS, Rank.ACE),
@@ -178,7 +178,6 @@ class RoundTest {
                 return true;
             }
         }
-        ;
         DoublerPlayer player = new DoublerPlayer();
         Deck deck = new FixedDeck(new Card[]{
             new Card(Suit.HEARTS, Rank.ACE),

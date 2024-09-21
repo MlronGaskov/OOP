@@ -1,14 +1,13 @@
 package ru.nsu.gaskov.core;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import org.junit.jupiter.api.Test;
 
 /**
- * Tests
+ * Tests.
  */
 class ValueCalculatorTest {
 

@@ -7,18 +7,18 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests
+ * Tests.
  */
 class OutcomeCalculatorTest {
     @Test
     public void testWin() {
-        List<Card> dealerCards = Arrays.stream(new Card[]{
-            new Card(Suit.HEARTS, Rank.TWO),
-            new Card(Suit.HEARTS, Rank.TEN)}).toList();
         Hand playerHand = new Hand();
         playerHand.take(new Card(Suit.HEARTS, Rank.ACE));
         playerHand.take(new Card(Suit.HEARTS, Rank.EIGHT));
         playerHand.setBet(50);
+        List<Card> dealerCards = Arrays.stream(new Card[]{
+            new Card(Suit.HEARTS, Rank.TWO),
+            new Card(Suit.HEARTS, Rank.TEN)}).toList();
         assertEquals(OutcomeCalculator.calculate(playerHand, dealerCards), 50);
     }
 

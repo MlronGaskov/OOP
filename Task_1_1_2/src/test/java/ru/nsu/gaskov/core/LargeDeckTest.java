@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests
+ * Tests.
  */
 class LargeDeckTest {
     @Test

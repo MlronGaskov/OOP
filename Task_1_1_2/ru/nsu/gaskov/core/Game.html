@@ -149,9 +149,12 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#countMoney(int%5B%5D)" class="member-name-link">countMoney</a><wbr>(int[]&nbsp;roundOutcomes)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the money for each player based on the outcomes
+ of the current round.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Round.html" title="class in ru.nsu.gaskov.core">Round</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#PlayRound()" class="member-name-link">PlayRound</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playRound()" class="member-name-link">playRound</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Starts a new round of the game.</div>
 </div>
@@ -225,9 +228,9 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="PlayRound()">
-<h3>PlayRound</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Round.html" title="class in ru.nsu.gaskov.core">Round</a></span>&nbsp;<span class="element-name">PlayRound</span>()</div>
+<section class="detail" id="playRound()">
+<h3>playRound</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Round.html" title="class in ru.nsu.gaskov.core">Round</a></span>&nbsp;<span class="element-name">playRound</span>()</div>
 <div class="block">Starts a new round of the game.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -239,6 +242,13 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="countMoney(int[])">
 <h3>countMoney</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">countMoney</span><wbr><span class="parameters">(int[]&nbsp;roundOutcomes)</span></div>
+<div class="block">Updates the money for each player based on the outcomes
+ of the current round.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>roundOutcomes</code> - an array of integers representing
+                      the outcomes for each player in the round</dd>
+</dl>
 </section>
 </li>
 </ul>

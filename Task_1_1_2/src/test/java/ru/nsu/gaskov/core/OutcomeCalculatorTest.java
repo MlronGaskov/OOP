@@ -1,12 +1,14 @@
 package ru.nsu.gaskov.core;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Tests
+ */
 class OutcomeCalculatorTest {
     @Test
     public void testWin() {

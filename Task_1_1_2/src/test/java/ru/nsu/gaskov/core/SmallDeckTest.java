@@ -2,12 +2,14 @@ package ru.nsu.gaskov.core;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
-
+/**
+ * Tests
+ */
 class SmallDeckTest {
     @Test
     public void smallDeckGetOneTest() {

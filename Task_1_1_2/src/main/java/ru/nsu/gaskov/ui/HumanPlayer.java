@@ -21,7 +21,7 @@ public class HumanPlayer implements Player {
      */
     public HumanPlayer(Scanner scanner) {
         this.scanner = scanner;
-        System.out.println("Enter player name: ");
+        System.out.println("\nEnter player name: ");
         name = scanner.nextLine();
         System.out.println("Welcome to blackjack, " + name + "!");
     }

@@ -38,7 +38,7 @@ public class Game {
         String decksAnswer = InputValidator.getValidInput(
             scanner,
             n -> n != null && n.matches("\\d") && Integer.parseInt(n) <= 8,
-            "Enter standard decks number: ",
+            "\nEnter standard decks number: ",
             "The standard decks number must be a positive number not more than 8."
         );
         if (Objects.equals(decksAnswer, "1") || decksAnswer == null) {

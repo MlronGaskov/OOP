@@ -1,10 +1,9 @@
 package ru.nsu.gaskov.core;
 
-import ru.nsu.gaskov.ui.InputValidator;
-import ru.nsu.gaskov.ui.HumanPlayer;
-
 import java.util.Objects;
 import java.util.Scanner;
+import ru.nsu.gaskov.ui.InputValidator;
+import ru.nsu.gaskov.ui.HumanPlayer;
 
 /**
  * The Game class represents a card game, managing players,

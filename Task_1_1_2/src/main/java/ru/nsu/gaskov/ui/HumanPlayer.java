@@ -1,8 +1,7 @@
 package ru.nsu.gaskov.ui;
 
-import ru.nsu.gaskov.core.Player;
-
 import java.util.Scanner;
+import ru.nsu.gaskov.core.Player;
 
 /**
  * The HumanPlayer class represents a human player in the blackjack game.

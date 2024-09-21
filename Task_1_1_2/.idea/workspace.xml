@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ebd3e794-6fac-4ce9-accf-eddcea6d3054" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Task_1_1_1/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_1_1_1/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/GameUserInterfaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/GameUserInterfaceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

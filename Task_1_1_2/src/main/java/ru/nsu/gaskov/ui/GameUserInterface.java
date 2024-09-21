@@ -45,8 +45,8 @@ public class GameUserInterface {
             for (int i = 2; i < dealerCards.size(); ++i) {
                 System.out.println("Dealer takes: " + dealerCards.get(i));
             }
-            System.out.println("Dealer cards: \n" +
-                dealerCards + " -> " + ValueCalculator.calculate(dealerCards));
+            System.out.println("Dealer cards: \n"
+                + dealerCards + " -> " + ValueCalculator.calculate(dealerCards));
         }
     }
 
@@ -58,8 +58,8 @@ public class GameUserInterface {
     private static void printPlayerHand(Hand playerHand) {
         System.out.print("Bet: " + playerHand.getBet()
             + (playerHand.isSplit() || playerHand.isDoubled() ? "x2 " : " "));
-        System.out.println(playerHand.isInsured() ?
-            ("Insure: " + playerHand.getBet() / 2 + " ") : "");
+        System.out.println(playerHand.isInsured()
+            ? ("Insure: " + playerHand.getBet() / 2 + " ") : "");
         System.out.println(playerHand.getCards1() + " -> " + playerHand.getCards1Value());
         if (playerHand.isSplit()) {
             System.out.println(playerHand.getCards2() + " -> " + playerHand.getCards2Value());

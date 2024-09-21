@@ -10,7 +10,7 @@ import java.util.Objects;
  * and calculates the outcomes for each player at the end of the round.
  */
 public class Round {
-    private final Deck deck;
+    public final Deck deck;
     public final Player[] players;
     public final Hand[] hands;
     public final List<Card> dealerOpenCards = new ArrayList<>();

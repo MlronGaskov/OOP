@@ -90,7 +90,7 @@ public class Hand {
      * @return a list of primary {@link Card} objects
      */
     public List<Card> getCards1() {
-        return cards1;
+        return new ArrayList<>(cards1);
     }
 
     /**
@@ -99,7 +99,7 @@ public class Hand {
      * @return a list of secondary {@link Card} objects or null if not split
      */
     public List<Card> getCards2() {
-        return cards2;
+        return new ArrayList<>(cards2);
     }
 
     /**

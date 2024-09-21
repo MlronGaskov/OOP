@@ -39,16 +39,17 @@ public class OutcomeCalculator {
         int dealerValue = ValueCalculator.calculate(dealerCards);
         if (pileValue > 21) {
             return -1;
-        } else if (dealerValue > 21) {
+        }
+        if (dealerValue > 21) {
             return 1;
         }
         if (pileValue == 21 || dealerValue < pileValue) {
             return 1;
-        } else if (dealerValue == pileValue) {
-            return 0;
-        } else {
-            return -1;
         }
+        if (dealerValue == pileValue) {
+            return 0;
+        }
+        return -1;
     }
 
     /**

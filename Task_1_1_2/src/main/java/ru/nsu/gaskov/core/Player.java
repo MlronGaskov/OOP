@@ -8,64 +8,40 @@ public interface Player {
 
     /**
      * Decides whether to make an insurance bet.
-     *
-     * @return true if the player opts for an insurance bet, false otherwise
      */
-    default boolean insurance() {
-        return false;
-    }
+    boolean insurance();
 
     /**
      * Decides whether to split the current hand into two separate hands.
-     *
-     * @return true if the player chooses to split their hand, false otherwise
      */
-    default boolean split() {
-        return false;
-    }
+    boolean split();
 
     /**
      * Decides whether to double the current bet.
-     *
-     * @return true if the player opts to double their bet, false otherwise
      */
-    default boolean doubleBet() {
-        return false;
-    }
+    boolean doubleBet();
 
     /**
      * Decides whether to take another card (hit) from the dealer.
-     *
-     * @return true if the player chooses to hit, false otherwise
      */
-    default boolean hit() {
-        return false;
-    }
+    boolean hit();
 
     /**
      * Sets the initial starting bet for the player.
-     *
-     * @return the starting bet amount, default is 50
      */
-    default int makeStartingBet() {
-        return 50;
-    }
+    int makeStartingBet();
 
     /**
      * Retrieves the name of the player.
      *
      * @return the name of the player, default is "Player"
      */
-    default String getName() {
-        return "Player";
-    }
+    String getName();
 
     /**
      * Sets the current round for the player.
      *
      * @param round the round object representing the current round
      */
-    default void setRound(Round round) {
-        // Default implementation does nothing
-    }
+    void setRound(Round round);
 }

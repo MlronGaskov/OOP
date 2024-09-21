@@ -22,6 +22,39 @@ class RoundTest {
     public void testOnePlayerRound() {
         Player[] players = new Player[]{
             new Player() {
+                @Override
+                public boolean insurance() {
+                    return false;
+                }
+
+                @Override
+                public boolean split() {
+                    return false;
+                }
+
+                @Override
+                public boolean doubleBet() {
+                    return false;
+                }
+
+                @Override
+                public boolean hit() {
+                    return false;
+                }
+
+                @Override
+                public int makeStartingBet() {
+                    return 50;
+                }
+
+                @Override
+                public String getName() {
+                    return "";
+                }
+
+                @Override
+                public void setRound(Round round) {
+                }
             }
         };
         Deck deck = new FixedDeck(new Card[]{
@@ -85,6 +118,20 @@ class RoundTest {
             @Override
             public boolean hit() {
                 return response;
+            }
+
+            @Override
+            public int makeStartingBet() {
+                return 50;
+            }
+
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public void setRound(Round round) {
             }
         }
 
@@ -174,8 +221,37 @@ class RoundTest {
     public void testOnePlayerWithDoubleAction() {
         class DoublerPlayer implements Player {
             @Override
+            public boolean insurance() {
+                return false;
+            }
+
+            @Override
+            public boolean split() {
+                return false;
+            }
+
+            @Override
             public boolean doubleBet() {
                 return true;
+            }
+
+            @Override
+            public boolean hit() {
+                return false;
+            }
+
+            @Override
+            public int makeStartingBet() {
+                return 50;
+            }
+
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public void setRound(Round round) {
             }
         }
 

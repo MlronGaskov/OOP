@@ -2,6 +2,7 @@ package ru.nsu.gaskov.ui;
 
 import java.util.Scanner;
 import ru.nsu.gaskov.core.Player;
+import ru.nsu.gaskov.core.Round;
 
 /**
  * The HumanPlayer class represents a human player in the blackjack game.
@@ -28,6 +29,10 @@ public class HumanPlayer implements Player {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void setRound(Round round) {
     }
 
     @Override

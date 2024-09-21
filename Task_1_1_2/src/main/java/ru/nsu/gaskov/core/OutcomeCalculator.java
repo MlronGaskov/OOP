@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * The OutcomeCalculator class is responsible for calculating the outcome of a player's hand
- * in relation to the dealer's hand in a card game. It evaluates insurance payouts, winning conditions,
+ * in relation to the dealer's hand in a card game. It evaluates insurance payouts,
  * and overall winnings based on the game's rules.
  */
 public class OutcomeCalculator {
@@ -52,7 +52,7 @@ public class OutcomeCalculator {
     }
 
     /**
-     * Calculates the total winning amount for the player based on their hand and the dealer's cards.
+     * Calculates the total winning amount for the player.
      *
      * @param playerHand  the player's hand
      * @param dealerCards the cards held by the dealer

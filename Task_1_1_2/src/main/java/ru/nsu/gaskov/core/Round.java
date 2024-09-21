@@ -119,10 +119,10 @@ public class Round {
      * @return true if the current step requires player action, false otherwise
      */
     private boolean isPlayerHandPlayStep() {
-        return currentStep == StepType.PLAYER_MAKES_INSURANCE_DECISION ||
-            currentStep == StepType.PLAYER_MAKES_SPLIT_DECISION ||
-            currentStep == StepType.PLAYER_MAKES_DOUBLE_DECISION ||
-            currentStep == StepType.PLAYER_HITS;
+        return currentStep == StepType.PLAYER_MAKES_INSURANCE_DECISION
+            || currentStep == StepType.PLAYER_MAKES_SPLIT_DECISION
+            || currentStep == StepType.PLAYER_MAKES_DOUBLE_DECISION
+            || currentStep == StepType.PLAYER_HITS;
     }
 
     /**

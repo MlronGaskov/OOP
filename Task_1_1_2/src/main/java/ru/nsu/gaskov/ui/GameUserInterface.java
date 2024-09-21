@@ -1,7 +1,7 @@
 package ru.nsu.gaskov.ui;
 
-import java.util.Scanner;
 import java.util.List;
+import java.util.Scanner;
 import ru.nsu.gaskov.core.Card;
 import ru.nsu.gaskov.core.Game;
 import ru.nsu.gaskov.core.Hand;
@@ -45,7 +45,8 @@ public class GameUserInterface {
             for (int i = 2; i < dealerCards.size(); ++i) {
                 System.out.println("Dealer takes: " + dealerCards.get(i));
             }
-            System.out.println("Dealer cards: \n" + dealerCards + " -> " + ValueCalculator.calculate(dealerCards));
+            System.out.println("Dealer cards: \n" +
+                dealerCards + " -> " + ValueCalculator.calculate(dealerCards));
         }
     }
 
@@ -55,8 +56,8 @@ public class GameUserInterface {
      * @param playerHand the Hand object representing the player's hand
      */
     private static void printPlayerHand(Hand playerHand) {
-        System.out.print("Bet: " + playerHand.getBet() +
-            (playerHand.isSplit() || playerHand.isDoubled() ? "x2 " : " "));
+        System.out.print("Bet: " + playerHand.getBet()
+            + (playerHand.isSplit() || playerHand.isDoubled() ? "x2 " : " "));
         System.out.println(playerHand.isInsured() ?
             ("Insure: " + playerHand.getBet() / 2 + " ") : "");
         System.out.println(playerHand.getCards1() + " -> " + playerHand.getCards1Value());
@@ -72,10 +73,10 @@ public class GameUserInterface {
      * @return true if the step is a player decision step, false otherwise
      */
     private static boolean isPlayerHandPlayStep(StepType step) {
-        return step == StepType.PLAYER_MAKES_INSURANCE_DECISION ||
-            step == StepType.PLAYER_MAKES_SPLIT_DECISION ||
-            step == StepType.PLAYER_MAKES_DOUBLE_DECISION ||
-            step == StepType.PLAYER_HITS;
+        return step == StepType.PLAYER_MAKES_INSURANCE_DECISION
+            || step == StepType.PLAYER_MAKES_SPLIT_DECISION
+            || step == StepType.PLAYER_MAKES_DOUBLE_DECISION
+            || step == StepType.PLAYER_HITS;
     }
 
     /**
@@ -89,7 +90,7 @@ public class GameUserInterface {
         Game game = new Game(scanner);
         for (int i = 1; i <= 10; ++i) {
             System.out.println("Round " + i);
-            Round round = game.PlayRound();
+            Round round = game.playRound();
             while (round.currentStep != null) {
                 if (round.currentStep == StepType.PLAYER_BETS) {
                     Step act = round.step();

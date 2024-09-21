@@ -2,8 +2,8 @@ package ru.nsu.gaskov.core;
 
 import java.util.Objects;
 import java.util.Scanner;
-import ru.nsu.gaskov.ui.InputValidator;
 import ru.nsu.gaskov.ui.HumanPlayer;
+import ru.nsu.gaskov.ui.InputValidator;
 
 /**
  * The Game class represents a card game, managing players,
@@ -53,10 +53,17 @@ public class Game {
      *
      * @return a new {@link Round} object representing the current round
      */
-    public Round PlayRound() {
+    public Round playRound() {
         return new Round(deck, players);
     }
 
+    /**
+     * Updates the money for each player based on the outcomes
+     * of the current round.
+     *
+     * @param roundOutcomes an array of integers representing
+     *                      the outcomes for each player in the round
+     */
     public void countMoney(int[] roundOutcomes) {
         if (roundOutcomes.length == playersNumber) {
             for (int i = 0; i < roundOutcomes.length; ++i) {

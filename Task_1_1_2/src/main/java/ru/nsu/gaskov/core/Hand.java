@@ -130,8 +130,9 @@ public class Hand {
      * @return the value of the current cards pile
      */
     public int getCurrentPileValue() {
-        if (currentCardsPile == 0)
+        if (currentCardsPile == 0) {
             return getCards1Value();
+        }
         return getCards2Value();
     }
 
@@ -141,9 +142,9 @@ public class Hand {
      * @return true if the hand is splittable, false otherwise
      */
     public boolean isHandSplittable() {
-        return cards2 == null &&
-            cards1.size() == 2 &&
-            cards1.get(0).rank() == cards1.get(1).rank();
+        return cards2 == null
+            && cards1.size() == 2
+            && cards1.get(0).rank() == cards1.get(1).rank();
     }
 
     /**

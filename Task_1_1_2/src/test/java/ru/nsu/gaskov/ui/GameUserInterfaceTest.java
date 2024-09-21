@@ -1,16 +1,17 @@
 package ru.nsu.gaskov.ui;
 
-import org.junit.jupiter.api.Test;
-import ru.nsu.gaskov.core.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
-import java.util.Scanner;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import ru.nsu.gaskov.core.AbstractDeck;
+import ru.nsu.gaskov.core.Card;
+import ru.nsu.gaskov.core.Rank;
+import ru.nsu.gaskov.core.Suit;
 
 /**
  * Tests.

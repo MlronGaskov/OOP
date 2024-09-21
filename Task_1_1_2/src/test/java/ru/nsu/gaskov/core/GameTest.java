@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.util.Scanner;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.Scanner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,6 +18,9 @@ public class GameTest {
 
     private Game game;
 
+    /**
+     * 2 players 1 standard deck.
+     */
     @BeforeEach
     public void setUp() {
         String input = "2\ntest1\ntest2\n1\n";

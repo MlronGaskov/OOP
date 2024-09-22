@@ -32,28 +32,28 @@ public class GameTest {
 
     @Test
     public void testGameInitialization() {
-        assertEquals(2, game.playersNumber);
-        assertEquals(1000, game.money[0]);
-        assertEquals(1000, game.money[1]);
-        assertInstanceOf(SmallDeck.class, game.deck);
-        assertEquals(2, game.players.length);
+        assertEquals(2, game.getPlayersNumber());
+        assertEquals(1000, game.getMoney()[0]);
+        assertEquals(1000, game.getMoney()[1]);
+        assertInstanceOf(SmallDeck.class, game.getDeck());
+        assertEquals(2, game.getPlayers().length);
     }
 
     @Test
     public void testCountMoney() {
         game.countMoney(new int[]{100, -50});
-        assertEquals(1100, game.money[0]);
-        assertEquals(950, game.money[1]);
+        assertEquals(1100, game.getMoney()[0]);
+        assertEquals(950, game.getMoney()[1]);
         game.countMoney(new int[]{200});
-        assertEquals(1100, game.money[0]);
-        assertEquals(950, game.money[1]);
+        assertEquals(1100, game.getMoney()[0]);
+        assertEquals(950, game.getMoney()[1]);
     }
 
     @Test
     public void testPlayRound() {
         Round round = game.playRound();
         assertNotNull(round);
-        assertArrayEquals(game.players, round.players);
-        assertEquals(game.deck, round.deck);
+        assertArrayEquals(game.getPlayers(), round.getPlayers());
+        assertEquals(game.getDeck(), round.getDeck());
     }
 }

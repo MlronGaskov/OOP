@@ -19,6 +19,7 @@ public class SmallDeck extends AbstractDeck {
     /**
      * Resets the deck by collecting all cards back into the deck and reshuffling.
      */
+    @Override
     public void collect() {
         index = 0;
         shuffle();

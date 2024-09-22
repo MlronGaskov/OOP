@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebd3e794-6fac-4ce9-accf-eddcea6d3054" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/TestingDeck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/TestingDeckTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task_1_1_1/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_1_1_1/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/LargeDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/LargeDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/OutcomeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/OutcomeCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/SmallDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/SmallDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/ValueCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/ValueCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/GameUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/ui/GameUserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/RoundTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/core/RoundTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/GameUserInterfaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/GameUserInterfaceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +71,7 @@
     "Gradle.BetConditionTest.executor": "Run",
     "Gradle.Build Task_1_1_2.executor": "Run",
     "Gradle.GameTest.executor": "Run",
+    "Gradle.GameTest.testPlayRound.executor": "Run",
     "Gradle.GameUserInterfaceTest.testGameEnd.executor": "Run",
     "Gradle.GameUserInterfaceTest.testPrintCard.executor": "Run",
     "Gradle.GameUserInterfaceTest.testPrintDealerCards.executor": "Run",
@@ -79,6 +93,11 @@
     "Gradle.Task_1_1_2 [:ru.nsu.gaskov.Main.main()].executor": "Run",
     "Gradle.Task_1_1_2 [:ru.nsu.gaskov.ui.GameUI.main()].executor": "Run",
     "Gradle.Task_1_1_2 [:ru.nsu.gaskov.ui.GameUserInterface.main()].executor": "Run",
+    "Gradle.TestingDeckTest.testInvalidRank.executor": "Run",
+    "Gradle.TestingDeckTest.testInvalidSuit.executor": "Run",
+    "Gradle.TestingDeckTest.testValidDeckConstruction.executor": "Run",
+    "Gradle.Tests in 'ru.nsu.gaskov'.executor": "Run",
+    "Gradle.ValueCalculatorTest.calculateWithoutAcesTest.executor": "Run",
     "Gradle.ValueCalculatorTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -100,8 +119,8 @@
       <recent name="C:\Users\test1\Desktop\oop\OOP\Task_1_1_2\src\main\java\ru\nsu\gaskov\core" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="ru.nsu.gaskov.ui" />
       <recent name="ru.nsu.gaskov.core" />
+      <recent name="ru.nsu.gaskov.ui" />
       <recent name="ru.nsu.gaskov.input" />
       <recent name="ru.nsu.gaskov.deck" />
       <recent name="ru.nsu.gaskov" />
@@ -145,7 +164,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameUserInterfaceTest.testPrintCard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestingDeckTest.testInvalidRank" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -158,7 +177,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.nsu.gaskov.ui.GameUserInterfaceTest.testPrintCard&quot;" />
+            <option value="&quot;ru.nsu.gaskov.core.TestingDeckTest.testInvalidRank&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -169,7 +188,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameUserInterfaceTest.testPrintDealerCards" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestingDeckTest.testInvalidSuit" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -182,7 +201,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.nsu.gaskov.ui.GameUserInterfaceTest.testPrintDealerCards&quot;" />
+            <option value="&quot;ru.nsu.gaskov.core.TestingDeckTest.testInvalidSuit&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,7 +212,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="HumanPlayerTest.testInsuranceNo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestingDeckTest.testValidDeckConstruction" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -206,7 +225,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.nsu.gaskov.ui.HumanPlayerTest.testInsuranceNo&quot;" />
+            <option value="&quot;ru.nsu.gaskov.core.TestingDeckTest.testValidDeckConstruction&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -220,10 +239,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GameUserInterfaceTest.testGameEnd" />
-        <item itemvalue="Gradle.GameUserInterfaceTest.testPrintCard" />
-        <item itemvalue="Gradle.GameUserInterfaceTest.testPrintDealerCards" />
         <item itemvalue="Application.GameUserInterface" />
-        <item itemvalue="Gradle.HumanPlayerTest.testInsuranceNo" />
+        <item itemvalue="Gradle.TestingDeckTest.testInvalidSuit" />
+        <item itemvalue="Gradle.TestingDeckTest.testInvalidRank" />
+        <item itemvalue="Gradle.TestingDeckTest.testValidDeckConstruction" />
       </list>
     </recent_temporary>
   </component>
@@ -237,5 +256,21 @@
       <updated>1726409581527</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/TestingDeck.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/gaskov/core/Game.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

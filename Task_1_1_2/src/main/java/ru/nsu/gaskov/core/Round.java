@@ -10,14 +10,14 @@ import java.util.Objects;
  * and calculates the outcomes for each player at the end of the round.
  */
 public class Round {
-    public final Deck deck;
-    public final Player[] players;
-    public final Hand[] hands;
-    public final List<Card> dealerOpenCards = new ArrayList<>();
-    public Card dealerClosedCard;
-    public StepType currentStep = StepType.PLAYER_BETS;
-    public int currentPlayerIndex = 0;
-    public final int[] outcomes;
+    private final Deck deck;
+    private final Player[] players;
+    private final Hand[] hands;
+    private final List<Card> dealerOpenCards = new ArrayList<>();
+    private Card dealerClosedCard;
+    private StepType currentStep = StepType.PLAYER_BETS;
+    private int currentPlayerIndex = 0;
+    private int[] outcomes = new int[] {};
 
     /**
      * Constructs a Round with the specified deck and player array.
@@ -36,6 +36,69 @@ public class Round {
         for (int i = 0; i < players.length; ++i) {
             this.hands[i] = new Hand();
         }
+    }
+
+    /**
+     * Retrieves the current step.
+     *
+     * @return the current step as a {@link StepType} enum.
+     */
+    public StepType getCurrentStep() {
+        return currentStep;
+    }
+
+    /**
+     * Retrieves the outcomes of the game.
+     *
+     * @return a cloned array of integers representing the outcomes.
+     */
+    public int[] getOutcomes() {
+        return outcomes.clone();
+    }
+
+    /**
+     * Retrieves the closed card of the dealer.
+     *
+     * @return the dealer's closed card as a {@link Card} object.
+     */
+    public Card getDealerClosedCard() {
+        return dealerClosedCard;
+    }
+
+    /**
+     * Retrieves the list of open cards held by the dealer.
+     *
+     * @return a list of {@link Card} objects representing the dealer's open cards.
+     */
+    public List<Card> getDealerOpenCards() {
+        return new ArrayList<>(dealerOpenCards);
+    }
+
+    /**
+     * Retrieves the deck of cards used in the game.
+     *
+     * @return the {@link Deck} object being used in the game.
+     */
+    public Deck getDeck() {
+        return deck;
+    }
+
+    /**
+     * Retrieves the array of players in the game.
+     *
+     * @return a cloned array of {@link Player} objects.
+     */
+    public Player[] getPlayers() {
+        return players.clone();
+    }
+
+    /**
+     * Retrieves the array of hands in play.
+     *
+     * @return a cloned array of {@link Hand} objects representing the hands in the game.
+     */
+    public Hand[] getHands() {
+        return hands.clone();
     }
 
     /**
@@ -67,7 +130,7 @@ public class Round {
                 return new Step(StepType.PLAYER_MAKES_INSURANCE_DECISION, currentPlayerIndex);
             }
         }
-        if (playerHand.getCurrentPileValue() >= 21) {
+        if (playerHand.getCurrentPileValue() >= Constants.BLACKJACK_SCORE) {
             Step result = new Step(StepType.PLAYER_STANDS, currentPlayerIndex);
             if (playerHand.isSplit() && playerHand.getCurrentCardsPile() == 0) {
                 playerHand.changePile();
@@ -98,7 +161,7 @@ public class Round {
         }
         if (currentStep == StepType.PLAYER_HITS) {
             int currentPileValue = playerHand.getCurrentPileValue();
-            if (currentPileValue < 21 && player.hit()) {
+            if (currentPileValue < Constants.BLACKJACK_SCORE && player.hit()) {
                 playerHand.take(deck.getOne());
                 return new Step(StepType.PLAYER_HITS, currentPlayerIndex);
             }
@@ -156,7 +219,7 @@ public class Round {
             return stepPlayerActs();
         } else if (currentStep == StepType.OUTCOME_CALCULATION) {
             dealerOpenCards.add(dealerClosedCard);
-            while (ValueCalculator.calculate(dealerOpenCards) < 17) {
+            while (ValueCalculator.calculate(dealerOpenCards) < Constants.DEALER_STAND_SCORE) {
                 dealerOpenCards.add(deck.getOne());
             }
             for (int i = 0; i < players.length; ++i) {

@@ -10,10 +10,10 @@ import ru.nsu.gaskov.ui.InputValidator;
  * the deck of cards, and player money.
  */
 public class Game {
-    public final Player[] players;
-    public final int playersNumber;
-    public final Deck deck;
-    public final int[] money;
+    private final Player[] players;
+    private final int playersNumber;
+    private final Deck deck;
+    private final int[] money;
 
     /**
      * Constructs a new Game instance, initializing players, deck,
@@ -37,15 +37,54 @@ public class Game {
         }
         String decksAnswer = InputValidator.getValidInput(
             scanner,
-            n -> n != null && n.matches("\\d") && Integer.parseInt(n) <= 8,
+            n -> n != null && (n.matches("\\d") && Integer.parseInt(n) <= 8
+                || n.matches("test\\|.*")),
             "\nEnter standard decks number: ",
             "The standard decks number must be a positive number not more than 8."
         );
-        if (Objects.equals(decksAnswer, "1") || decksAnswer == null) {
+        if (decksAnswer != null && decksAnswer.matches("test\\|.*")) {
+            deck = new TestingDeck(decksAnswer.split("\\|"));
+        } else if (Objects.equals(decksAnswer, "1") || decksAnswer == null) {
             deck = new SmallDeck();
         } else {
             deck = new LargeDeck(Integer.parseInt(decksAnswer));
         }
+    }
+
+    /**
+     * Retrieves the array of players in the game.
+     *
+     * @return a cloned array of {@link Player} objects representing the players in the game.
+     */
+    public Player[] getPlayers() {
+        return players.clone();
+    }
+
+    /**
+     * Retrieves the number of players currently active in the game.
+     *
+     * @return the total count of players as an integer.
+     */
+    public int getPlayersNumber() {
+        return playersNumber;
+    }
+
+    /**
+     * Retrieves the deck of cards used in the game.
+     *
+     * @return the {@link Deck} object representing the current deck of cards.
+     */
+    public Deck getDeck() {
+        return deck;
+    }
+
+    /**
+     * Retrieves the array of monetary values associated with the players.
+     *
+     * @return a cloned array of integers representing the money amounts for each player.
+     */
+    public int[] getMoney() {
+        return money.clone();
     }
 
     /**

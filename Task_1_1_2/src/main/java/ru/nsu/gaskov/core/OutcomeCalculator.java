@@ -19,7 +19,7 @@ public class OutcomeCalculator {
     private static int insurancePayment(Hand playerHand, List<Card> dealerCards) {
         int dealerCardsValue = ValueCalculator.calculate(dealerCards);
         if (playerHand.isInsured()) {
-            if (dealerCardsValue == 21 && dealerCards.size() == 2) {
+            if (dealerCardsValue == Constants.BLACKJACK_SCORE && dealerCards.size() == 2) {
                 return playerHand.getBet();
             }
             return -playerHand.getBet() / 2;
@@ -37,13 +37,13 @@ public class OutcomeCalculator {
     private static int pileWinning(List<Card> pile, List<Card> dealerCards) {
         int pileValue = ValueCalculator.calculate(pile);
         int dealerValue = ValueCalculator.calculate(dealerCards);
-        if (pileValue > 21) {
+        if (pileValue > Constants.BLACKJACK_SCORE) {
             return -1;
         }
-        if (dealerValue > 21) {
+        if (dealerValue > Constants.BLACKJACK_SCORE) {
             return 1;
         }
-        if (pileValue == 21 || dealerValue < pileValue) {
+        if (pileValue == Constants.BLACKJACK_SCORE || dealerValue < pileValue) {
             return 1;
         }
         if (dealerValue == pileValue) {

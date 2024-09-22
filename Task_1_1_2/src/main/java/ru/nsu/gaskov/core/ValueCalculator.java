@@ -42,7 +42,7 @@ public class ValueCalculator {
         int value = cards.stream().mapToInt(ValueCalculator::getNotBustCardValue).sum();
         int aceCount = (int) cards.stream().filter(e -> e.rank() == Rank.ACE).count();
 
-        while (aceCount > 0 && value > 21) {
+        while (aceCount > 0 && value > Constants.BLACKJACK_SCORE) {
             value -= 10;
             aceCount--;
         }

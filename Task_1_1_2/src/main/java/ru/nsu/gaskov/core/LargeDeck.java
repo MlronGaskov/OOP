@@ -28,6 +28,7 @@ public class LargeDeck extends AbstractDeck {
      * Collects the cards from the deck. If more than half of the cards have
      * been dealt, the index is reset and the deck is shuffled again.
      */
+    @Override
     public void collect() {
         if (index * 2 > cards.size()) {
             index = 0;

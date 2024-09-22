@@ -172,12 +172,12 @@ public class Hand {
      */
     public void take(Card card) {
         if (currentCardsPile == 0) {
-            if (getCards1Value() >= 21) {
+            if (getCards1Value() >= Constants.BLACKJACK_SCORE) {
                 throw new IllegalStateException("Hand is already full.");
             }
             cards1.add(Objects.requireNonNull(card));
         } else {
-            if (getCards2Value() >= 21) {
+            if (getCards2Value() >= Constants.BLACKJACK_SCORE) {
                 throw new IllegalStateException("Hand is already full.");
             }
             cards2.add(Objects.requireNonNull(card));

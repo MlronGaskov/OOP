@@ -41,6 +41,6 @@ class GameUserInterfaceTest {
         GameUserInterface.main(null);
         String[] outStrings = myOut.toString().split("\n");
         String outcome = outStrings[outStrings.length - 2];
-        assertEquals("miron: -100 ", outcome.substring(0, outcome.length() - 1));
+        assertEquals("miron: -100", outcome.substring(0, outcome.length() - 2));
     }
 }

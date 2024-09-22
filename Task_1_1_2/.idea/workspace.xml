@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ebd3e794-6fac-4ce9-accf-eddcea6d3054" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Task_1_1_1/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_1_1_1/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/GameUserInterfaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/gaskov/ui/GameUserInterfaceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +114,7 @@
       <recent name="ru.nsu.gaskov" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TestingDeckTest.testInvalidFormat">
+  <component name="RunManager" selected="Gradle.GameUserInterfaceTest.testGameEnd">
     <configuration name="GameUserInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.nsu.gaskov.ui.GameUserInterface" />
       <module name="Task_1_1_2.main" />
@@ -225,9 +226,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestingDeckTest.testInvalidFormat" />
-        <item itemvalue="Gradle.Tests in 'ru.nsu.gaskov'" />
         <item itemvalue="Gradle.GameUserInterfaceTest.testGameEnd" />
+        <item itemvalue="Gradle.Tests in 'ru.nsu.gaskov'" />
+        <item itemvalue="Gradle.TestingDeckTest.testInvalidFormat" />
         <item itemvalue="Application.GameUserInterface" />
         <item itemvalue="Gradle.TestingDeckTest.testInvalidSuit" />
       </list>

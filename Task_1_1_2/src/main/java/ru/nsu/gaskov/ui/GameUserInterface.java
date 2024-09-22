@@ -145,17 +145,23 @@ public class GameUserInterface {
                 } else if (isPlayerHandPlayStep(round.getCurrentStep())) {
                     Step act = round.step();
                     if (act.act() == StepType.PLAYER_MAKES_INSURANCE_DECISION) {
-                        System.out.println(game.getPlayers()[act.playerIndex()].getName() + ": insure");
+                        System.out.println(game.getPlayers()[act.playerIndex()].getName()
+                            + ": insure");
                     } else if (act.act() == StepType.PLAYER_MAKES_SPLIT_DECISION) {
-                        System.out.println(game.getPlayers()[act.playerIndex()].getName() + ": split");
+                        System.out.println(game.getPlayers()[act.playerIndex()].getName()
+                            + ": split");
                     } else if (act.act() == StepType.PLAYER_MAKES_DOUBLE_DECISION) {
-                        System.out.println(game.getPlayers()[act.playerIndex()].getName() + ": double");
+                        System.out.println(game.getPlayers()[act.playerIndex()].getName()
+                            + ": double");
                     } else if (act.act() == StepType.PLAYER_HITS) {
-                        System.out.println(game.getPlayers()[act.playerIndex()].getName() + ": hit");
+                        System.out.println(game.getPlayers()[act.playerIndex()].getName()
+                            + ": hit");
                     } else if (act.act() == StepType.PLAYER_STANDS) {
-                        System.out.println(game.getPlayers()[act.playerIndex()].getName() + ": stand");
+                        System.out.println(game.getPlayers()[act.playerIndex()].getName()
+                            + ": stand");
                     }
-                    System.out.print("\n" + game.getPlayers()[act.playerIndex()].getName() + " cards: ");
+                    System.out.print("\n" + game.getPlayers()[act.playerIndex()].getName()
+                        + " cards: ");
                     printPlayerHand(round.getHands()[act.playerIndex()]);
                 } else if (round.getCurrentStep() == StepType.OUTCOME_CALCULATION) {
                     round.step();

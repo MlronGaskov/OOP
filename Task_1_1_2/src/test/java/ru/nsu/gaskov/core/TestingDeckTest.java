@@ -37,7 +37,7 @@ class TestingDeckTest {
 
     @Test
     void testInvalidFormat() {
-        String[] cardCodes = {"2H"};  // No space between rank and suit
+        String[] cardCodes = {"test", "2H"};  // No space between rank and suit
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             new TestingDeck(cardCodes);
         });

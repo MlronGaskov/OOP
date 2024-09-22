@@ -41,6 +41,6 @@ class TestingDeckTest {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             new TestingDeck(cardCodes);
         });
-        assertEquals("Invalid card format. Expected format: 'rank suit'.", exception.getMessage());
+        assertEquals("Invalid card format.", exception.getMessage());
     }
 }

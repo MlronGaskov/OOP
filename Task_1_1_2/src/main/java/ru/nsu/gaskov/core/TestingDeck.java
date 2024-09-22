@@ -32,7 +32,7 @@ public class TestingDeck extends AbstractDeck {
         String[] parts = cardCode.split(" ");
 
         if (parts.length != 2) {
-            throw new IllegalArgumentException("Invalid card format. Expected format: 'rank suit'.");
+            throw new IllegalArgumentException("Invalid card format.");
         }
 
         return new Card(

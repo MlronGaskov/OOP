@@ -38,7 +38,7 @@ loadScripts(document, 'script');</script>
 <p>Summary:</p>
 <ul>
 <li>Nested</li>
-<li><a href="#field-summary">Field</a></li>
+<li>Field</li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -46,7 +46,7 @@ loadScripts(document, 'script');</script>
 <li>
 <p>Detail:</p>
 <ul>
-<li><a href="#field-detail">Field</a></li>
+<li>Field</li>
 <li><a href="#constructor-detail">Constr</a></li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -58,13 +58,13 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -97,42 +97,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#currentPlayerIndex" class="member-name-link">currentPlayerIndex</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="StepType.html" title="enum class in ru.nsu.gaskov.core">StepType</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#currentStep" class="member-name-link">currentStep</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></code></div>
-<div class="col-second even-row-color"><code><a href="#dealerClosedCard" class="member-name-link">dealerClosedCard</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#dealerOpenCards" class="member-name-link">dealerOpenCards</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a></code></div>
-<div class="col-second even-row-color"><code><a href="#deck" class="member-name-link">deck</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#hands" class="member-name-link">hands</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final int[]</code></div>
-<div class="col-second even-row-color"><code><a href="#outcomes" class="member-name-link">outcomes</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#players" class="member-name-link">players</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -160,9 +124,44 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Step.html" title="class in ru.nsu.gaskov.core">Step</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#step()" class="member-name-link">step</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="StepType.html" title="enum class in ru.nsu.gaskov.core">StepType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentStep()" class="member-name-link">getCurrentStep</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the current step.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDealerClosedCard()" class="member-name-link">getDealerClosedCard</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the closed card of the dealer.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDealerOpenCards()" class="member-name-link">getDealerOpenCards</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the list of open cards held by the dealer.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeck()" class="member-name-link">getDeck</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the deck of cards used in the game.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHands()" class="member-name-link">getHands</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the array of hands in play.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOutcomes()" class="member-name-link">getOutcomes</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the outcomes of the game.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayers()" class="member-name-link">getPlayers</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the array of players in the game.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Step.html" title="class in ru.nsu.gaskov.core">Step</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#step()" class="member-name-link">step</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Executes the current step of the game round.</div>
 </div>
 </div>
@@ -177,62 +176,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="deck">
-<h3>deck</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a></span>&nbsp;<span class="element-name">deck</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="players">
-<h3>players</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]</span>&nbsp;<span class="element-name">players</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="hands">
-<h3>hands</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>[]</span>&nbsp;<span class="element-name">hands</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="dealerOpenCards">
-<h3>dealerOpenCards</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</span>&nbsp;<span class="element-name">dealerOpenCards</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="dealerClosedCard">
-<h3>dealerClosedCard</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></span>&nbsp;<span class="element-name">dealerClosedCard</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="currentStep">
-<h3>currentStep</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="StepType.html" title="enum class in ru.nsu.gaskov.core">StepType</a></span>&nbsp;<span class="element-name">currentStep</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="currentPlayerIndex">
-<h3>currentPlayerIndex</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">currentPlayerIndex</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="outcomes">
-<h3>outcomes</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">outcomes</span></div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -259,6 +202,83 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="getCurrentStep()">
+<h3>getCurrentStep</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="StepType.html" title="enum class in ru.nsu.gaskov.core">StepType</a></span>&nbsp;<span class="element-name">getCurrentStep</span>()</div>
+<div class="block">Retrieves the current step.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current step as a <a href="StepType.html" title="enum class in ru.nsu.gaskov.core"><code>StepType</code></a> enum.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getOutcomes()">
+<h3>getOutcomes</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">getOutcomes</span>()</div>
+<div class="block">Retrieves the outcomes of the game.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a cloned array of integers representing the outcomes.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDealerClosedCard()">
+<h3>getDealerClosedCard</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a></span>&nbsp;<span class="element-name">getDealerClosedCard</span>()</div>
+<div class="block">Retrieves the closed card of the dealer.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the dealer's closed card as a <a href="Card.html" title="class in ru.nsu.gaskov.core"><code>Card</code></a> object.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDealerOpenCards()">
+<h3>getDealerOpenCards</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in ru.nsu.gaskov.core">Card</a>&gt;</span>&nbsp;<span class="element-name">getDealerOpenCards</span>()</div>
+<div class="block">Retrieves the list of open cards held by the dealer.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a list of <a href="Card.html" title="class in ru.nsu.gaskov.core"><code>Card</code></a> objects representing the dealer's open cards.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDeck()">
+<h3>getDeck</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Deck.html" title="interface in ru.nsu.gaskov.core">Deck</a></span>&nbsp;<span class="element-name">getDeck</span>()</div>
+<div class="block">Retrieves the deck of cards used in the game.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the <a href="Deck.html" title="interface in ru.nsu.gaskov.core"><code>Deck</code></a> object being used in the game.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getPlayers()">
+<h3>getPlayers</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Player.html" title="interface in ru.nsu.gaskov.core">Player</a>[]</span>&nbsp;<span class="element-name">getPlayers</span>()</div>
+<div class="block">Retrieves the array of players in the game.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a cloned array of <a href="Player.html" title="interface in ru.nsu.gaskov.core"><code>Player</code></a> objects.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getHands()">
+<h3>getHands</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Hand.html" title="class in ru.nsu.gaskov.core">Hand</a>[]</span>&nbsp;<span class="element-name">getHands</span>()</div>
+<div class="block">Retrieves the array of hands in play.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a cloned array of <a href="Hand.html" title="class in ru.nsu.gaskov.core"><code>Hand</code></a> objects representing the hands in the game.</dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="step()">
 <h3>step</h3>

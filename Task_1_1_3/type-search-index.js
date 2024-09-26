@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"ru.nsu.gaskov","l":"Add"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.gaskov","l":"Div"},{"p":"ru.nsu.gaskov","l":"Expression"},{"p":"ru.nsu.gaskov","l":"Mul"},{"p":"ru.nsu.gaskov","l":"Number"},{"p":"ru.nsu.gaskov","l":"Sub"},{"p":"ru.nsu.gaskov","l":"Variable"}];updateSearchResults();

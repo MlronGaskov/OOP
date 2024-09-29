@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test.
+ */
 class AddTest {
     @Test
     public void testIsAdd() {
@@ -76,4 +79,15 @@ class AddTest {
         );
     }
 
+    @Test
+    public void testSimplify() {
+        assertAll(
+            () -> assertTrue(new Number(6).isEquals(new Add(new Number(2), new Number(4)).simplify())),
+            () -> assertTrue(
+                new Variable("x").isEquals(
+                    new Add(new Variable("x"), new Number(0)).simplify()
+                )
+            )
+        );
+    }
 }

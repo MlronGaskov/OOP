@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test.
+ */
 class DivTest {
     @Test
     void testIsDiv() {
@@ -73,6 +76,23 @@ class DivTest {
                         new Number(3),
                         new Variable("x")
                     )
+                )
+            )
+        );
+    }
+
+    @Test
+    public void testSimplify() {
+        assertAll(
+            () -> assertTrue(new Number(6).isEquals(new Div(new Number(12), new Number(2)).simplify())),
+            () -> assertTrue(
+                new Variable("x").isEquals(
+                    new Div(new Variable("x"), new Number(1)).simplify()
+                )
+            ),
+            () -> assertTrue(
+                new Number(0).isEquals(
+                    new Div(new Number(0), new Variable("x")).simplify()
                 )
             )
         );

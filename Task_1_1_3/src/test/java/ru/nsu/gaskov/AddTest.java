@@ -36,13 +36,22 @@ class AddTest {
         );
     }
 
-    @Test void testAddEquals() {
+    @Test void testAddIsEquals() {
         assertAll(
-            () -> assertEquals(
-                new Add("((3+x))"),
-                new Add(
-                    new Number(3),
-                    new Variable("x")
+            () -> assertTrue(
+                new Add("((3+x))").isEquals(
+                    new Add(
+                        new Number(3),
+                        new Variable("x")
+                    )
+                )
+            ),
+            () -> assertFalse(
+                new Add("((5+x))").isEquals(
+                    new Add(
+                        new Number(3),
+                        new Variable("x")
+                    )
                 )
             )
         );
@@ -51,18 +60,19 @@ class AddTest {
     @Test
     public void testAddEval() {
         assertAll(
-            () -> assertEquals(14, (new Add("7+7")).eval("14=fkla")),
+            () -> assertEquals(14, (new Add("7+7")).eval("kg=3")),
             () -> assertEquals(14, (new Add("x+Y")).eval("x=2; Y = 12")),
-            () -> assertEquals(14, (new Add("7+7+x+e")).eval("x=9;e=-9;kfe=fkla")),
+            () -> assertEquals(14, (new Add("7+7+x+e")).eval("x=9;e=-9;kfe=12")),
             () -> assertEquals(17, (new Add("0+2+3+6+6")).eval(""))
         );
     }
 
     @Test
     public void testAddDerivative() {
-        assertEquals(
-            new Add("0+0+0+1+1+0"),
-            (new Add("4+1+3+x+x+y")).derivative("x")
+        assertTrue(
+            (new Add("0+0+0+1+1+0")).isEquals(
+                (new Add("4+1+3+x+x+y")).derivative("x")
+            )
         );
     }
 

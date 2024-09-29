@@ -29,18 +29,18 @@ class NumberTest {
         );
     }
 
-    @Test void testNumberEquals() {
+    @Test void testNumberIsEquals() {
         assertAll(
-            () -> assertEquals(new Number("((15.54))"), new Number(15.54)),
-            () -> assertNotEquals(new Number("2.565"), new Number(18)),
-            () -> assertNotEquals(new Number("14"), new Object())
+            () -> assertTrue((new Number("((15.54))")).isEquals(new Number(15.54))),
+            () -> assertFalse((new Number("2.565")).isEquals(new Number(18))),
+            () -> assertFalse((new Number("14")).isEquals(new Object()))
         );
     }
 
     @Test
     public void testNumberEval() {
         assertAll(
-            () -> assertEquals(14, (new Number(14)).eval("14=fkla")),
+            () -> assertEquals(14, (new Number(14)).eval("kfe=12")),
             () -> assertEquals(-1544.4859234, (new Number(-1544.4859234)).eval(""))
         );
     }

@@ -1,5 +1,6 @@
 package ru.nsu.gaskov;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Variable extends Expression {
@@ -28,17 +29,11 @@ public class Variable extends Expression {
     }
 
     @Override
-    public double eval(String variablesValues) {
-        variablesValues = variablesValues.replaceAll(" ", "");
-        for (String variable: variablesValues.split(";")) {
-            if (variable.split("=").length != 2 || !Number.isNumber(variable.split("=")[1])) {
-                throw new IllegalArgumentException("Invalid variable value format.");
-            }
-            if (Objects.equals(variable.split("=")[0], name)) {
-                return (new Number(variable.split("=")[1])).eval(variablesValues);
-            }
+    public double eval(HashMap<String, Double> variablesValues) {
+        if (!variablesValues.containsKey(name)) {
+            throw new IllegalArgumentException("No such variable name.");
         }
-        throw new IllegalArgumentException("No such variable name.");
+        return variablesValues.get(name);
     }
 
     @Override
@@ -52,7 +47,7 @@ public class Variable extends Expression {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean isEquals(Object obj) {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }

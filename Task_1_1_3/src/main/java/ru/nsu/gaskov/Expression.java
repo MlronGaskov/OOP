@@ -1,15 +1,17 @@
 package ru.nsu.gaskov;
 
+import java.util.HashMap;
+
 public abstract class Expression {
-    public static String getLastTerm(String expressionString) {
+    protected static String getLastTerm(String expressionString) {
         return getLastPart(expressionString, false);
     }
 
-    public static String getLastMultiplier(String expressionString) {
+    protected static String getLastMultiplier(String expressionString) {
         return getLastPart(expressionString, true);
     }
 
-    public static String removeOuterBrackets(String expressionString) {
+    protected static String removeOuterBrackets(String expressionString) {
         while (expressionString.startsWith("(")
             && expressionString.endsWith(")")
             && getLastPart(expressionString, true).length() == expressionString.length())
@@ -40,9 +42,31 @@ public abstract class Expression {
         System.out.println(this.toString());
     }
 
+
+    public double eval(String variablesValues) {
+        HashMap<String, Double> parsedValues = new HashMap<>();
+        if (variablesValues.isEmpty()) {
+            return this.eval(parsedValues);
+        }
+        variablesValues = variablesValues.replaceAll(" ", "");
+        for (String variable: variablesValues.split(";")) {
+            if (variable.split("=").length != 2
+                || !Number.isNumber(variable.split("=")[1]))
+            {
+                throw new IllegalArgumentException("Invalid variable value format.");
+            }
+            parsedValues.put(
+                variable.split("=")[0],
+                Double.parseDouble(variable.split("=")[1])
+            );
+        }
+        return this.eval(parsedValues);
+    }
+
     public abstract Expression derivative(String variable);
-    public abstract double eval(String variablesValues);
+    public abstract double eval(HashMap<String, Double> variablesValues);
     public abstract Expression simplify();
+    public abstract boolean isEquals(Object obj);
 
     public static Expression simplify(Expression expression) {
         return expression.simplify();
@@ -50,9 +74,6 @@ public abstract class Expression {
 
     @Override
     public abstract String toString();
-
-    @Override
-    public abstract boolean equals(Object obj);
 
     private static String getLastPart(String expressionString, boolean isMultiplier) {
         int inBracketsCnt = 0;

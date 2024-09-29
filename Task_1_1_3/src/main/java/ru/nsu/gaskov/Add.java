@@ -1,5 +1,6 @@
 package ru.nsu.gaskov;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Add extends Expression {
@@ -44,25 +45,25 @@ public class Add extends Expression {
     }
 
     @Override
-    public double eval(String variablesValues) {
+    public double eval(HashMap<String, Double> variablesValues) {
         return leftTerm.eval(variablesValues) + rightTerm.eval(variablesValues);
     }
 
     @Override
     public Expression simplify() {
-        try {
-            return new Number(this.eval(""));
-        } catch (IllegalArgumentException e) {
-            Expression leftTermSimplified = leftTerm.simplify();
-            Expression rightTermSimplified = rightTerm.simplify();
-            if (Objects.equals(leftTermSimplified, new Number(0))) {
-                return rightTermSimplified;
-            }
-            if (Objects.equals(rightTermSimplified, new Number(0))) {
-                return leftTermSimplified;
-            }
-            return new Add(leftTermSimplified, rightTermSimplified);
+        Expression leftTermSimplified = leftTerm.simplify();
+        Expression rightTermSimplified = rightTerm.simplify();
+        if (leftTermSimplified.getClass() == Number.class
+            && rightTermSimplified.getClass() == Number.class) {
+            return new Number(leftTermSimplified.eval("") + rightTermSimplified.eval(""));
         }
+        if (Objects.equals(leftTermSimplified, new Number(0))) {
+            return rightTermSimplified;
+        }
+        if (Objects.equals(rightTermSimplified, new Number(0))) {
+            return leftTermSimplified;
+        }
+        return new Add(leftTermSimplified, rightTermSimplified);
     }
 
     @Override
@@ -71,13 +72,13 @@ public class Add extends Expression {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean isEquals(Object obj) {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        return (Objects.equals(((Add) obj).getLeftTerm(), leftTerm)
-            && Objects.equals(((Add) obj).getRightTerm(), rightTerm))
-            || (Objects.equals(((Add) obj).getLeftTerm(), rightTerm)
-            && Objects.equals(((Add) obj).getRightTerm(), leftTerm));
+        return (leftTerm.isEquals(((Add) obj).leftTerm)
+            && rightTerm.isEquals(((Add) obj).rightTerm))
+            || (leftTerm.isEquals(((Add) obj).rightTerm)
+            && leftTerm.isEquals(((Add) obj).leftTerm));
     }
 }

@@ -51,33 +51,37 @@ class ExpressionTest {
     @Test
     public void testCreate() {
         assertAll(
-            () -> assertEquals(
-                new Add(new Number(3), new Mul(new Number(2), new Variable("x"))),
-                Expression.create("(3+(2*x))")
+            () -> assertTrue(
+                (new Add(new Number(3), new Mul(new Number(2), new Variable("x")))).isEquals(
+                    Expression.create("(3+(2*x))")
+                )
             ),
-            () -> assertEquals(
-                new Add(new Number(3), new Mul(new Number(2), new Variable("x"))),
-                Expression.create("3+2*x")
+            () -> assertTrue(
+                (new Add(new Number(3), new Mul(new Number(2), new Variable("x")))).isEquals(
+                    Expression.create("3+2*x")
+                )
             ),
-            () -> assertEquals(
-                new Div(
+            () -> assertTrue(
+                (new Div(
                     new Variable("u"),
                     new Mul(
                         new Div(new Number(2), new Variable("x")),
                         new Variable("f")
                     )
-                ),
-                Expression.create("(u/(2/x*f))")
+                )).isEquals(
+                    Expression.create("(u/(2/x*f))")
+                )
             ),
-            () -> assertEquals(
-                new Div(
+            () -> assertTrue(
+                (new Div(
                     new Variable("u"),
                     new Mul(
                         new Div(new Number(2), new Variable("x")),
                         new Variable("f")
-                    )
-                ),
-                Expression.create("u/((((2/x))*f))")
+                   )
+                )).isEquals(
+                    Expression.create("u/((((2/x))*f))")
+                )
             )
         );
     }
@@ -85,19 +89,21 @@ class ExpressionTest {
     @Test
     public void testDerivative() {
         assertAll(
-            () -> assertEquals(
+            () -> assertTrue(
                 new Add(
                     new Number(0),
                     new Add(
                         new Mul(new Number(0), new Variable("x")),
                         new Mul(new Number(2), new Number(1))
                     )
-                ),
-                Expression.create("(3+(2*x))").derivative("x")
+                ).isEquals(
+                    Expression.create("(3+(2*x))").derivative("x")
+                )
             ),
-            () -> assertEquals(
-                Expression.create("(1*f-u*0)/(f*f)"),
-                Expression.create("(u/f)").derivative("u")
+            () -> assertTrue(
+                Expression.create("(1*f-u*0)/(f*f)").isEquals(
+                    Expression.create("(u/f)").derivative("u")
+                )
             )
         );
     }

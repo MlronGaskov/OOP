@@ -1,5 +1,6 @@
 package ru.nsu.gaskov;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Div extends Expression {
@@ -53,25 +54,25 @@ public class Div extends Expression {
     }
 
     @Override
-    public double eval(String variablesValues) {
+    public double eval(HashMap<String, Double> variablesValues) {
         return dividend.eval(variablesValues) / divisor.eval(variablesValues);
     }
 
     @Override
     public Expression simplify() {
-        try {
-            return new Number(this.eval(""));
-        } catch (IllegalArgumentException e) {
-            Expression dividendSimplified = dividend.simplify();
-            Expression divisorSimplified = divisor.simplify();
-            if (Objects.equals(dividendSimplified, new Number(0))) {
-                return new Number(0);
-            }
-            if (Objects.equals(divisorSimplified, new Number(1))) {
-                return dividendSimplified;
-            }
-            return new Div(dividendSimplified, divisorSimplified);
+        Expression dividendSimplified = dividend.simplify();
+        Expression divisorSimplified = divisor.simplify();
+        if (dividendSimplified.getClass() == Number.class
+            && divisorSimplified.getClass() == Number.class) {
+            return new Number(dividendSimplified.eval("") / divisorSimplified.eval(""));
         }
+        if (Objects.equals(dividendSimplified, new Number(0))) {
+            return new Number(0);
+        }
+        if (Objects.equals(divisorSimplified, new Number(1))) {
+            return dividendSimplified;
+        }
+        return new Div(dividendSimplified, divisorSimplified);
     }
 
     @Override
@@ -80,11 +81,11 @@ public class Div extends Expression {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean isEquals(Object obj) {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        return Objects.equals(((Div) obj).getDividend(), dividend)
-            && Objects.equals(((Div) obj).getDivisor(), divisor);
+        return ((Div) obj).getDividend().isEquals(dividend)
+            && ((Div) obj).getDivisor().isEquals(divisor);
     }
 }

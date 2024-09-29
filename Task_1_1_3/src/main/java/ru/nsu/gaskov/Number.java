@@ -1,5 +1,7 @@
 package ru.nsu.gaskov;
 
+import java.util.HashMap;
+
 public class Number extends Expression {
     public static boolean isNumber(String expressionString) {
         expressionString = Expression.removeOuterBrackets(expressionString);
@@ -32,7 +34,7 @@ public class Number extends Expression {
     }
 
     @Override
-    public double eval(String variablesValues) {
+    public double eval(HashMap<String, Double> variablesValues) {
         return number;
     }
 
@@ -50,7 +52,7 @@ public class Number extends Expression {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean isEquals(Object obj) {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }

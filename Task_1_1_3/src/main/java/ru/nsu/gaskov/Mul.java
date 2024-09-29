@@ -1,5 +1,6 @@
 package ru.nsu.gaskov;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Mul extends Expression {
@@ -50,30 +51,30 @@ public class Mul extends Expression {
     }
 
     @Override
-    public double eval(String variablesValues) {
+    public double eval(HashMap<String, Double> variablesValues) {
         return leftMultiplier.eval(variablesValues) * rightMultiplier.eval(variablesValues);
     }
 
     @Override
     public Expression simplify() {
-        try {
-            return new Number(this.eval(""));
-        } catch (IllegalArgumentException e) {
-            Expression leftMultiplierSimplified = leftMultiplier.simplify();
-            Expression rightMultiplierSimplified = rightMultiplier.simplify();
-            if (Objects.equals(leftMultiplierSimplified, new Number(0))
-                || Objects.equals(rightMultiplierSimplified, new Number(0)))
-            {
-                return new Number(0);
-            }
-            if (Objects.equals(leftMultiplierSimplified, new Number(1))) {
-                return rightMultiplierSimplified;
-            }
-            if (Objects.equals(rightMultiplierSimplified, new Number(1))) {
-                return leftMultiplierSimplified;
-            }
-            return new Mul(leftMultiplierSimplified, rightMultiplierSimplified);
+        Expression leftMultiplierSimplified = leftMultiplier.simplify();
+        Expression rightMultiplierSimplified = rightMultiplier.simplify();
+        if (leftMultiplierSimplified.getClass() == Number.class
+            && rightMultiplierSimplified.getClass() == Number.class) {
+            return new Number(leftMultiplierSimplified.eval("") * rightMultiplierSimplified.eval(""));
         }
+        if (Objects.equals(leftMultiplierSimplified, new Number(0))
+            || Objects.equals(rightMultiplierSimplified, new Number(0)))
+        {
+            return new Number(0);
+        }
+        if (Objects.equals(leftMultiplierSimplified, new Number(1))) {
+            return rightMultiplierSimplified;
+        }
+        if (Objects.equals(rightMultiplierSimplified, new Number(1))) {
+            return leftMultiplierSimplified;
+        }
+        return new Mul(leftMultiplierSimplified, rightMultiplierSimplified);
     }
 
     @Override
@@ -82,13 +83,13 @@ public class Mul extends Expression {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean isEquals(Object obj) {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        return (Objects.equals(((Mul) obj).getLeftMultiplier(), leftMultiplier)
-            && Objects.equals(((Mul) obj).getRightMultiplier(), rightMultiplier))
-            || (Objects.equals(((Mul) obj).getLeftMultiplier(), rightMultiplier)
-            && Objects.equals(((Mul) obj).getRightMultiplier(), leftMultiplier));
+        return (((Mul) obj).getLeftMultiplier().isEquals(leftMultiplier)
+            && ((Mul) obj).getRightMultiplier().isEquals(rightMultiplier))
+            || (((Mul) obj).getLeftMultiplier().isEquals(rightMultiplier)
+            && ((Mul) obj).getRightMultiplier().isEquals(leftMultiplier));
     }
 }

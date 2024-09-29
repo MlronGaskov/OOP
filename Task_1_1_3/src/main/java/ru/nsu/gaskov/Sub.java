@@ -1,5 +1,6 @@
 package ru.nsu.gaskov;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Sub extends Expression {
@@ -44,25 +45,25 @@ public class Sub extends Expression {
     }
 
     @Override
-    public double eval(String variablesValues) {
+    public double eval(HashMap<String, Double> variablesValues) {
         return minuend.eval(variablesValues) - subtrahend.eval(variablesValues);
     }
 
     @Override
     public Expression simplify() {
-        try {
-            return new Number(this.eval(""));
-        } catch (IllegalArgumentException e) {
-            Expression minuendSimplified = minuend.simplify();
-            Expression subtrahendSimplified = subtrahend.simplify();
-            if (Objects.equals(subtrahendSimplified, new Number(0))) {
-                return minuendSimplified;
-            }
-            if (Objects.equals(minuendSimplified, subtrahendSimplified)) {
-                return new Number(0);
-            }
-            return new Sub(minuendSimplified, subtrahendSimplified);
+        Expression minuendSimplified = minuend.simplify();
+        Expression subtrahendSimplified = subtrahend.simplify();
+        if (minuendSimplified.getClass() == Number.class
+            && subtrahendSimplified.getClass() == Number.class) {
+            return new Number(minuendSimplified.eval("") - subtrahendSimplified.eval(""));
         }
+        if (Objects.equals(subtrahendSimplified, new Number(0))) {
+            return minuendSimplified;
+        }
+        if (Objects.equals(minuendSimplified, subtrahendSimplified)) {
+            return new Number(0);
+        }
+        return new Sub(minuendSimplified, subtrahendSimplified);
     }
 
     @Override
@@ -72,11 +73,11 @@ public class Sub extends Expression {
 
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean isEquals(Object obj) {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        return Objects.equals(((Sub) obj).getMinuend(), minuend)
-            && Objects.equals(((Sub) obj).getSubtrahend(), subtrahend);
+        return ((Sub) obj).getMinuend().isEquals(minuend)
+            && ((Sub) obj).getSubtrahend().isEquals(subtrahend);
     }
 }

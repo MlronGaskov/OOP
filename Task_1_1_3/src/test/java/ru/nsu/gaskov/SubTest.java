@@ -39,13 +39,14 @@ class SubTest {
         );
     }
 
-    @Test void testSubEquals() {
+    @Test void testSubIsEquals() {
         assertAll(
-            () -> assertEquals(
-                new Sub("((3-x))"),
-                new Sub(
-                    new Number(3),
-                    new Variable("x")
+            () -> assertTrue(
+                (new Sub("((3-x))")).isEquals(
+                    new Sub(
+                        new Number(3),
+                        new Variable("x")
+                    )
                 )
             )
         );
@@ -54,18 +55,19 @@ class SubTest {
     @Test
     public void testSubEval() {
         assertAll(
-            () -> assertEquals(14, (new Sub("21-7")).eval("14=fkla")),
+            () -> assertEquals(14, (new Sub("21-7")).eval("kef=12")),
             () -> assertEquals(14, (new Sub("x-Y")).eval("x=2; Y = -12")),
-            () -> assertEquals(14, (new Sub("7-7+x-e")).eval("x=19;e=5;kfe=fkla")),
+            () -> assertEquals(14, (new Sub("7-7+x-e")).eval("x=19;e=5;kfe=3")),
             () -> assertEquals(-5, (new Sub("0-2-3+6-6")).eval(""))
         );
     }
 
     @Test
     public void testSubDerivative() {
-        assertEquals(
-            new Sub("0-0-0-1-1-0"),
-            (new Sub("4-1-3-x-x-y")).derivative("x")
+        assertTrue(
+            (new Sub("0-0-0-1-1-0")).isEquals(
+                (new Sub("4-1-3-x-x-y")).derivative("x")
+            )
         );
     }
 }

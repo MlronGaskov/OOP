@@ -57,11 +57,11 @@ class VariableTest {
         );
     }
 
-    @Test void testVariableEquals() {
+    @Test void testVariableIsEquals() {
         assertAll(
-            () -> assertEquals(new Variable("((Var15))"), new Variable("Var15")),
-            () -> assertNotEquals(new Variable("v2"), new Number(18)),
-            () -> assertNotEquals(new Variable("Var"), new Variable("x"))
+            () -> assertTrue((new Variable("((Var15))")).isEquals(new Variable("Var15"))),
+            () -> assertFalse((new Variable("v2")).isEquals(new Number(18))),
+            () -> assertFalse((new Variable("Var")).isEquals(new Variable("x")))
         );
     }
 }

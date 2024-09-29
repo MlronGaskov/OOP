@@ -25,25 +25,25 @@ class MulTest {
 
     @Test
     void testGetLeftMultiplier() {
-        assertEquals(new Number(4), new Mul("4*x").getLeftMultiplier());
+        assertTrue((new Number(4)).isEquals((new Mul("4*x")).getLeftMultiplier()));
     }
 
     @Test
     void testGetRightMultiplier() {
-        assertEquals(new Variable("x"), new Mul("4*x").getRightMultiplier());
+        assertTrue((new Variable("x")).isEquals(new Mul("4*x").getRightMultiplier()));
     }
 
     @Test
     void testMulDerivative() {
-        assertEquals(new Add("0*x+4*1"), (new Mul("4*x")).derivative("x"));
+        assertTrue(new Add("0*x+4*1").isEquals((new Mul("4*x")).derivative("x")));
     }
 
     @Test
     void testMulEval() {
         assertAll(
-            () -> assertEquals(14, (new Mul("2*7")).eval("14=fkla")),
+            () -> assertEquals(14, (new Mul("2*7")).eval("kfe=4")),
             () -> assertEquals(14, (new Mul("x*Y")).eval("x=2; Y = 7")),
-            () -> assertEquals(16, (new Mul("2*2*2*x")).eval("x=2;e=5;kfe=fkla")),
+            () -> assertEquals(16, (new Mul("2*2*2*x")).eval("x=2;e=5;kfe=5")),
             () -> assertEquals(0, (new Mul("0*E")).eval("E=2.6"))
         );
     }
@@ -65,13 +65,14 @@ class MulTest {
     }
 
     @Test
-    void testMulEquals() {
+    void testMulIsEquals() {
         assertAll(
-            () -> assertEquals(
-                new Mul("((3*x))"),
-                new Mul(
-                    new Number(3),
-                    new Variable("x")
+            () -> assertTrue(
+                new Mul("((3*x))").isEquals(
+                    new Mul(
+                        new Number(3),
+                        new Variable("x")
+                    )
                 )
             )
         );

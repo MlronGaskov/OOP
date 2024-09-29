@@ -92,6 +92,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Number</span>
 <span class="extends-implements">extends <a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></span></div>
+<div class="block">Class representing a numerical value in a mathematical expression.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -104,9 +105,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(double)" class="member-name-link">Number</a><wbr>(double&nbsp;number)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a Number instance from a double value.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">Number</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;expressionString)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Constructs a Number instance from a string representation of a number.</div>
+</div>
 </div>
 </section>
 </li>
@@ -123,22 +128,34 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#derivative(java.lang.String)" class="member-name-link">derivative</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variable)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Computes the derivative of the number with respect to the specified variable.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#eval(java.util.HashMap)" class="member-name-link">eval</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;&nbsp;variablesValues)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Evaluates the number, returning its value.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEquals(java.lang.Object)" class="member-name-link">isEquals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if this Number is equal to another object.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isNumber(java.lang.String)" class="member-name-link">isNumber</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;expressionString)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Checks if the provided string can be parsed as a number.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#simplify()" class="member-name-link">simplify</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Simplifies the number expression.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the string representation of the number.</div>
+</div>
 </div>
 </div>
 </div>
@@ -163,12 +180,24 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(double)">
 <h3>Number</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Number</span><wbr><span class="parameters">(double&nbsp;number)</span></div>
+<div class="block">Constructs a Number instance from a double value.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>number</code> - the numerical value</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>Number</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Number</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;expressionString)</span></div>
+<div class="block">Constructs a Number instance from a string representation of a number.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>expressionString</code> - the string to convert into a number</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the string is not a valid number format</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -183,15 +212,28 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="isNumber(java.lang.String)">
 <h3>isNumber</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNumber</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;expressionString)</span></div>
+<div class="block">Checks if the provided string can be parsed as a number.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>expressionString</code> - the string to check</dd>
+<dt>Returns:</dt>
+<dd>true if the string is a valid number format, false otherwise</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="derivative(java.lang.String)">
 <h3>derivative</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></span>&nbsp;<span class="element-name">derivative</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variable)</span></div>
+<div class="block">Computes the derivative of the number with respect to the specified variable.
+ For any constant number, the derivative is zero.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#derivative(java.lang.String)">derivative</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>variable</code> - the variable to differentiate by</dd>
+<dt>Returns:</dt>
+<dd>a new Number instance representing 0</dd>
 </dl>
 </section>
 </li>
@@ -199,9 +241,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="eval(java.util.HashMap)">
 <h3>eval</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">eval</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;&nbsp;variablesValues)</span></div>
+<div class="block">Evaluates the number, returning its value.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#eval(java.util.HashMap)">eval</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>variablesValues</code> - a map of variable names to their values (not used here)</dd>
+<dt>Returns:</dt>
+<dd>the numerical value of the instance</dd>
 </dl>
 </section>
 </li>
@@ -209,9 +256,13 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="simplify()">
 <h3>simplify</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></span>&nbsp;<span class="element-name">simplify</span>()</div>
+<div class="block">Simplifies the number expression.
+ Since a number is already simplified, it returns a new Number instance with the same value.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#simplify()">simplify</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Returns:</dt>
+<dd>a new Number instance representing this value</dd>
 </dl>
 </section>
 </li>
@@ -219,9 +270,13 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Returns the string representation of the number.
+ If the number is an integer, it returns it without decimal points.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Returns:</dt>
+<dd>the string representation of the number</dd>
 </dl>
 </section>
 </li>
@@ -229,9 +284,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="isEquals(java.lang.Object)">
 <h3>isEquals</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEquals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
+<div class="block">Checks if this Number is equal to another object.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#isEquals(java.lang.Object)">isEquals</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>obj</code> - the object to compare with</dd>
+<dt>Returns:</dt>
+<dd>true if the object is a Number and has the same value, false otherwise</dd>
 </dl>
 </section>
 </li>

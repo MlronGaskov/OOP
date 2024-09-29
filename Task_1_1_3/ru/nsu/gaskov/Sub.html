@@ -92,6 +92,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Sub</span>
 <span class="extends-implements">extends <a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></span></div>
+<div class="block">Class representing a subtraction operation in a mathematical expression.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -104,10 +105,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">Sub</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;expressionString)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a Sub instance from a string representation of a subtraction operation.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(ru.nsu.gaskov.Expression,ru.nsu.gaskov.Expression)" class="member-name-link">Sub</a><wbr>(<a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a>&nbsp;minuend,
  <a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a>&nbsp;subtrahend)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Constructs a Sub instance with the specified minuend and subtrahend.</div>
+</div>
 </div>
 </section>
 </li>
@@ -124,28 +129,44 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#derivative(java.lang.String)" class="member-name-link">derivative</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variable)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Computes the derivative of the subtraction expression with respect to the specified variable.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#eval(java.util.HashMap)" class="member-name-link">eval</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;&nbsp;variablesValues)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Evaluates the subtraction expression using the provided variable values.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinuend()" class="member-name-link">getMinuend</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the minuend of the subtraction.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSubtrahend()" class="member-name-link">getSubtrahend</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the subtrahend of the subtraction.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEquals(java.lang.Object)" class="member-name-link">isEquals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if this Sub expression is equal to another object.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSub(java.lang.String)" class="member-name-link">isSub</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;expressionString)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Checks if the provided string represents a valid subtraction operation.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#simplify()" class="member-name-link">simplify</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Simplifies the subtraction expression.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the string representation of the subtraction expression.</div>
+</div>
 </div>
 </div>
 </div>
@@ -171,12 +192,25 @@ loadScripts(document, 'script');</script>
 <h3>Sub</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Sub</span><wbr><span class="parameters">(<a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a>&nbsp;minuend,
  <a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a>&nbsp;subtrahend)</span></div>
+<div class="block">Constructs a Sub instance with the specified minuend and subtrahend.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>minuend</code> - the expression from which another expression is to be subtracted</dd>
+<dd><code>subtrahend</code> - the expression to be subtracted</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>Sub</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Sub</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;expressionString)</span></div>
+<div class="block">Constructs a Sub instance from a string representation of a subtraction operation.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>expressionString</code> - the string to convert into a subtraction expression</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the string is not a valid subtraction format</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -191,27 +225,49 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="isSub(java.lang.String)">
 <h3>isSub</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSub</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;expressionString)</span></div>
+<div class="block">Checks if the provided string represents a valid subtraction operation.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>expressionString</code> - the string to check</dd>
+<dt>Returns:</dt>
+<dd>true if the string represents a valid subtraction, false otherwise</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getMinuend()">
 <h3>getMinuend</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></span>&nbsp;<span class="element-name">getMinuend</span>()</div>
+<div class="block">Retrieves the minuend of the subtraction.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the minuend of the subtraction</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getSubtrahend()">
 <h3>getSubtrahend</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></span>&nbsp;<span class="element-name">getSubtrahend</span>()</div>
+<div class="block">Retrieves the subtrahend of the subtraction.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the subtrahend of the subtraction</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="derivative(java.lang.String)">
 <h3>derivative</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></span>&nbsp;<span class="element-name">derivative</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variable)</span></div>
+<div class="block">Computes the derivative of the subtraction expression with respect to the specified variable.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#derivative(java.lang.String)">derivative</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>variable</code> - the variable to differentiate by</dd>
+<dt>Returns:</dt>
+<dd>a new Sub instance representing the derivative of the subtraction</dd>
 </dl>
 </section>
 </li>
@@ -219,9 +275,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="eval(java.util.HashMap)">
 <h3>eval</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">eval</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;&nbsp;variablesValues)</span></div>
+<div class="block">Evaluates the subtraction expression using the provided variable values.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#eval(java.util.HashMap)">eval</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>variablesValues</code> - a map of variable names to their values</dd>
+<dt>Returns:</dt>
+<dd>the result of the subtraction</dd>
 </dl>
 </section>
 </li>
@@ -229,9 +290,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="simplify()">
 <h3>simplify</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></span>&nbsp;<span class="element-name">simplify</span>()</div>
+<div class="block">Simplifies the subtraction expression.
+ If both terms are numbers, it returns a new Number instance representing their difference.
+ If the subtrahend is 0, it returns the minuend.
+ If both terms are equal, it returns 0.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#simplify()">simplify</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Returns:</dt>
+<dd>a simplified expression</dd>
 </dl>
 </section>
 </li>
@@ -239,9 +306,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Returns the string representation of the subtraction expression.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Returns:</dt>
+<dd>a string representing the subtraction in the format "(minuend - subtrahend)"</dd>
 </dl>
 </section>
 </li>
@@ -249,9 +319,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="isEquals(java.lang.Object)">
 <h3>isEquals</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEquals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
+<div class="block">Checks if this Sub expression is equal to another object.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Expression.html#isEquals(java.lang.Object)">isEquals</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.gaskov">Expression</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>obj</code> - the object to compare with</dd>
+<dt>Returns:</dt>
+<dd>true if the object is a Sub and both terms are equal, false otherwise</dd>
 </dl>
 </section>
 </li>

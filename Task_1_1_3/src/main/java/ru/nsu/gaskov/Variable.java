@@ -68,7 +68,6 @@ public class Variable extends Expression {
 
     /**
      * Simplifies the variable expression.
-     * Variables are already in their simplest form, so returns a new Variable instance with the same name.
      *
      * @return a new Variable instance representing this variable
      */

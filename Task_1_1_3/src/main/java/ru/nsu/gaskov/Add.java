@@ -105,10 +105,10 @@ public class Add extends Expression {
         Expression leftTermSimplified = leftTerm.simplify();
         Expression rightTermSimplified = rightTerm.simplify();
 
-        if (leftTermSimplified instanceof Number &&
-            rightTermSimplified instanceof Number) {
-            return new Number(leftTermSimplified.eval(new HashMap<>()) +
-                rightTermSimplified.eval(new HashMap<>()));
+        if (leftTermSimplified instanceof Number
+            && rightTermSimplified instanceof Number) {
+            return new Number(leftTermSimplified.eval(new HashMap<>())
+                + rightTermSimplified.eval(new HashMap<>()));
         }
 
         if (leftTermSimplified.isEquals(new Number(0))) {

@@ -88,7 +88,9 @@ class MulTest {
     @Test
     public void testSimplify() {
         assertAll(
-            () -> assertTrue(new Number(6).isEquals(new Mul(new Number(2), new Number(3)).simplify())),
+            () -> assertTrue(
+                new Number(6).isEquals(new Mul(new Number(2), new Number(3)).simplify())
+            ),
             () -> assertTrue(
                 new Variable("x").isEquals(
                     new Mul(new Variable("x"), new Number(1)).simplify()

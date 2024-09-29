@@ -106,10 +106,10 @@ public class Sub extends Expression {
         Expression minuendSimplified = minuend.simplify();
         Expression subtrahendSimplified = subtrahend.simplify();
 
-        if (minuendSimplified instanceof Number &&
-            subtrahendSimplified instanceof Number) {
-            return new Number(minuendSimplified.eval(new HashMap<>()) -
-                subtrahendSimplified.eval(new HashMap<>()));
+        if (minuendSimplified instanceof Number
+            && subtrahendSimplified instanceof Number) {
+            return new Number(minuendSimplified.eval(new HashMap<>())
+                - subtrahendSimplified.eval(new HashMap<>()));
         }
 
         if (subtrahendSimplified.isEquals(new Number(0))) {

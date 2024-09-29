@@ -115,10 +115,10 @@ public class Div extends Expression {
         Expression dividendSimplified = dividend.simplify();
         Expression divisorSimplified = divisor.simplify();
 
-        if (dividendSimplified instanceof Number &&
-            divisorSimplified instanceof Number) {
-            return new Number(dividendSimplified.eval(new HashMap<>()) /
-                divisorSimplified.eval(new HashMap<>()));
+        if (dividendSimplified instanceof Number
+            && divisorSimplified instanceof Number) {
+            return new Number(dividendSimplified.eval(new HashMap<>())
+                / divisorSimplified.eval(new HashMap<>()));
         }
         if (dividendSimplified.isEquals(new Number(0))) {
             return new Number(0);

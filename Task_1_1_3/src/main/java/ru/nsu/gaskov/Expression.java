@@ -76,7 +76,7 @@ public abstract class Expression {
     /**
      * Evaluates the expression given a string of variable values.
      *
-     * @param variablesValues a string containing variable values in the format "var1=value1;var2=value2;..."
+     * @param variablesValues a string containing variable values in the format "var1=value1;..."
      * @return the evaluated result of the expression
      * @throws IllegalArgumentException if the variable value format is invalid
      */
@@ -100,14 +100,6 @@ public abstract class Expression {
     }
 
     /**
-     * Computes the derivative of the expression with respect to the specified variable.
-     *
-     * @param variable the variable to differentiate by
-     * @return the derivative of the expression
-     */
-    public abstract Expression derivative(String variable);
-
-    /**
      * Evaluates the expression using the provided variable values.
      *
      * @param variablesValues a map containing variable names and their corresponding values
@@ -116,19 +108,19 @@ public abstract class Expression {
     public abstract double eval(HashMap<String, Double> variablesValues);
 
     /**
+     * Computes the derivative of the expression with respect to the specified variable.
+     *
+     * @param variable the variable to differentiate by
+     * @return the derivative of the expression
+     */
+    public abstract Expression derivative(String variable);
+
+    /**
      * Simplifies the expression.
      *
      * @return a simplified version of the expression
      */
     public abstract Expression simplify();
-
-    /**
-     * Checks if two expressions are equal.
-     *
-     * @param obj the object to compare with
-     * @return true if the expressions are equal, false otherwise
-     */
-    public abstract boolean isEquals(Object obj);
 
     /**
      * Simplifies the given expression.
@@ -140,11 +132,19 @@ public abstract class Expression {
         return expression.simplify();
     }
 
+    /**
+     * Checks if two expressions are equal.
+     *
+     * @param obj the object to compare with
+     * @return true if the expressions are equal, false otherwise
+     */
+    public abstract boolean isEquals(Object obj);
+
     @Override
     public abstract String toString();
 
     /**
-     * Retrieves the last part of the expression string based on the specified criteria for multipliers.
+     * Retrieves the last part of the expression string.
      *
      * @param expressionString the expression string to analyze
      * @param isMultiplier true if looking for multipliers, false otherwise
@@ -162,6 +162,7 @@ public abstract class Expression {
                         return expressionString.substring(i + 1);
                     }
                 }
+                default -> {}
             }
         }
         return expressionString;

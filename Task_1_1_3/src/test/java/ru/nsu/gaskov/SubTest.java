@@ -81,7 +81,9 @@ class SubTest {
     @Test
     public void testSimplify() {
         assertAll(
-            () -> assertTrue(new Number(-2).isEquals(new Sub(new Number(2), new Number(4)).simplify())),
+            () -> assertTrue(
+                new Number(-2).isEquals(new Sub(new Number(2), new Number(4)).simplify())
+            ),
             () -> assertTrue(
                 new Variable("x").isEquals(
                     new Sub(new Variable("x"), new Number(0)).simplify()

@@ -21,7 +21,8 @@ public class Mul extends Expression {
         expressionString = Expression.removeOuterBrackets(expressionString);
         String rightMultiplier = getLastMultiplier(expressionString);
         return rightMultiplier.length() < expressionString.length()
-            && expressionString.charAt(expressionString.length() - rightMultiplier.length() - 1) == '*';
+            && expressionString
+            .charAt(expressionString.length() - rightMultiplier.length() - 1) == '*';
     }
 
     private final Expression leftMultiplier;
@@ -75,8 +76,7 @@ public class Mul extends Expression {
     }
 
     /**
-     * Computes the derivative of the multiplication expression with respect to the specified variable
-     * using the product rule.
+     * Computes the derivative of the multiplication expression
      *
      * @param variable the variable to differentiate by
      * @return a new Add instance representing the derivative of the multiplication
@@ -112,13 +112,13 @@ public class Mul extends Expression {
         Expression leftMultiplierSimplified = leftMultiplier.simplify();
         Expression rightMultiplierSimplified = rightMultiplier.simplify();
 
-        if (leftMultiplierSimplified instanceof Number &&
-            rightMultiplierSimplified instanceof Number) {
-            return new Number(leftMultiplierSimplified.eval(new HashMap<>()) *
-                rightMultiplierSimplified.eval(new HashMap<>()));
+        if (leftMultiplierSimplified instanceof Number
+            && rightMultiplierSimplified instanceof Number) {
+            return new Number(leftMultiplierSimplified.eval(new HashMap<>())
+                * rightMultiplierSimplified.eval(new HashMap<>()));
         }
-        if (leftMultiplierSimplified.isEquals(new Number(0)) ||
-            rightMultiplierSimplified.isEquals(new Number(0))) {
+        if (leftMultiplierSimplified.isEquals(new Number(0))
+            || rightMultiplierSimplified.isEquals(new Number(0))) {
             return new Number(0);
         }
         if (leftMultiplierSimplified.isEquals(new Number(1))) {
@@ -134,7 +134,7 @@ public class Mul extends Expression {
     /**
      * Returns the string representation of the multiplication expression.
      *
-     * @return a string representing the multiplication in the format "(leftMultiplier * rightMultiplier)"
+     * @return a string representing the multiplication
      */
     @Override
     public String toString() {

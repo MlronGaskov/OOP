@@ -88,7 +88,9 @@ class DivTest {
     @Test
     public void testSimplify() {
         assertAll(
-            () -> assertTrue(new Number(6).isEquals(new Div(new Number(12), new Number(2)).simplify())),
+            () -> assertTrue(
+                new Number(6).isEquals(new Div(new Number(12), new Number(2)).simplify())
+            ),
             () -> assertTrue(
                 new Variable("x").isEquals(
                     new Div(new Variable("x"), new Number(1)).simplify()

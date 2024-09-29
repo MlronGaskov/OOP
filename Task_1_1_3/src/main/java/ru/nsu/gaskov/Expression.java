@@ -162,7 +162,9 @@ public abstract class Expression {
                         return expressionString.substring(i + 1);
                     }
                 }
-                default -> {}
+                default -> {
+                    continue;
+                }
             }
         }
         return expressionString;

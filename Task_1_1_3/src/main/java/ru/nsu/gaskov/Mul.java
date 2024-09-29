@@ -76,7 +76,7 @@ public class Mul extends Expression {
     }
 
     /**
-     * Computes the derivative of the multiplication expression
+     * Computes the derivative of the multiplication expression.
      *
      * @param variable the variable to differentiate by
      * @return a new Add instance representing the derivative of the multiplication

@@ -84,8 +84,13 @@ loadScripts(document, 'script');</script>
 <h1 title="Interface OrientedEdge" class="title">Interface OrientedEdge&lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>V</code> - the type of vertex that this edge connects, extending the Vertex interface.</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">OrientedEdge&lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>&gt;</span></div>
+<div class="block">Represents a directed edge in a graph.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -102,16 +107,24 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Compares this edge to the specified object for equality.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="OrientedEdge.html" title="type parameter in OrientedEdge">V</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFromVertex()" class="member-name-link">getFromVertex</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the vertex where this edge starts.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="OrientedEdge.html" title="type parameter in OrientedEdge">V</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getToVertex()" class="member-name-link">getToVertex</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the vertex where this edge ends.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns a string representation of the edge in a readable format.</div>
+</div>
 </div>
 </div>
 </div>
@@ -130,21 +143,34 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getFromVertex()">
 <h3>getFromVertex</h3>
 <div class="member-signature"><span class="return-type"><a href="OrientedEdge.html" title="type parameter in OrientedEdge">V</a></span>&nbsp;<span class="element-name">getFromVertex</span>()</div>
+<div class="block">Returns the vertex where this edge starts.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the source vertex of the edge.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getToVertex()">
 <h3>getToVertex</h3>
 <div class="member-signature"><span class="return-type"><a href="OrientedEdge.html" title="type parameter in OrientedEdge">V</a></span>&nbsp;<span class="element-name">getToVertex</span>()</div>
+<div class="block">Returns the vertex where this edge ends.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the target vertex of the edge.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Returns a string representation of the edge in a readable format.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>a string describing the edge.</dd>
 </dl>
 </section>
 </li>
@@ -152,9 +178,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</span></div>
+<div class="block">Compares this edge to the specified object for equality.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>object</code> - the object to compare this edge against.</dd>
+<dt>Returns:</dt>
+<dd>true if the specified object is equal to this edge; false otherwise.</dd>
 </dl>
 </section>
 </li>

@@ -90,6 +90,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">TopologicalSort</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Provides utility methods for topological sorting of directed graphs.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -119,8 +120,10 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr>
 E extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;V&gt;&gt;<br><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;V&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sortVertices(ru.nsu.gaskov.graph.Graph)" class="member-name-link">sortVertices</a><wbr>(<a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;V,<wbr>E&gt;&nbsp;graph)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sort(ru.nsu.gaskov.graph.Graph)" class="member-name-link">sort</a><wbr>(<a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;V,<wbr>E&gt;&nbsp;graph)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Performs a topological sort on the specified directed graph.</div>
+</div>
 </div>
 </div>
 </div>
@@ -153,11 +156,21 @@ E extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">O
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="sortVertices(ru.nsu.gaskov.graph.Graph)">
-<h3>sortVertices</h3>
+<section class="detail" id="sort(ru.nsu.gaskov.graph.Graph)">
+<h3>sort</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr>
 E extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;V&gt;&gt;</span>
-<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;V&gt;</span>&nbsp;<span class="element-name">sortVertices</span><wbr><span class="parameters">(<a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;V,<wbr>E&gt;&nbsp;graph)</span></div>
+<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;V&gt;</span>&nbsp;<span class="element-name">sort</span><wbr><span class="parameters">(<a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;V,<wbr>E&gt;&nbsp;graph)</span></div>
+<div class="block">Performs a topological sort on the specified directed graph.</div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>V</code> - the type of vertices in the graph, extending the Vertex interface.</dd>
+<dd><code>E</code> - the type of edges in the graph, extending the OrientedEdge interface.</dd>
+<dt>Parameters:</dt>
+<dd><code>graph</code> - the directed graph to be sorted.</dd>
+<dt>Returns:</dt>
+<dd>a list containing the vertices in topologically sorted order.</dd>
+</dl>
 </section>
 </li>
 </ul>

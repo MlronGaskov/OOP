@@ -88,6 +88,11 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>V</code> - the type of vertices in the graph, extending the Vertex interface.</dd>
+<dd><code>E</code> - the type of edges in the graph, extending the OrientedEdge interface.</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;V,<wbr>E&gt;</code></dd>
 </dl>
@@ -95,6 +100,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">AdjacencyListGraph&lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr>E extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;V&gt;&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;V,<wbr>E&gt;</span></div>
+<div class="block">Represents a directed graph using an adjacency list.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,7 +113,9 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">AdjacencyListGraph</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Initializes a new empty graph.</div>
+</div>
 </div>
 </section>
 </li>
@@ -124,34 +132,54 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdge(E)" class="member-name-link">addEdge</a><wbr>(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a>&nbsp;edge)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds an edge to the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addVertex(V)" class="member-name-link">addVertex</a><wbr>(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a vertex to the graph.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a><wbr>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copy()" class="member-name-link">copy</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Creates and returns a copy of the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Compares this graph to another object for equality.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllVertices()" class="member-name-link">getAllVertices</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves all vertices in the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNeighbours(V)" class="member-name-link">getNeighbours</a><wbr>(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the neighbors of a specified vertex.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a hash code for this graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEdge(E)" class="member-name-link">removeEdge</a><wbr>(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a>&nbsp;edge)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes an edge from the graph.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeVertex(V)" class="member-name-link">removeVertex</a><wbr>(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&nbsp;vertex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes a vertex from the graph and its associated edges.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a string representation of the graph.</div>
+</div>
 </div>
 </div>
 </div>
@@ -176,6 +204,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="&lt;init&gt;()">
 <h3>AdjacencyListGraph</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">AdjacencyListGraph</span>()</div>
+<div class="block">Initializes a new empty graph.</div>
 </section>
 </li>
 </ul>
@@ -190,9 +219,14 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="addVertex(V)">
 <h3 id="addVertex(ru.nsu.gaskov.graph.Vertex)">addVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&nbsp;vertex)</span></div>
+<div class="block">Adds a vertex to the graph.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Graph.html#addVertex(V)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a> extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a> extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex to be added.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the vertex already exists.</dd>
 </dl>
 </section>
 </li>
@@ -200,9 +234,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="removeVertex(V)">
 <h3 id="removeVertex(ru.nsu.gaskov.graph.Vertex)">removeVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeVertex</span><wbr><span class="parameters">(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&nbsp;vertex)</span></div>
+<div class="block">Removes a vertex from the graph and its associated edges.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Graph.html#removeVertex(V)">removeVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a> extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a> extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex to be removed.</dd>
 </dl>
 </section>
 </li>
@@ -210,9 +247,14 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="addEdge(E)">
 <h3 id="addEdge(ru.nsu.gaskov.graph.OrientedEdge)">addEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a>&nbsp;edge)</span></div>
+<div class="block">Adds an edge to the graph.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Graph.html#addEdge(E)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a> extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a> extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>edge</code> - the edge to be added.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the edge already exists.</dd>
 </dl>
 </section>
 </li>
@@ -220,9 +262,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="removeEdge(E)">
 <h3 id="removeEdge(ru.nsu.gaskov.graph.OrientedEdge)">removeEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeEdge</span><wbr><span class="parameters">(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a>&nbsp;edge)</span></div>
+<div class="block">Removes an edge from the graph.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Graph.html#removeEdge(E)">removeEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a> extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a> extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>edge</code> - the edge to be removed.</dd>
 </dl>
 </section>
 </li>
@@ -230,9 +275,16 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="getNeighbours(V)">
 <h3 id="getNeighbours(ru.nsu.gaskov.graph.Vertex)">getNeighbours</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;</span>&nbsp;<span class="element-name">getNeighbours</span><wbr><span class="parameters">(<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&nbsp;vertex)</span></div>
+<div class="block">Retrieves the neighbors of a specified vertex.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Graph.html#getNeighbours(V)">getNeighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a> extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a> extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex whose neighbors are to be retrieved.</dd>
+<dt>Returns:</dt>
+<dd>a list of neighboring vertices.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the vertex does not exist.</dd>
 </dl>
 </section>
 </li>
@@ -240,9 +292,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="getAllVertices()">
 <h3>getAllVertices</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;</span>&nbsp;<span class="element-name">getAllVertices</span>()</div>
+<div class="block">Retrieves all vertices in the graph.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Graph.html#getAllVertices()">getAllVertices</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a> extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a> extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;&gt;</code></dd>
+<dt>Returns:</dt>
+<dd>a list of all vertices in the graph.</dd>
 </dl>
 </section>
 </li>
@@ -250,9 +305,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="copy()">
 <h3>copy</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a>&gt;</span>&nbsp;<span class="element-name">copy</span>()</div>
+<div class="block">Creates and returns a copy of the graph.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Graph.html#copy()">copy</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a> extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a> extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;&gt;</code></dd>
+<dt>Returns:</dt>
+<dd>a copy of the current graph instance.</dd>
 </dl>
 </section>
 </li>
@@ -260,11 +318,14 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Returns a string representation of the graph.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Graph.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a> extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a> extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>a string representing the vertices and adjacency list.</dd>
 </dl>
 </section>
 </li>
@@ -272,11 +333,16 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</span></div>
+<div class="block">Compares this graph to another object for equality.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Graph.html#equals(java.lang.Object)">equals</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a> extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr><a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">E</a> extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;<a href="AdjacencyListGraph.html" title="type parameter in AdjacencyListGraph">V</a>&gt;&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>object</code> - the object to compare this graph against.</dd>
+<dt>Returns:</dt>
+<dd>true if the specified object is equal to this graph; false otherwise.</dd>
 </dl>
 </section>
 </li>
@@ -284,9 +350,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</
 <section class="detail" id="hashCode()">
 <h3>hashCode</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
+<div class="block">Returns a hash code for this graph.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>a hash code value for this graph.</dd>
 </dl>
 </section>
 </li>

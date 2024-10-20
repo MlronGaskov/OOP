@@ -84,8 +84,14 @@ loadScripts(document, 'script');</script>
 <h1 title="Interface EdgeReader" class="title">Interface EdgeReader&lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr>E extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;V&gt;&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>V</code> - the type of vertex the edge is associated with, extending the Vertex interface.</dd>
+<dd><code>E</code> - the type of edge that this reader will process, extending the OrientedEdge interface.</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">EdgeReader&lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr>E extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;V&gt;&gt;</span></div>
+<div class="block">An interface for reading edge data from an input source.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -102,7 +108,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="EdgeReader.html" title="type parameter in EdgeReader">E</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readFromScanner(java.util.Scanner)" class="member-name-link">readFromScanner</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link">Scanner</a>&nbsp;scanner)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Reads an edge from the provided Scanner.</div>
+</div>
 </div>
 </div>
 </div>
@@ -121,6 +129,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="readFromScanner(java.util.Scanner)">
 <h3>readFromScanner</h3>
 <div class="member-signature"><span class="return-type"><a href="EdgeReader.html" title="type parameter in EdgeReader">E</a></span>&nbsp;<span class="element-name">readFromScanner</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link">Scanner</a>&nbsp;scanner)</span></div>
+<div class="block">Reads an edge from the provided Scanner.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>scanner</code> - the Scanner object used to read input.</dd>
+<dt>Returns:</dt>
+<dd>an instance of the edge type E created from the input.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the input format is invalid.</dd>
+</dl>
 </section>
 </li>
 </ul>

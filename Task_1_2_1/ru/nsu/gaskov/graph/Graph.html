@@ -85,11 +85,17 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>V</code> - the type of vertices in the graph, extending the Vertex interface.</dd>
+<dd><code>E</code> - the type of edges in the graph, extending the OrientedEdge interface.</dd>
+</dl>
+<dl class="notes">
 <dt>All Known Implementing Classes:</dt>
 <dd><code><a href="AdjacencyListGraph.html" title="class in ru.nsu.gaskov.graph">AdjacencyListGraph</a></code>, <code><a href="AdjacencyMatrixGraph.html" title="class in ru.nsu.gaskov.graph">AdjacencyMatrixGraph</a></code>, <code><a href="IncidenceMatrixGraph.html" title="class in ru.nsu.gaskov.graph">IncidenceMatrixGraph</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Graph&lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>,<wbr>E extends <a href="OrientedEdge.html" title="interface in ru.nsu.gaskov.graph">OrientedEdge</a>&lt;V&gt;&gt;</span></div>
+<div class="block">An interface representing a graph structure.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -106,33 +112,49 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addEdge(E)" class="member-name-link">addEdge</a><wbr>(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;edge)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Adds an edge to the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addVertex(V)" class="member-name-link">addVertex</a><wbr>(<a href="Graph.html" title="type parameter in Graph">V</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Adds a vertex to the graph.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a><wbr>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#copy()" class="member-name-link">copy</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Creates and returns a copy of the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getAllVertices()" class="member-name-link">getAllVertices</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Retrieves all vertices in the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getNeighbours(V)" class="member-name-link">getNeighbours</a><wbr>(<a href="Graph.html" title="type parameter in Graph">V</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Retrieves the neighbors of a specified vertex.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#readFromFile(java.lang.String,ru.nsu.gaskov.graph.VertexReader,ru.nsu.gaskov.graph.EdgeReader)" class="member-name-link">readFromFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
  <a href="VertexReader.html" title="interface in ru.nsu.gaskov.graph">VertexReader</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;vertexReader,
  <a href="EdgeReader.html" title="interface in ru.nsu.gaskov.graph">EdgeReader</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;&nbsp;edgeReader)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Reads graph data from a file and populates the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeEdge(E)" class="member-name-link">removeEdge</a><wbr>(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;edge)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Removes an edge from the graph.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeVertex(V)" class="member-name-link">removeVertex</a><wbr>(<a href="Graph.html" title="type parameter in Graph">V</a>&nbsp;vertex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Removes a vertex from the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
@@ -154,36 +176,70 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="addVertex(V)">
 <h3 id="addVertex(ru.nsu.gaskov.graph.Vertex)">addVertex</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">V</a>&nbsp;vertex)</span></div>
+<div class="block">Adds a vertex to the graph.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex to be added.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="removeVertex(V)">
 <h3 id="removeVertex(ru.nsu.gaskov.graph.Vertex)">removeVertex</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeVertex</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">V</a>&nbsp;vertex)</span></div>
+<div class="block">Removes a vertex from the graph.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex to be removed.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="addEdge(E)">
 <h3 id="addEdge(ru.nsu.gaskov.graph.OrientedEdge)">addEdge</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;edge)</span></div>
+<div class="block">Adds an edge to the graph.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>edge</code> - the edge to be added.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="removeEdge(E)">
 <h3 id="removeEdge(ru.nsu.gaskov.graph.OrientedEdge)">removeEdge</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeEdge</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">E</a>&nbsp;edge)</span></div>
+<div class="block">Removes an edge from the graph.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>edge</code> - the edge to be removed.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getNeighbours(V)">
 <h3 id="getNeighbours(ru.nsu.gaskov.graph.Vertex)">getNeighbours</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;</span>&nbsp;<span class="element-name">getNeighbours</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">V</a>&nbsp;vertex)</span></div>
+<div class="block">Retrieves the neighbors of a specified vertex.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex whose neighbors are to be retrieved.</dd>
+<dt>Returns:</dt>
+<dd>a list of neighboring vertices.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getAllVertices()">
 <h3>getAllVertices</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;</span>&nbsp;<span class="element-name">getAllVertices</span>()</div>
+<div class="block">Retrieves all vertices in the graph.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>an unmodifiable list of all vertices in the graph.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link">UnsupportedOperationException</a></code> - if the returned list is modified.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -193,9 +249,18 @@ loadScripts(document, 'script');</script>
  <a href="VertexReader.html" title="interface in ru.nsu.gaskov.graph">VertexReader</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;vertexReader,
  <a href="EdgeReader.html" title="interface in ru.nsu.gaskov.graph">EdgeReader</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;&nbsp;edgeReader)</span>
                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a></span></div>
+<div class="block">Reads graph data from a file and populates the graph.
+ The file format should start with the number of vertices,
+ followed by vertex data, then the number of edges,
+ and finally edge data.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filename</code> - the path to the input file containing graph data.</dd>
+<dd><code>vertexReader</code> - the reader used to create vertex instances.</dd>
+<dd><code>edgeReader</code> - the reader used to create edge instances.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a></code> - if the specified file does not exist.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the input format is invalid.</dd>
 </dl>
 </section>
 </li>
@@ -203,6 +268,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="copy()">
 <h3>copy</h3>
 <div class="member-signature"><span class="return-type"><a href="Graph.html" title="interface in ru.nsu.gaskov.graph">Graph</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;</span>&nbsp;<span class="element-name">copy</span>()</div>
+<div class="block">Creates and returns a copy of the graph.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a copy of the current graph instance.</dd>
+</dl>
 </section>
 </li>
 <li>

@@ -84,8 +84,13 @@ loadScripts(document, 'script');</script>
 <h1 title="Interface VertexReader" class="title">Interface VertexReader&lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>V</code> - the type of vertex this reader will process, which extends the Vertex interface.</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">VertexReader&lt;V extends <a href="Vertex.html" title="interface in ru.nsu.gaskov.graph">Vertex</a>&gt;</span></div>
+<div class="block">An interface for reading vertex data from an input source.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -102,7 +107,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="VertexReader.html" title="type parameter in VertexReader">V</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readFromScanner(java.util.Scanner)" class="member-name-link">readFromScanner</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link">Scanner</a>&nbsp;scanner)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Reads a vertex from the provided Scanner.</div>
+</div>
 </div>
 </div>
 </div>
@@ -121,6 +128,13 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="readFromScanner(java.util.Scanner)">
 <h3>readFromScanner</h3>
 <div class="member-signature"><span class="return-type"><a href="VertexReader.html" title="type parameter in VertexReader">V</a></span>&nbsp;<span class="element-name">readFromScanner</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link">Scanner</a>&nbsp;scanner)</span></div>
+<div class="block">Reads a vertex from the provided Scanner.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>scanner</code> - the Scanner object used to read input.</dd>
+<dt>Returns:</dt>
+<dd>an instance of the vertex type V created from the input.</dd>
+</dl>
 </section>
 </li>
 </ul>

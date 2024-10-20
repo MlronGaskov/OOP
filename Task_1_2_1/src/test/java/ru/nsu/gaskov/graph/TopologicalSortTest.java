@@ -1,6 +1,5 @@
 package ru.nsu.gaskov.graph;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -8,11 +7,14 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+/**
+ * Unit tests for the TopologicalSort class.
+ * This class validates topological sorting functionality using different graph implementations.
+ */
 class TopologicalSortTest {
 
     static Stream<Graph<SimpleVertex, SimpleEdge>> graphProvider() {

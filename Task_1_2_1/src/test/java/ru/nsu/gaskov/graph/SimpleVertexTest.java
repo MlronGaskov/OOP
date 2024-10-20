@@ -2,8 +2,13 @@ package ru.nsu.gaskov.graph;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+/**
+ * Unit tests for the SimpleVertex class to validate its behavior.
+ */
 class SimpleVertexTest {
     @Test
     public void testEquals() {

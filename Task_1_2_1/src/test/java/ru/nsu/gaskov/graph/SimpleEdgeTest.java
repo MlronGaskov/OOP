@@ -2,8 +2,15 @@ package ru.nsu.gaskov.graph;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+/**
+ * Unit tests for the SimpleEdge class to validate its behavior.
+ * This class tests the equality, hash code, and string representation
+ * of SimpleEdge instances.
+ */
 class SimpleEdgeTest {
     @Test
     public void testEquals() {

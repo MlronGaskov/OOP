@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 /**
  * A class for reading vertices from a given input using a Scanner.
- *
- * This class implements the VertexReader interface specifically for
- * creating SimpleVertex instances based on integer input.
  */
 public class SimpleVertexReader implements VertexReader<SimpleVertex> {
 

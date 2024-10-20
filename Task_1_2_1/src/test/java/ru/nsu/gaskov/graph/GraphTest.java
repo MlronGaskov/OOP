@@ -1,7 +1,10 @@
 package ru.nsu.gaskov.graph;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,11 +13,8 @@ import java.io.IOException;
 import java.util.InvalidPropertiesFormatException;
 import java.util.List;
 import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 /**
  * GraphTest class is responsible for testing different implementations of Graph.
@@ -93,7 +93,11 @@ class GraphTest {
         writer.newLine();
         writer.close();
 
-        graph.readFromFile(inputFile.getAbsolutePath(), new SimpleVertexReader(), new SimpleEdgeReader());
+        graph.readFromFile(
+            inputFile.getAbsolutePath(),
+            new SimpleVertexReader(),
+            new SimpleEdgeReader()
+        );
 
         Graph<SimpleVertex, SimpleEdge> expectedGraph = switch (graph) {
             case AdjacencyListGraph<SimpleVertex, SimpleEdge> adjacencyListGraph ->

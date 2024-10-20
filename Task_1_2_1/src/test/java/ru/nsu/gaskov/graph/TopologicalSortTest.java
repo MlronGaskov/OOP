@@ -1,15 +1,14 @@
 package ru.nsu.gaskov.graph;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 /**
  * Unit tests for the TopologicalSort class.
@@ -26,7 +25,7 @@ class TopologicalSortTest {
 
     @ParameterizedTest
     @MethodSource("graphProvider")
-    public void SortTest(Graph<SimpleVertex, SimpleEdge> graph) throws IOException {
+    public void sortTest(Graph<SimpleVertex, SimpleEdge> graph) throws IOException {
         File inputFile = File.createTempFile("inputFile", ".txt");
         inputFile.deleteOnExit();
 
@@ -40,7 +39,11 @@ class TopologicalSortTest {
         writer.write("1 4 2 4 2 5 3 5 4 6 4 7 4 8 5 7 3 8");
         writer.newLine();
         writer.close();
-        graph.readFromFile(inputFile.getAbsolutePath(), new SimpleVertexReader(), new SimpleEdgeReader());
+        graph.readFromFile(
+            inputFile.getAbsolutePath(),
+            new SimpleVertexReader(),
+            new SimpleEdgeReader()
+        );
         assertArrayEquals(
             new String[]{"3", "2", "1", "4", "5", "7", "6", "8"},
             TopologicalSort

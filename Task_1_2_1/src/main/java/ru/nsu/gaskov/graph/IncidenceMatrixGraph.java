@@ -1,14 +1,12 @@
 package ru.nsu.gaskov.graph;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.*;
 
 public class IncidenceMatrixGraph <V extends Vertex, E extends OrientedEdge<V>> implements Graph<V, E> {
     private int verticesCount;
-    private List<V> vertices;
-    private List<E> edges;
-    private List<List<Boolean>> incidenceMatrix;
+    private final List<V> vertices;
+    private final List<E> edges;
+    private final List<List<Boolean>> incidenceMatrix;
 
     public IncidenceMatrixGraph() {
         verticesCount = 0;
@@ -99,7 +97,7 @@ public class IncidenceMatrixGraph <V extends Vertex, E extends OrientedEdge<V>> 
     }
 
     @Override
-    public Collection<V> getNeighbours(V vertex) {
+    public List<V> getNeighbours(V vertex) {
         if (vertex == null) {
             return new ArrayList<>();
         }
@@ -117,41 +115,8 @@ public class IncidenceMatrixGraph <V extends Vertex, E extends OrientedEdge<V>> 
     }
 
     @Override
-    public Collection<V> getAllVertices() {
+    public List<V> getAllVertices() {
         return vertices;
-    }
-
-    @Override
-    public void readFromFile(
-        String filename,
-        VertexReader<V> vertexReader,
-        EdgeReader<V, E> edgeReader
-    ) throws FileNotFoundException {
-
-        verticesCount = 0;
-        vertices = new ArrayList<>();
-        incidenceMatrix = new ArrayList<>();
-        edges = new ArrayList<>();
-
-        Scanner scanner = new Scanner(new File(filename));
-        if (scanner.hasNextInt()) {
-            int numVertices = scanner.nextInt();
-            for (int i = 0; i < numVertices; i++) {
-                V vertex = vertexReader.readFromScanner(scanner);
-                addVertex(vertex);
-            }
-        } else {
-            throw new IllegalArgumentException("Invalid input format.");
-        }
-        if (scanner.hasNextInt()) {
-            int numEdges = scanner.nextInt();
-            for (int i = 0; i < numEdges; i++) {
-                E edge = edgeReader.readFromScanner(scanner);
-                addEdge(edge);
-            }
-        } else {
-            throw new IllegalArgumentException("Invalid input format.");
-        }
     }
 
     @Override

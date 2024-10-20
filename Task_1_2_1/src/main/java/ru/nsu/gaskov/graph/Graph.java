@@ -1,7 +1,9 @@
 package ru.nsu.gaskov.graph;
 
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Collection;
+import java.util.List;
+import java.util.Scanner;
 
 public interface Graph<V extends Vertex, E extends OrientedEdge<V>> {
     void addVertex(V vertex);
@@ -10,14 +12,35 @@ public interface Graph<V extends Vertex, E extends OrientedEdge<V>> {
     void addEdge(E edge);
     void removeEdge(E edge);
 
-    Collection<V> getNeighbours(V vertex);
-    Collection<V> getAllVertices();
+    List<V> getNeighbours(V vertex);
+    List<V> getAllVertices();
 
-    void readFromFile(
+    default void readFromFile(
         String filename,
         VertexReader<V> vertexReader,
         EdgeReader<V, E> edgeReader
-    ) throws FileNotFoundException;
+    ) throws FileNotFoundException {
+        try (Scanner scanner = new Scanner(new File(filename))) {
+            if (scanner.hasNextInt()) {
+                int numVertices = scanner.nextInt();
+                for (int i = 0; i < numVertices; i++) {
+                    V vertex = vertexReader.readFromScanner(scanner);
+                    addVertex(vertex);
+                }
+            } else {
+                throw new IllegalArgumentException("Invalid input format.");
+            }
+            if (scanner.hasNextInt()) {
+                int numEdges = scanner.nextInt();
+                for (int i = 0; i < numEdges; i++) {
+                    E edge = edgeReader.readFromScanner(scanner);
+                    addEdge(edge);
+                }
+            } else {
+                throw new IllegalArgumentException("Invalid input format.");
+            }
+        }
+    }
 
     Graph<V, E> copy();
 

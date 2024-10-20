@@ -2,7 +2,7 @@ package ru.nsu.gaskov.graph;
 
 import java.util.Scanner;
 
-public class SimpleVertexReader extends VertexReader<SimpleVertex> {
+public class SimpleVertexReader implements VertexReader<SimpleVertex> {
 
     @Override
     public SimpleVertex readFromScanner(Scanner scanner) {

@@ -2,7 +2,7 @@ package ru.nsu.gaskov.graph;
 
 import java.util.Scanner;
 
-public class SimpleEdgeReader extends EdgeReader<SimpleVertex, SimpleEdge> {
+public class SimpleEdgeReader implements EdgeReader<SimpleVertex, SimpleEdge> {
     @Override
     public SimpleEdge readFromScanner(Scanner scanner) {
         SimpleVertex v1, v2;

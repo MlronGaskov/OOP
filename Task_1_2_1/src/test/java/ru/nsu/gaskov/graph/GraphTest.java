@@ -1,18 +1,30 @@
 package ru.nsu.gaskov.graph;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.InvalidPropertiesFormatException;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AdjacencyMatrixGraphTest {
-    @Test void testAdditionAndRemoving() {
-        AdjacencyMatrixGraph<SimpleVertex, SimpleEdge> graph = new AdjacencyMatrixGraph<>();
+class GraphTest {
+    static Stream<Graph<SimpleVertex, SimpleEdge>> graphProvider() {
+        AdjacencyMatrixGraph<SimpleVertex, SimpleEdge> graph1 = new AdjacencyMatrixGraph<>();
+        AdjacencyListGraph<SimpleVertex, SimpleEdge> graph2 = new AdjacencyListGraph<>();
+        IncidenceMatrixGraph<SimpleVertex, SimpleEdge> graph3 = new IncidenceMatrixGraph<>();
+        return Stream.of(graph1, graph2, graph3);
+    }
+
+    @ParameterizedTest
+    @MethodSource("graphProvider")
+    void testAdditionAndRemoving(Graph<SimpleVertex, SimpleEdge> graph) {
         graph.addVertex(new SimpleVertex(1));
         graph.addVertex(new SimpleVertex(2));
         graph.addVertex(new SimpleVertex(3));
@@ -42,33 +54,26 @@ class AdjacencyMatrixGraphTest {
         );
     }
 
-    @Test
-    public void testGraphEquals() {
-        AdjacencyMatrixGraph<SimpleVertex, SimpleEdge> graph = new AdjacencyMatrixGraph<>();
-        AdjacencyMatrixGraph<SimpleVertex, SimpleEdge> sameGraph = new AdjacencyMatrixGraph<>();
-        AdjacencyMatrixGraph<SimpleVertex, SimpleEdge> notSameGraph = new AdjacencyMatrixGraph<>();
+    @ParameterizedTest
+    @MethodSource("graphProvider")
+    public void testGraphEquals(Graph<SimpleVertex, SimpleEdge> graph) {
 
         graph.addEdge(new SimpleEdge(new SimpleVertex(1), new SimpleVertex(2)));
         graph.addEdge(new SimpleEdge(new SimpleVertex(2), new SimpleVertex(3)));
         graph.addEdge(new SimpleEdge(new SimpleVertex(1), new SimpleVertex(3)));
 
-        sameGraph.addEdge(new SimpleEdge(new SimpleVertex(2), new SimpleVertex(3)));
-        sameGraph.addEdge(new SimpleEdge(new SimpleVertex(1), new SimpleVertex(2)));
-        sameGraph.addEdge(new SimpleEdge(new SimpleVertex(1), new SimpleVertex(3)));
-
-        notSameGraph.addEdge(new SimpleEdge(new SimpleVertex(2), new SimpleVertex(3)));
-        notSameGraph.addEdge(new SimpleEdge(new SimpleVertex(2), new SimpleVertex(1)));
-        notSameGraph.addEdge(new SimpleEdge(new SimpleVertex(2), new SimpleVertex(2)));
+        Graph<SimpleVertex, SimpleEdge> notSameGraph = graph.copy();
+        notSameGraph.addEdge(new SimpleEdge(new SimpleVertex(6), new SimpleVertex(8)));
 
         assertAll(
-            () -> assertEquals(graph, sameGraph),
             () -> assertNotEquals(graph, notSameGraph),
             () -> assertEquals(graph, graph.copy())
         );
     }
 
-    @Test
-    public void testGraphRead() throws IOException {
+    @ParameterizedTest
+    @MethodSource("graphProvider")
+    public void testGraphRead(Graph<SimpleVertex, SimpleEdge> graph) throws IOException {
         File inputFile = File.createTempFile("inputFile", ".txt");
         inputFile.deleteOnExit();
 
@@ -83,10 +88,18 @@ class AdjacencyMatrixGraphTest {
         writer.newLine();
         writer.close();
 
-        AdjacencyMatrixGraph<SimpleVertex, SimpleEdge> graph = new AdjacencyMatrixGraph<>();
         graph.readFromFile(inputFile.getAbsolutePath(), new SimpleVertexReader(), new SimpleEdgeReader());
 
-        AdjacencyMatrixGraph<SimpleVertex, SimpleEdge> expectedGraph = new AdjacencyMatrixGraph<>();
+        Graph<SimpleVertex, SimpleEdge> expectedGraph = switch (graph) {
+            case AdjacencyListGraph<SimpleVertex, SimpleEdge> adjacencyListGraph ->
+                new AdjacencyListGraph<>();
+            case AdjacencyMatrixGraph<SimpleVertex, SimpleEdge> adjacencyMatrixGraph ->
+                new AdjacencyMatrixGraph<>();
+            case IncidenceMatrixGraph<SimpleVertex, SimpleEdge> incidenceMatrixGraph ->
+                new IncidenceMatrixGraph<>();
+            default -> throw new InvalidPropertiesFormatException("");
+        };
+
         expectedGraph.addVertex(new SimpleVertex(1));
         expectedGraph.addVertex(new SimpleVertex(2));
         expectedGraph.addVertex(new SimpleVertex(3));

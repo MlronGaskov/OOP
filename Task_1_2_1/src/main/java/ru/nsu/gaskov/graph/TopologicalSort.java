@@ -15,14 +15,16 @@ public class TopologicalSort {
      * @param <V> the type of vertices in the graph, extending the Vertex interface.
      * @param <E> the type of edges in the graph, extending the OrientedEdge interface.
      * @return a list containing the vertices in topologically sorted order.
-     * @throws IllegalArgumentException if the graph contains cycles, as topological sorting is not possible.
      */
-    public static <V extends Vertex, E extends OrientedEdge<V>> List<V> sortVertices(Graph<V, E> graph) {
+    public static <V extends Vertex, E extends OrientedEdge<V>> List<V> sort(Graph<V, E> graph) {
         Graph<V, E> graphCopy = graph.copy();
         List<V> sortedVertices = new ArrayList<>();
 
         List<V> withoutNeighbours = new ArrayList<>(
-            graphCopy.getAllVertices().stream().filter(e -> graphCopy.getNeighbours(e).isEmpty()).toList()
+            graphCopy
+                .getAllVertices()
+                .stream()
+                .filter(e -> graphCopy.getNeighbours(e).isEmpty()).toList()
         );
         while (!withoutNeighbours.isEmpty() && !graphCopy.getAllVertices().isEmpty()) {
             for (V vertex : withoutNeighbours) {
@@ -30,7 +32,10 @@ public class TopologicalSort {
                 sortedVertices.add(vertex);
             }
             withoutNeighbours = new ArrayList<>(
-                graphCopy.getAllVertices().stream().filter(e -> graphCopy.getNeighbours(e).isEmpty()).toList()
+                graphCopy
+                    .getAllVertices()
+                    .stream()
+                    .filter(e -> graphCopy.getNeighbours(e).isEmpty()).toList()
             );
         }
         return sortedVertices.stream().toList();

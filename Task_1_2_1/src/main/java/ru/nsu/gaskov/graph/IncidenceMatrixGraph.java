@@ -11,13 +11,15 @@ import java.util.Objects;
  * @param <E> the type of edges in the graph, extending the OrientedEdge interface.
  */
 public class IncidenceMatrixGraph<V extends Vertex, E extends OrientedEdge<V>>
-    implements Graph<V, E>
-{
+    implements Graph<V, E> {
     private int verticesCount;
     private final List<V> vertices;
     private final List<E> edges;
     private final List<List<Boolean>> incidenceMatrix;
 
+    /**
+     * Initializes a new empty graph.
+     */
     public IncidenceMatrixGraph() {
         verticesCount = 0;
         vertices = new ArrayList<>();
@@ -67,7 +69,7 @@ public class IncidenceMatrixGraph<V extends Vertex, E extends OrientedEdge<V>>
             }
             incidenceMatrix.get(i).remove(vertexIndex);
         }
-        for (int edgeIdToRemove: edgesIdsToRemove) {
+        for (int edgeIdToRemove : edgesIdsToRemove) {
             removeEdge(edges.get(edgeIdToRemove));
         }
         vertices.remove(vertexIndex);
@@ -139,7 +141,8 @@ public class IncidenceMatrixGraph<V extends Vertex, E extends OrientedEdge<V>>
         }
         List<V> neighbours = new ArrayList<>();
         for (int i = 0; i < edges.size(); ++i) {
-            if (incidenceMatrix.get(i).get(vertexFromIndex) && edges.get(i).getFromVertex().equals(vertex)) {
+            if (incidenceMatrix.get(i).get(vertexFromIndex)
+                && edges.get(i).getFromVertex().equals(vertex)) {
                 neighbours.add(edges.get(i).getToVertex());
             }
         }

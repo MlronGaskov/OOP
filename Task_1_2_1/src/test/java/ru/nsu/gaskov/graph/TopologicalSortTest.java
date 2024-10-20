@@ -47,7 +47,7 @@ class TopologicalSortTest {
         assertArrayEquals(
             new String[]{"3", "2", "1", "4", "5", "7", "6", "8"},
             TopologicalSort
-                .sortVertices(graph)
+                .sort(graph)
                 .stream().map(SimpleVertex::toString).toArray()
         );
     }

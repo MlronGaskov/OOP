@@ -10,7 +10,8 @@ import java.util.Objects;
  * @param <V> the type of vertices in the graph, extending the Vertex interface.
  * @param <E> the type of edges in the graph, extending the OrientedEdge interface.
  */
-public class AdjacencyListGraph<V extends Vertex, E extends OrientedEdge<V>> implements Graph<V, E> {
+public class AdjacencyListGraph<V extends Vertex, E extends OrientedEdge<V>>
+    implements Graph<V, E> {
     private int verticesCount;
     private final List<V> vertices;
     private final List<List<E>> adjacencyList;
@@ -115,7 +116,8 @@ public class AdjacencyListGraph<V extends Vertex, E extends OrientedEdge<V>> imp
         }
         int vertexFromIndex = vertices.indexOf(edge.getFromVertex());
         for (int i = 0; i < adjacencyList.get(vertexFromIndex).size(); i++) {
-            if (adjacencyList.get(vertexFromIndex).get(i).getToVertex().equals(edge.getToVertex())) {
+            if (adjacencyList.get(vertexFromIndex).get(i).getToVertex()
+                .equals(edge.getToVertex())) {
                 adjacencyList.get(vertexFromIndex).remove(i);
                 break;
             }

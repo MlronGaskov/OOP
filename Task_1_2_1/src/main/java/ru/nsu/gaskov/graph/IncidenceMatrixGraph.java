@@ -69,7 +69,7 @@ public class IncidenceMatrixGraph<V extends Vertex, E extends OrientedEdge<V>>
             }
             incidenceMatrix.get(i).remove(vertexIndex);
         }
-        for (int edgeIdToRemove: edgesIdsToRemove.reversed()) {
+        for (int edgeIdToRemove : edgesIdsToRemove.reversed()) {
             removeEdge(edges.get(edgeIdToRemove));
         }
         vertices.remove(vertexIndex);

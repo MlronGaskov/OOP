@@ -27,7 +27,7 @@ public class TopologicalSort {
                 .toList()
         );
         while (!withoutNeighbours.isEmpty() && !graphCopy.getAllVertices().isEmpty()) {
-            for (V vertex: withoutNeighbours.reversed()) {
+            for (V vertex : withoutNeighbours.reversed()) {
                 graphCopy.removeVertex(vertex);
                 sortedVertices.add(vertex);
             }

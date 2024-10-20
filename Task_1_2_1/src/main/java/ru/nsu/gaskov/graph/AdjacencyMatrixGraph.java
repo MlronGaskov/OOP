@@ -10,7 +10,8 @@ import java.util.Objects;
  * @param <V> the type of vertices in the graph, extending the Vertex interface.
  * @param <E> the type of edges in the graph, extending the OrientedEdge interface.
  */
-public class AdjacencyMatrixGraph<V extends Vertex, E extends OrientedEdge<V>> implements Graph<V, E> {
+public class AdjacencyMatrixGraph<V extends Vertex, E extends OrientedEdge<V>>
+    implements Graph<V, E> {
     private int verticesCount;
     private final List<V> vertices;
     private final List<List<E>> adjacencyMatrix;

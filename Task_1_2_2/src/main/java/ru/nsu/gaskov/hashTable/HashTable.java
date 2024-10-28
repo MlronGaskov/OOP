@@ -1,9 +1,16 @@
 package ru.nsu.gaskov.hashTable;
 
-import java.util.ConcurrentModificationException;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Objects;
 import java.util.NoSuchElementException;
+import java.util.ConcurrentModificationException;
 
+/**
+ * A simple implementation of a hash table with open addressing and linear probing.
+ */
 public class HashTable<K, V> {
     private static final float LOAD_FACTOR = 0.75f;
     private final Entry<K, V> REMOVED = new Entry<>(null, null);
@@ -12,15 +19,24 @@ public class HashTable<K, V> {
     private int modCount = 0;
     private Entry<K, V>[] table;
 
+    /**
+     * Constructs an empty hash table with the specified initial capacity.
+     */
     @SuppressWarnings("unchecked")
     public HashTable(int initCapacity) {
         table = new Entry[initCapacity];
     }
 
+    /**
+     * Computes the hash value for the specified key.
+     */
     private int hash(K key) {
         return (key == null) ? 0 : Math.abs(key.hashCode() % table.length);
     }
 
+    /**
+     * Resizes the hash table if the load factor exceeds the threshold.
+     */
     @SuppressWarnings("unchecked")
     private void resize() {
         if (size < LOAD_FACTOR * table.length) {
@@ -36,6 +52,11 @@ public class HashTable<K, V> {
         }
     }
 
+    /**
+     * Associates the specified value with the specified key in this hash table.
+     * If the hash table already contains a mapping for the key, the old value
+     * is replaced by the specified value.
+     */
     public void put(K key, V value) {
         int index = hash(key);
         while (table[index] != null && table[index] != REMOVED) {
@@ -52,6 +73,10 @@ public class HashTable<K, V> {
         resize();
     }
 
+    /**
+     * Returns the value to which the specified key is mapped, or null if this
+     * hash table contains no mapping for the key.
+     */
     public V get(K key) {
         int index = hash(key);
         while (table[index] != null) {
@@ -63,6 +88,9 @@ public class HashTable<K, V> {
         return null;
     }
 
+    /**
+     * Removes the mapping for the specified key from this hash table if present.
+     */
     public boolean remove(K key) {
         int index = hash(key);
         while (table[index] != null) {
@@ -77,19 +105,39 @@ public class HashTable<K, V> {
         return false;
     }
 
+    /**
+     * Updates the value for the specified key. If the key does not exist, it
+     * adds the key-value pair to the hash table.
+     */
     public void update(K key, V value) {
         put(key, value);
     }
 
+    /**
+     * Returns true if this hash table contains a mapping for the specified key.
+     */
     public boolean containsKey(K key) {
         return get(key) != null;
     }
 
+    /**
+     * Returns the number of key-value pairs in this hash table.
+     * Removed key-value pairs can be included.
+     */
     public int size() {
         return size;
     }
 
-    public boolean equals(HashTable<K, V> other) {
+    @Override
+    @SuppressWarnings("unchecked")
+    public boolean equals(Object object) {
+        if (object == this) {
+            return true;
+        }
+        if (object.getClass() != getClass()) {
+            return false;
+        }
+        HashTable<K, V> other = (HashTable<K, V>) object;
         if (this.size != other.size) {
             return false;
         }
@@ -102,6 +150,18 @@ public class HashTable<K, V> {
             }
         }
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        List<Entry<K, V>> sortedEntries = new ArrayList<>();
+        for (int i = 0; i < size; ++i) {
+            if (table[i] != null && table[i] != REMOVED) {
+                sortedEntries.add(table[i]);
+            }
+        }
+        sortedEntries.sort(Comparator.comparing(a -> a.getKey().toString()));
+        return Objects.hash(size, sortedEntries);
     }
 
     @Override
@@ -119,6 +179,9 @@ public class HashTable<K, V> {
         return sb.toString();
     }
 
+    /**
+     * Returns an iterator over the entries in this hash table.
+     */
     public Iterator<Entry<K, V>> iterator() {
         return new Iterator<>() {
             private int index = 0;

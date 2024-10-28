@@ -1,14 +1,22 @@
 package ru.nsu.gaskov.hashTable;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Tests.
+ */
 class HashTableTest {
     private HashTable<String, Integer> hashTable;
 
@@ -115,9 +123,11 @@ class HashTableTest {
         otherTable.put("one", 1);
         otherTable.put("two", 2);
 
-        assertTrue(hashTable.equals(otherTable));
+        assertEquals(hashTable, otherTable);
+        assertEquals(hashTable.hashCode(), otherTable.hashCode());
 
         otherTable.put("three", 3);
-        assertFalse(hashTable.equals(otherTable));
+        assertNotEquals(hashTable, otherTable);
+        assertNotEquals(hashTable.hashCode(), otherTable.hashCode());
     }
 }

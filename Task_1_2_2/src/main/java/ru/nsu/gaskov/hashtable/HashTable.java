@@ -1,19 +1,19 @@
-package ru.nsu.gaskov.hashTable;
+package ru.nsu.gaskov.hashtable;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import java.util.NoSuchElementException;
-import java.util.ConcurrentModificationException;
+import java.util.Objects;
 
 /**
  * A simple implementation of a hash table with open addressing and linear probing.
  */
 public class HashTable<K, V> {
     private static final float LOAD_FACTOR = 0.75f;
-    private final Entry<K, V> REMOVED = new Entry<>(null, null);
+    private final Entry<K, V> removed = new Entry<>(null, null);
 
     private int size = 0;
     private int modCount = 0;
@@ -46,7 +46,7 @@ public class HashTable<K, V> {
         table = new Entry[2 * oldTable.length];
         size = 0;
         for (Entry<K, V> entry : oldTable) {
-            if (entry != null && entry != REMOVED) {
+            if (entry != null && entry != removed) {
                 put(entry.getKey(), entry.getValue());
             }
         }
@@ -59,7 +59,7 @@ public class HashTable<K, V> {
      */
     public void put(K key, V value) {
         int index = hash(key);
-        while (table[index] != null && table[index] != REMOVED) {
+        while (table[index] != null && table[index] != removed) {
             if (table[index].getKey().equals(key)) {
                 table[index] = new Entry<>(key, value);
                 modCount++;
@@ -80,7 +80,7 @@ public class HashTable<K, V> {
     public V get(K key) {
         int index = hash(key);
         while (table[index] != null) {
-            if (table[index] != REMOVED && table[index].getKey().equals(key)) {
+            if (table[index] != removed && table[index].getKey().equals(key)) {
                 return table[index].getValue();
             }
             index = (index + 1) % table.length;
@@ -94,8 +94,8 @@ public class HashTable<K, V> {
     public boolean remove(K key) {
         int index = hash(key);
         while (table[index] != null) {
-            if (table[index] != REMOVED && table[index].getKey().equals(key)) {
-                table[index] = REMOVED;
+            if (table[index] != removed && table[index].getKey().equals(key)) {
+                table[index] = removed;
                 size--;
                 modCount++;
                 return true;
@@ -142,7 +142,7 @@ public class HashTable<K, V> {
             return false;
         }
         for (Entry<K, V> entry : this.table) {
-            if (entry != null && entry != REMOVED) {
+            if (entry != null && entry != removed) {
                 V otherValue = other.get(entry.getKey());
                 if (otherValue == null || !otherValue.equals(entry.getValue())) {
                     return false;
@@ -156,7 +156,7 @@ public class HashTable<K, V> {
     public int hashCode() {
         List<Entry<K, V>> sortedEntries = new ArrayList<>();
         for (int i = 0; i < size; ++i) {
-            if (table[i] != null && table[i] != REMOVED) {
+            if (table[i] != null && table[i] != removed) {
                 sortedEntries.add(table[i]);
             }
         }
@@ -168,7 +168,7 @@ public class HashTable<K, V> {
     public String toString() {
         StringBuilder sb = new StringBuilder("{");
         for (Entry<K, V> entry : table) {
-            if (entry != null && entry != REMOVED) {
+            if (entry != null && entry != removed) {
                 sb.append(entry.getKey()).append("=").append(entry.getValue()).append(", ");
             }
         }
@@ -189,7 +189,7 @@ public class HashTable<K, V> {
 
             @Override
             public boolean hasNext() {
-                while (index < table.length && (table[index] == null || table[index] == REMOVED)) {
+                while (index < table.length && (table[index] == null || table[index] == removed)) {
                     index++;
                 }
                 return index < table.length;

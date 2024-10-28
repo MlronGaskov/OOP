@@ -1,4 +1,4 @@
-package ru.nsu.gaskov.hashTable;
+package ru.nsu.gaskov.hashtable;
 
 import java.util.Objects;
 

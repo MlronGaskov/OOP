@@ -15,35 +15,39 @@ public class HashTable<K, V> {
     private static final float LOAD_FACTOR = 0.75f;
     private final Entry<K, V> removed = new Entry<>(null, null);
 
-    private int size = 0;
-    private int modCount = 0;
-    private Entry<K, V>[] table;
+    private long size = 0;
+    private long modCount = 0;
+    private List<Entry<K, V>> table;
 
     /**
      * Constructs an empty hash table with the specified initial capacity.
      */
-    @SuppressWarnings("unchecked")
     public HashTable(int initCapacity) {
-        table = new Entry[initCapacity];
+        table = new ArrayList<>(initCapacity);
+        for (int i = 0; i < initCapacity; i++) {
+            table.add(null);
+        }
     }
 
     /**
      * Computes the hash value for the specified key.
      */
     private int hash(K key) {
-        return (key == null) ? 0 : Math.abs(key.hashCode() % table.length);
+        return (key == null) ? 0 : Math.abs(key.hashCode() % table.size());
     }
 
     /**
      * Resizes the hash table if the load factor exceeds the threshold.
      */
-    @SuppressWarnings("unchecked")
     private void resize() {
-        if (size < LOAD_FACTOR * table.length) {
+        if (size < LOAD_FACTOR * table.size()) {
             return;
         }
-        Entry<K, V>[] oldTable = table;
-        table = new Entry[2 * oldTable.length];
+        List<Entry<K, V>> oldTable = table;
+        table = new ArrayList<>(2 * oldTable.size());
+        for (int i = 0; i < 2 * oldTable.size(); i++) {
+            table.add(null);
+        }
         size = 0;
         for (Entry<K, V> entry : oldTable) {
             if (entry != null && entry != removed) {
@@ -59,15 +63,15 @@ public class HashTable<K, V> {
      */
     public void put(K key, V value) {
         int index = hash(key);
-        while (table[index] != null && table[index] != removed) {
-            if (table[index].getKey().equals(key)) {
-                table[index] = new Entry<>(key, value);
+        while (table.get(index) != null && table.get(index) != removed) {
+            if (table.get(index).getKey().equals(key)) {
+                table.set(index, new Entry<>(key, value));
                 modCount++;
                 return;
             }
-            index = (index + 1) % table.length;
+            index = (index + 1) % table.size();
         }
-        table[index] = new Entry<>(key, value);
+        table.set(index, new Entry<>(key, value));
         size++;
         modCount++;
         resize();
@@ -79,11 +83,11 @@ public class HashTable<K, V> {
      */
     public V get(K key) {
         int index = hash(key);
-        while (table[index] != null) {
-            if (table[index] != removed && table[index].getKey().equals(key)) {
-                return table[index].getValue();
+        while (table.get(index) != null) {
+            if (table.get(index) != removed && table.get(index).getKey().equals(key)) {
+                return table.get(index).getValue();
             }
-            index = (index + 1) % table.length;
+            index = (index + 1) % table.size();
         }
         return null;
     }
@@ -93,14 +97,14 @@ public class HashTable<K, V> {
      */
     public boolean remove(K key) {
         int index = hash(key);
-        while (table[index] != null) {
-            if (table[index] != removed && table[index].getKey().equals(key)) {
-                table[index] = removed;
+        while (table.get(index) != null) {
+            if (table.get(index) != removed && table.get(index).getKey().equals(key)) {
+                table.set(index, removed);
                 size--;
                 modCount++;
                 return true;
             }
-            index = (index + 1) % table.length;
+            index = (index + 1) % table.size();
         }
         return false;
     }
@@ -124,7 +128,7 @@ public class HashTable<K, V> {
      * Returns the number of key-value pairs in this hash table.
      * Removed key-value pairs can be included.
      */
-    public int size() {
+    public long size() {
         return size;
     }
 
@@ -155,9 +159,9 @@ public class HashTable<K, V> {
     @Override
     public int hashCode() {
         List<Entry<K, V>> sortedEntries = new ArrayList<>();
-        for (int i = 0; i < size; ++i) {
-            if (table[i] != null && table[i] != removed) {
-                sortedEntries.add(table[i]);
+        for (Entry<K, V> entry : table) {
+            if (entry != null && entry != removed) {
+                sortedEntries.add(entry);
             }
         }
         sortedEntries.sort(Comparator.comparing(a -> a.getKey().toString()));
@@ -185,14 +189,14 @@ public class HashTable<K, V> {
     public Iterator<Entry<K, V>> iterator() {
         return new Iterator<>() {
             private int index = 0;
-            private final int expectedModCount = modCount;
+            private final long expectedModCount = modCount;
 
             @Override
             public boolean hasNext() {
-                while (index < table.length && (table[index] == null || table[index] == removed)) {
+                while (index < table.size() && (table.get(index) == null || table.get(index) == removed)) {
                     index++;
                 }
-                return index < table.length;
+                return index < table.size();
             }
 
             @Override
@@ -203,7 +207,7 @@ public class HashTable<K, V> {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                return table[index++];
+                return table.get(index++);
             }
         };
     }

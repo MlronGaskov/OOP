@@ -193,7 +193,8 @@ public class HashTable<K, V> {
 
             @Override
             public boolean hasNext() {
-                while (index < table.size() && (table.get(index) == null || table.get(index) == removed)) {
+                while (index < table.size()
+                    && (table.get(index) == null || table.get(index) == removed)) {
                     index++;
                 }
                 return index < table.size();

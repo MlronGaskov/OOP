@@ -5,15 +5,26 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Spliterators;
+import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
+/**
+ * KmpSubstringSearcher provides methods for finding occurrences
+ * of a specified substring within various types of text sources.
+ * It utilizes the Knuth-Morris-Pratt (KMP) algorithm for efficient substring search.
+ * This class offers methods to find a single occurrence, all occurrences as
+ * a list, or as a Stream or Iterator of indices.
+ */
 public class KmpSubstringSearcher {
 
     /**
      * An iterator for finding all occurrences of a specified substring in a text file.
-     * This iterator searches the file using the Knuth-Morris-Pratt (KMP) pattern matching algorithm,
+     * This iterator searches the file using the Knuth-Morris-Pratt pattern matching algorithm,
      * returning the starting index of each occurrence of the substring in the text file.
      */
     private static class SubstringIndexIterator implements Iterator<Long> {
@@ -71,7 +82,8 @@ public class KmpSubstringSearcher {
             int readChar;
             while ((readChar = reader.read()) != -1) {
                 char textChar = (char) readChar;
-                while (positionInSubstring > 0 && textChar != substring.charAt(positionInSubstring)) {
+                while (positionInSubstring > 0
+                    && textChar != substring.charAt(positionInSubstring)) {
                     positionInSubstring = prefixArray[positionInSubstring - 1];
                 }
                 if (textChar == substring.charAt(positionInSubstring)) {

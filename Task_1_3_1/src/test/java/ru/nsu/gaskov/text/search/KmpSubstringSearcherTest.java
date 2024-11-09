@@ -119,7 +119,9 @@ class KmpSubstringSearcherTest {
         assertEquals(expectedIndices, actualIndices);
 
         BufferedReader missingReader = new BufferedReader(new StringReader(text));
-        assertTrue(KmpSubstringSearcher.indexesStream(missingReader, "missing").findAny().isEmpty());
+        assertTrue(
+            KmpSubstringSearcher.indexesStream(missingReader, "missing").findAny().isEmpty()
+        );
     }
 
     @Test
@@ -141,7 +143,9 @@ class KmpSubstringSearcherTest {
         reader.close();
 
         BufferedReader missingReader = new BufferedReader(new StringReader(text));
-        Iterator<Long> missingIterator = new KmpSubstringSearcher().iterate(missingReader, "missing");
+        Iterator<Long> missingIterator = new KmpSubstringSearcher()
+            .iterate(missingReader, "missing");
+        
         assertFalse(missingIterator.hasNext());
         missingReader.close();
     }

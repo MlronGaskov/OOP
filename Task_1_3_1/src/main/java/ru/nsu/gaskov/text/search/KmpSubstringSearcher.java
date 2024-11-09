@@ -23,7 +23,7 @@ import java.util.stream.StreamSupport;
 public class KmpSubstringSearcher {
 
     /**
-     * An iterator for finding all occurrences of a specified substring in a text file.
+     * An iterator for finding all occurrences of a specified substring in a BufferedReader.
      * This iterator searches the file using the Knuth-Morris-Pratt pattern matching algorithm,
      * returning the starting index of each occurrence of the substring in the text file.
      */
@@ -120,95 +120,63 @@ public class KmpSubstringSearcher {
     }
 
     /**
-     * Finds the first occurrence of a substring in the given text.
-     */
-    public static long indexOf(String text, String substring) throws IOException {
-        if (substring.isEmpty()) {
-            return 0;
-        }
-        try (BufferedReader reader = new BufferedReader(new StringReader(text))) {
-            SubstringIndexIterator iterator = new SubstringIndexIterator(reader, substring);
-            return iterator.hasNext() ? iterator.next() : -1;
-        }
-    }
-
-    /**
-     * Finds the first occurrence of a substring in the given text.
-     */
-    public static long indexOf(Path filePath, String substring) throws IOException {
-        if (substring.isEmpty()) {
-            return 0;
-        }
-        try (BufferedReader reader = Files.newBufferedReader(filePath)) {
-            SubstringIndexIterator iterator = new SubstringIndexIterator(reader, substring);
-            return iterator.hasNext() ? iterator.next() : -1;
-        }
-    }
-
-    /**
-     * Finds the first occurrence of a substring in the given text.
+     * Finds the first occurrence of a substring in the BufferedReader.
      */
     public static long indexOf(BufferedReader reader, String substring) {
-        if (substring.isEmpty()) {
-            return 0;
-        }
-        SubstringIndexIterator iterator = new SubstringIndexIterator(reader, substring);
+        Iterator<Long> iterator = iterate(reader, substring);
         return iterator.hasNext() ? iterator.next() : -1;
+    }
+
+    /**
+     * Finds the first occurrence of a substring in the given String.
+     */
+    public static long indexOf(String text, String substring) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new StringReader(text))) {
+            return indexOf(reader, substring);
+        }
+    }
+
+    /**
+     * Finds the first occurrence of a substring in the file.
+     */
+    public static long indexOf(Path filePath, String substring) throws IOException {
+        try (BufferedReader reader = Files.newBufferedReader(filePath)) {
+            return indexOf(reader, substring);
+        }
+    }
+
+    /**
+     * Finds all occurrences of a substring in the given BufferedReader.
+     */
+    public static List<Long> indexesOf(BufferedReader reader, String substring) {
+        return indexesStream(reader, substring).toList();
     }
 
     /**
      * Finds all occurrences of a substring in the given text.
      */
     public static List<Long> indexesOf(String text, String substring) throws IOException {
-        List<Long> indices = new ArrayList<>();
-        if (substring.isEmpty()) {
-            return indices;
-        }
         try (BufferedReader reader = new BufferedReader(new StringReader(text))) {
-            SubstringIndexIterator iterator = new SubstringIndexIterator(reader, substring);
-            while (iterator.hasNext()) {
-                indices.add(iterator.next());
-            }
+            return indexesOf(reader, substring);
         }
-        return indices;
     }
 
     /**
-     * Finds all occurrences of a substring in the given text.
+     * Finds all occurrences of a substring in the given file.
      */
     public static List<Long> indexesOf(Path filePath, String substring) throws IOException {
-        List<Long> indices = new ArrayList<>();
-        if (substring.isEmpty()) {
-            return indices;
-        }
         try (BufferedReader reader = Files.newBufferedReader(filePath)) {
-            SubstringIndexIterator iterator = new SubstringIndexIterator(reader, substring);
-            while (iterator.hasNext()) {
-                indices.add(iterator.next());
-            }
+            return indexesOf(reader, substring);
         }
-        return indices;
-    }
-
-    /**
-     * Finds all occurrences of a substring in the given text.
-     */
-    public static List<Long> indexesOf(BufferedReader reader, String substring) {
-        List<Long> indices = new ArrayList<>();
-        if (substring.isEmpty()) {
-            return indices;
-        }
-        SubstringIndexIterator iterator = new SubstringIndexIterator(reader, substring);
-        while (iterator.hasNext()) {
-            indices.add(iterator.next());
-        }
-        return indices;
     }
 
     /**
      * Returns an iterator for finding all occurrences of the substring.
      */
-    Iterator<Long> iterate(BufferedReader reader, String substring) {
+    public static Iterator<Long> iterate(BufferedReader reader, String substring) {
+        if (substring.isEmpty()) {
+            return List.of(0L).iterator();
+        }
         return new SubstringIndexIterator(reader, substring);
     }
 
@@ -216,13 +184,7 @@ public class KmpSubstringSearcher {
      * Returns a Stream of indices representing each occurrence of the substring.
      */
     public static Stream<Long> indexesStream(BufferedReader reader, String substring) {
-        if (substring.isEmpty()) {
-            return Stream.empty();
-        }
-        SubstringIndexIterator iterator = new SubstringIndexIterator(reader, substring);
-        return StreamSupport.stream(
-            Spliterators.spliteratorUnknownSize(iterator, 0),
-            false
-        );
+        Iterable<Long> iterable = () -> iterate(reader, substring);
+        return StreamSupport.stream(iterable.spliterator(), false);
     }
 }

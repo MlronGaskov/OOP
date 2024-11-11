@@ -1,16 +1,13 @@
 package ru.nsu.gaskov.text.search;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -19,6 +16,8 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Tests.
@@ -49,9 +48,11 @@ class KmpSubstringSearcherTest {
 
     @Test
     void testIndexesOfInResourcesFile() throws IOException {
-        Path filePath = Paths.get("src/test/resources/testfile.txt");
-        assertTrue(Files.exists(filePath));
-        BufferedReader reader = Files.newBufferedReader(filePath);
+        InputStream resourceStream = getClass().getClassLoader().getResourceAsStream("testfile.txt");
+        assertNotNull(resourceStream, "Resource file not found");
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(resourceStream));
+
         assertEquals(10, KmpSubstringSearcher.indexOf(reader, "holaa"));
         reader.close();
     }

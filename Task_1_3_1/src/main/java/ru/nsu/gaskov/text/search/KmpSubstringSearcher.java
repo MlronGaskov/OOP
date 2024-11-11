@@ -5,11 +5,9 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Spliterators;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -23,6 +21,48 @@ import java.util.stream.StreamSupport;
 public class KmpSubstringSearcher {
 
     /**
+     * An exception indicating an error during a substring search, typically due to I/O issues.
+     */
+    public static class SubstringSearchException extends RuntimeException {
+
+        /**
+         * Constructs a {@code SubstringSearchException} with {@code null}
+         * as its error message string.
+         */
+        public SubstringSearchException() {
+            super();
+        }
+
+        /**
+         * Constructs a {@code SubstringSearchException} with the specified detail
+         * message and cause.
+         */
+        public SubstringSearchException(String s, Throwable cause) {
+            super(s, cause);
+        }
+
+        /**
+         * Constructs a {@code SubstringSearchException} with the specified cause.
+         * The detail message is set to {@code (cause == null ? null :
+         * cause.toString())} (which typically contains the class and
+         * detail message of {@code cause}).
+         */
+        public SubstringSearchException(Throwable cause) {
+            super(cause);
+        }
+
+        /**
+         * Constructs a {@code SubstringSearchException}, saving a reference
+         * to the error message string {@code s} for later retrieval by the
+         * {@code getMessage} method.
+         */
+        public SubstringSearchException(String s) {
+            super(s);
+        }
+    }
+
+
+    /**
      * An iterator for finding all occurrences of a specified substring in a BufferedReader.
      * This iterator searches the file using the Knuth-Morris-Pratt pattern matching algorithm,
      * returning the starting index of each occurrence of the substring in the text file.
@@ -31,7 +71,7 @@ public class KmpSubstringSearcher {
         private final BufferedReader reader;
         private final String substring;
         private final int[] prefixArray;
-        private Long positionInText = 0L;
+        private long positionInText = 0L;
         private int positionInSubstring = 0;
         private Long nextSubstringIndex = null;
 
@@ -49,6 +89,7 @@ public class KmpSubstringSearcher {
 
         /**
          * Checks if there is a next occurrence of the substring in the file.
+         * @throws SubstringSearchException if an I/O error occurs during the search.
          */
         @Override
         public boolean hasNext() {
@@ -58,7 +99,7 @@ public class KmpSubstringSearcher {
                 }
                 return nextSubstringIndex != -1;
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                throw new SubstringSearchException(e);
             }
         }
 

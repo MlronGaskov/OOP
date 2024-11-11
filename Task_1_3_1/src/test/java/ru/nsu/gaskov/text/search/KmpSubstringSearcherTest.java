@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -44,6 +45,15 @@ class KmpSubstringSearcherTest {
         assertEquals(expectedIndex, KmpSubstringSearcher.indexOf(text, substring));
 
         assertEquals(-1, KmpSubstringSearcher.indexOf(text, "notfound"));
+    }
+
+    @Test
+    void testIndexesOfInResourcesFile() throws IOException {
+        Path filePath = Paths.get("src/test/resources/testfile.txt");
+        assertTrue(Files.exists(filePath));
+        BufferedReader reader = Files.newBufferedReader(filePath);
+        assertEquals(10, KmpSubstringSearcher.indexOf(reader, "holaa"));
+        reader.close();
     }
 
     @Test
@@ -133,7 +143,7 @@ class KmpSubstringSearcherTest {
         List<Long> expectedIndices = List.of(0L, 21L);
 
         List<Long> actualIndices = new ArrayList<>();
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
 
         while (iterator.hasNext()) {
             actualIndices.add(iterator.next());
@@ -143,7 +153,7 @@ class KmpSubstringSearcherTest {
         reader.close();
 
         BufferedReader missingReader = new BufferedReader(new StringReader(text));
-        Iterator<Long> missingIterator = new KmpSubstringSearcher()
+        Iterator<Long> missingIterator = KmpSubstringSearcher
             .iterate(missingReader, "missing");
         
         assertFalse(missingIterator.hasNext());
@@ -156,7 +166,7 @@ class KmpSubstringSearcherTest {
         String substring = "abcd";
         List<Long> expectedIndices = List.of(2L);
 
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
         List<Long> actualIndices = new ArrayList<>();
         while (iterator.hasNext()) {
             actualIndices.add(iterator.next());
@@ -171,7 +181,7 @@ class KmpSubstringSearcherTest {
         String substring = "xyz";
         List<Long> expectedIndices = List.of();
 
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
         List<Long> actualIndices = new ArrayList<>();
         while (iterator.hasNext()) {
             actualIndices.add(iterator.next());
@@ -186,7 +196,7 @@ class KmpSubstringSearcherTest {
         String substring = "abc";
         List<Long> expectedIndices = List.of(2L, 5L, 8L);
 
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
         List<Long> actualIndices = new ArrayList<>();
         while (iterator.hasNext()) {
             actualIndices.add(iterator.next());
@@ -201,7 +211,7 @@ class KmpSubstringSearcherTest {
         String substring = "\n";
         List<Long> expectedIndices = List.of(3L, 6L, 13L, 14L);
 
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
         List<Long> actualIndices = new ArrayList<>();
         while (iterator.hasNext()) {
             actualIndices.add(iterator.next());
@@ -216,7 +226,7 @@ class KmpSubstringSearcherTest {
         String substring = "test";
         List<Long> expectedIndices = List.of(0L);
 
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
         List<Long> actualIndices = new ArrayList<>();
         while (iterator.hasNext()) {
             actualIndices.add(iterator.next());
@@ -231,7 +241,7 @@ class KmpSubstringSearcherTest {
         String substring = "test";
         List<Long> expectedIndices = List.of(4L);
 
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
         List<Long> actualIndices = new ArrayList<>();
         while (iterator.hasNext()) {
             actualIndices.add(iterator.next());
@@ -246,7 +256,7 @@ class KmpSubstringSearcherTest {
         String substring = "a";
         List<Long> expectedIndices = List.of(0L, 1L, 2L, 3L);
 
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
         List<Long> actualIndices = new ArrayList<>();
         while (iterator.hasNext()) {
             actualIndices.add(iterator.next());
@@ -261,7 +271,7 @@ class KmpSubstringSearcherTest {
         String substring = "hello";
         List<Long> expectedIndices = List.of(0L);
 
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
         List<Long> actualIndices = new ArrayList<>();
         while (iterator.hasNext()) {
             actualIndices.add(iterator.next());
@@ -290,7 +300,7 @@ class KmpSubstringSearcherTest {
         BufferedReader reader = Files.newBufferedReader(tempFile);
         String substring = "aaa";
 
-        Iterator<Long> iterator = new KmpSubstringSearcher().iterate(reader, substring);
+        Iterator<Long> iterator = KmpSubstringSearcher.iterate(reader, substring);
         for (int i = 0; i < fileSize - 2; ++i) {
             assertTrue(iterator.hasNext());
             assertEquals(i, iterator.next());

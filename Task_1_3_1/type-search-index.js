@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.gaskov.text.search","l":"KmpSubstringSearcher"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.gaskov.text.search","l":"KmpSubstringSearcher"},{"p":"ru.nsu.gaskov.text.search","l":"KmpSubstringSearcher.SubstringSearchException"}];updateSearchResults();

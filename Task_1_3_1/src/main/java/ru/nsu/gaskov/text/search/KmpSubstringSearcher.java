@@ -89,6 +89,7 @@ public class KmpSubstringSearcher {
 
         /**
          * Checks if there is a next occurrence of the substring in the file.
+         *
          * @throws SubstringSearchException if an I/O error occurs during the search.
          */
         @Override

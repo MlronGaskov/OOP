@@ -1,5 +1,10 @@
 package ru.nsu.gaskov.text.search;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -16,8 +21,6 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Tests.
@@ -48,7 +51,8 @@ class KmpSubstringSearcherTest {
 
     @Test
     void testIndexesOfInResourcesFile() throws IOException {
-        InputStream resourceStream = getClass().getClassLoader().getResourceAsStream("testfile.txt");
+        InputStream resourceStream = getClass().getClassLoader()
+            .getResourceAsStream("testfile.txt");
         assertNotNull(resourceStream, "Resource file not found");
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(resourceStream));

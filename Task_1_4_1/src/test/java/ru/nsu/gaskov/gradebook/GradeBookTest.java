@@ -1,9 +1,11 @@
 package ru.nsu.gaskov.gradebook;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Tests.
@@ -29,7 +31,9 @@ class GradeBookTest {
     @Test
     void testCalculateAverageGrade() {
         gradeBook.addGrade(new Grade(1, "Mathematics", CreditType.EXAM, GradeScore.GOOD));
-        gradeBook.addGrade(new Grade(1, "Programming", CreditType.GRADED_CREDIT, GradeScore.EXCELLENT));
+        gradeBook.addGrade(
+            new Grade(1, "Programming", CreditType.GRADED_CREDIT, GradeScore.EXCELLENT)
+        );
 
         double average = gradeBook.calculateAverageGrade();
         assertEquals(4.5, average, 0.01); // Средняя оценка: (4+5)/2
@@ -39,7 +43,9 @@ class GradeBookTest {
     void testCanTransferToBudget() {
         gradeBook.addGrade(new Grade(1, "Mathematics", CreditType.EXAM, GradeScore.GOOD));
         gradeBook.addGrade(new Grade(1, "Physics", CreditType.EXAM, GradeScore.EXCELLENT));
-        gradeBook.addGrade(new Grade(2, "Chemistry", CreditType.EXAM, GradeScore.SATISFACTORY)); // Неудовлетворяет условию
+        gradeBook.addGrade(
+            new Grade(2, "Chemistry", CreditType.EXAM, GradeScore.SATISFACTORY)
+        );
 
         assertFalse(gradeBook.canTransferToBudget());
 

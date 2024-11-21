@@ -160,7 +160,8 @@ public class GradeBook {
     public boolean canGetIncreasedScholarship() {
         int currentSemester = getCurrentSemester();
         List<Grade> currentSemesterGrades = grades.stream()
-            .filter(grade -> grade.semester() == currentSemester)
+            .filter(grade -> grade.semester() == currentSemester
+                && grade.creditType() != CreditType.CREDIT)
             .toList();
 
         return currentSemesterGrades.stream().noneMatch(grade -> grade.getScore() < 5);

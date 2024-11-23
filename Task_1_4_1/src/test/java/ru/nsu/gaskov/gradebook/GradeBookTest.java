@@ -80,4 +80,87 @@ class GradeBookTest {
         gradeBook.addGrade(new Grade(1, "History", CreditType.EXAM, GradeScore.GOOD));
         assertFalse(gradeBook.canGetIncreasedScholarship());
     }
+
+    @Test
+    void testAllConditionsMet() {
+        // Успешное выполнение всех условий
+        GradeBook gradeBook = new GradeBook("Ivan Ivanov", StudyForm.PAID);
+        gradeBook.addGrade(new Grade(1, "Mathematics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.addGrade(new Grade(1, "Physics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.addGrade(new Grade(2, "Programming", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.setQualificationWorkGrade(GradeScore.EXCELLENT);
+
+        assertTrue(gradeBook.canGetRedDiploma());
+    }
+
+    @Test
+    void testNotEnoughExcellents() {
+        // Менее 75% оценок "Отлично"
+        GradeBook gradeBook = new GradeBook("Ivan Ivanov", StudyForm.PAID);
+        gradeBook.addGrade(new Grade(1, "Mathematics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.addGrade(new Grade(1, "Physics", CreditType.EXAM, GradeScore.GOOD));
+        gradeBook.addGrade(new Grade(2, "Programming", CreditType.EXAM, GradeScore.GOOD));
+        gradeBook.setQualificationWorkGrade(GradeScore.EXCELLENT);
+
+        assertFalse(gradeBook.canGetRedDiploma());
+    }
+
+    @Test
+    void testSatisfactoryGradePresent() {
+        // Есть "Удовлетворительная" оценка
+        GradeBook gradeBook = new GradeBook("Ivan Ivanov", StudyForm.PAID);
+        gradeBook.addGrade(new Grade(1, "Mathematics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.addGrade(new Grade(2, "Physics", CreditType.EXAM, GradeScore.SATISFACTORY));
+        gradeBook.addGrade(new Grade(2, "Programming", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.setQualificationWorkGrade(GradeScore.EXCELLENT);
+
+        assertFalse(gradeBook.canGetRedDiploma());
+    }
+
+    @Test
+    void testNoQualificationWorkGrade() {
+        // Нет оценки за дипломную работу
+        GradeBook gradeBook = new GradeBook("Ivan Ivanov", StudyForm.PAID);
+        gradeBook.addGrade(new Grade(1, "Mathematics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.addGrade(new Grade(2, "Physics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.addGrade(new Grade(2, "Programming", CreditType.EXAM, GradeScore.EXCELLENT));
+
+        assertTrue(gradeBook.canGetRedDiploma());
+    }
+
+    @Test
+    void testFailingQualificationWorkGrade() {
+        // Неудовлетворительная оценка за дипломную работу
+        GradeBook gradeBook = new GradeBook("Ivan Ivanov", StudyForm.PAID);
+        gradeBook.addGrade(new Grade(1, "Mathematics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.addGrade(new Grade(2, "Physics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.addGrade(new Grade(2, "Programming", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.setQualificationWorkGrade(GradeScore.SATISFACTORY);
+
+        assertFalse(gradeBook.canGetRedDiploma());
+    }
+
+    @Test
+    void testCreditsNotCounted() {
+        // Зачеты не влияют на результат
+        GradeBook gradeBook = new GradeBook("Ivan Ivanov", StudyForm.BUDGET);
+        gradeBook.addGrade(new Grade(1, "Mathematics", CreditType.CREDIT, GradeScore.SATISFACTORY));
+        gradeBook.addGrade(new Grade(1, "Physics", CreditType.CREDIT, GradeScore.SATISFACTORY));
+        gradeBook.addGrade(new Grade(2, "Programming", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.setQualificationWorkGrade(GradeScore.EXCELLENT);
+
+        assertTrue(gradeBook.canGetRedDiploma());
+    }
+
+    @Test
+    void testMultipleGradesForSameSubject() {
+        // Учитывается последняя оценка по предмету
+        GradeBook gradeBook = new GradeBook("Ivan Ivanov", StudyForm.BUDGET);
+        gradeBook.addGrade(new Grade(1, "Mathematics", CreditType.EXAM, GradeScore.GOOD));
+        gradeBook.addGrade(new Grade(2, "Mathematics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.addGrade(new Grade(1, "Physics", CreditType.EXAM, GradeScore.EXCELLENT));
+        gradeBook.setQualificationWorkGrade(GradeScore.EXCELLENT);
+
+        assertTrue(gradeBook.canGetRedDiploma());
+    }
 }

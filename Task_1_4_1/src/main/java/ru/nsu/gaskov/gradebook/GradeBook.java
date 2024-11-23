@@ -1,9 +1,7 @@
 package ru.nsu.gaskov.gradebook;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Represents a student's grade book, containing information about their grades,
@@ -130,14 +128,15 @@ public class GradeBook {
     public boolean canGetRedDiploma() {
         Map<String, Grade> lastGrades = new HashMap<>();
 
-        grades.forEach(
-            grade -> {
-                if ((!lastGrades.containsKey(grade.subject())
-                    || grade.semester() > lastGrades.get(grade.subject()).semester())
-                    && grade.creditType() != CreditType.CREDIT) {
-                    lastGrades.put(grade.subject(), grade);
-                }
-            }
+        lastGrades.putAll(
+            grades.stream()
+                .filter(grade -> grade.creditType() != CreditType.CREDIT)
+                .sorted(Comparator.comparing(Grade::semester))
+                .collect(Collectors.toMap(
+                    Grade::subject,
+                    grade -> grade,
+                    (existing, replacement) -> replacement
+                ))
         );
 
         long excellentCount = lastGrades.keySet()
@@ -149,7 +148,9 @@ public class GradeBook {
             return false;
         }
 
-        boolean noSatisfactoryGrades = grades.stream().noneMatch(grade -> grade.getScore() == 3);
+        boolean noSatisfactoryGrades = grades.stream().noneMatch(
+            grade -> grade.getScore() <= 3 && grade.creditType() != CreditType.CREDIT
+        );
         return noSatisfactoryGrades
             && (qualificationWorkGrade == null || qualificationWorkGrade == GradeScore.EXCELLENT);
     }

@@ -34,7 +34,8 @@ public class ParallelThreadsInspector implements PrimeInspector {
      */
     private static class PrimeCheckThread extends Thread {
         private final List<Integer> numbers;
-        private final int start, end;
+        private final int start;
+        private final int end;
         private final NonPrimeFlag flag;
 
         public PrimeCheckThread(List<Integer> numbers, int start, int end, NonPrimeFlag flag) {

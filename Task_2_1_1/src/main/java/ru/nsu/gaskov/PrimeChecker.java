@@ -4,6 +4,9 @@ package ru.nsu.gaskov;
  * Utility class for checking if a number is not prime.
  */
 public class PrimeChecker {
+    /**
+     * Checks if a number is not prime.
+     */
     public static boolean isNotPrime(int n) {
         if (n < 2) {
             return true;

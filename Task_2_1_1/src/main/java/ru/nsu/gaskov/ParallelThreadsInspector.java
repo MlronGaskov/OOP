@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * Parallel implementation of PrimeInspector using threads.
+ */
 public class ParallelThreadsInspector implements PrimeInspector {
     private final int numThreads;
 
@@ -11,6 +14,9 @@ public class ParallelThreadsInspector implements PrimeInspector {
         this.numThreads = numThreads;
     }
 
+    /**
+     * Helper class to store a flag for detecting non-prime numbers.
+     */
     private static class NonPrimeFlag {
         private final AtomicBoolean hasNonPrime = new AtomicBoolean(false);
 
@@ -23,6 +29,9 @@ public class ParallelThreadsInspector implements PrimeInspector {
         }
     }
 
+    /**
+     * Thread for checking prime numbers in a segment of the list.
+     */
     private static class PrimeCheckThread extends Thread {
         private final List<Integer> numbers;
         private final int start, end;

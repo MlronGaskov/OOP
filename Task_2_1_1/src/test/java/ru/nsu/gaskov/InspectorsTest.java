@@ -94,23 +94,24 @@ class InspectorsTest {
 
         PrimeInspector sequential = new SequentialInspector();
         long start = System.nanoTime();
-        boolean result = sequential.hasNonPrime(largePrimes);
+        sequential.hasNonPrime(largePrimes);
         long duration = System.nanoTime() - start;
-        System.out.println("No1 (Sequential): " + (duration / 1_000_000.0) + " ms, result: " + result);
+        System.out.println("No1 (Sequential): " + (duration / 1_000_000.0) + " ms");
 
         int[] threadCounts = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
         for (int threads : threadCounts) {
             PrimeInspector parallel = new ExecutorsFrameworkInspector(threads);
             start = System.nanoTime();
-            result = parallel.hasNonPrime(largePrimes);
+            parallel.hasNonPrime(largePrimes);
             duration = System.nanoTime() - start;
-            System.out.println("No2 (Parallel, threads=" + threads + "): " + (duration / 1_000_000.0) + " ms, result: " + result);
+            System.out.println("No2 (Parallel, threads=" + threads + "): "
+                + (duration / 1_000_000.0) + " ms");
         }
 
         PrimeInspector parallelStream = new ParallelStreamInspector();
         start = System.nanoTime();
-        result = parallelStream.hasNonPrime(largePrimes);
+        parallelStream.hasNonPrime(largePrimes);
         duration = System.nanoTime() - start;
-        System.out.println("No3 (ParallelStream): " + (duration / 1_000_000.0) + " ms, result: " + result);
+        System.out.println("No3 (ParallelStream): " + (duration / 1_000_000.0) + " ms");
     }
 }

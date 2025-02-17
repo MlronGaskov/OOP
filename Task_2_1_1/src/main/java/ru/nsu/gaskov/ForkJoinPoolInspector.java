@@ -17,7 +17,8 @@ public class ForkJoinPoolInspector implements PrimeInspector {
     private static class PrimeCheckTask extends RecursiveTask<Boolean> {
         private static final int THRESHOLD = 100;
         private final List<Integer> numbers;
-        private final int start, end;
+        private final int start;
+        private final int end;
 
         public PrimeCheckTask(List<Integer> numbers, int start, int end) {
             this.numbers = numbers;

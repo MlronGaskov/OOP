@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.mr.pizza","l":"BoundedQueue"},{"p":"ru.nsu.mr.pizza","l":"Phone"},{"p":"ru.nsu.mr.pizza","l":"Pizzeria"},{"p":"ru.nsu.mr.pizza","l":"RandomOrderGenerator"},{"p":"ru.nsu.mr.pizza","l":"Simulation"}];updateSearchResults();

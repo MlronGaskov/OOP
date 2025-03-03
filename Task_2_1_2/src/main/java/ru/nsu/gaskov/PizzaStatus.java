@@ -1,0 +1,5 @@
+package ru.nsu.gaskov;
+
+public enum PizzaStatus {
+    ORDER_RECEIVED, COOKING_STARTED, STORED_IN_WAREHOUSE, TAKEN_FOR_DELIVERY, DELIVERED
+}

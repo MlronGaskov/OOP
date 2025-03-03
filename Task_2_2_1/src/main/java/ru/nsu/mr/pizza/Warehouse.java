@@ -34,7 +34,7 @@ class Warehouse {
      * Retrieves up to {@code maxCount} pizzas from the warehouse.
      *
      * @param maxCount the maximum number of pizzas to retrieve
-     * @return a list of retrieved pizzas (may be fewer than {@code maxCount} if not enough pizzas are available)
+     * @return a list of retrieved pizzas (maybe fewer than {@code maxCount} if not enough pizzas are available)
      * @throws InterruptedException if the thread is interrupted while waiting for pizzas to become available
      */
     public List<Pizza> getPizzas(int maxCount) throws InterruptedException {

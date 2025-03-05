@@ -97,6 +97,7 @@ public class BoundedQueue<T> {
 
     /**
      * Checks if the queue is empty.
+     * At the time of receiving the result, it is not guaranteed that the queue is really empty or not.
      *
      * @return true if empty, false otherwise
      */
@@ -111,6 +112,7 @@ public class BoundedQueue<T> {
 
     /**
      * Checks if the queue is full.
+     * At the time of receiving the result, it is not guaranteed that the queue is really full or not.
      *
      * @return true if full, false otherwise
      */

@@ -54,4 +54,9 @@ class Pizza {
     public void setStatus(PizzaStatus status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "pizza [" + this.id + "]. Status: " + status;
+    }
 }

@@ -34,12 +34,10 @@ class DeliveryMan implements Runnable {
      */
     private void deliver(Pizza pizza) throws InterruptedException {
         pizza.setStatus(PizzaStatus.DELIVERING);
-        System.out.println("DeliveryMan " + id + " started delivering pizza ["
-                + pizza.getId() + "]. Status: " + pizza.getStatus());
+        System.out.println("DeliveryMan " + id + " started delivering " + pizza);
         Thread.sleep(pizza.getDeliveryTime());
         pizza.setStatus(PizzaStatus.DELIVERED);
-        System.out.println("DeliveryMan " + id + " finished delivering pizza ["
-                + pizza.getId() + "]. Status: " + pizza.getStatus());
+        System.out.println("DeliveryMan " + id + " finished delivering " + pizza);
     }
 
     /**
@@ -52,7 +50,7 @@ class DeliveryMan implements Runnable {
                 List<Pizza> pizzas = warehouse.getPizzas(trunkSize);
                 for (Pizza pizza : pizzas) {
                     deliver(pizza);
-                    phone.call("DeliveryMan " + id + ": Pizza [" + pizza.getId() + "] delivered successfully.");
+                    phone.call("DeliveryMan " + id + ": " + pizza + " delivered successfully.");
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();

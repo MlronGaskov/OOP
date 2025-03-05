@@ -34,12 +34,10 @@ class Cook implements Runnable {
      */
     private void cook(Pizza pizza) throws InterruptedException {
         pizza.setStatus(PizzaStatus.COOKING);
-        System.out.println("Cook " + id + " started cooking pizza ["
-                + pizza.getId() + "]. Status: " + pizza.getStatus());
+        System.out.println("Cook " + id + " started cooking " + pizza);
         Thread.sleep(cookingTime);
         pizza.setStatus(PizzaStatus.COOKED);
-        System.out.println("Cook " + id + " finished cooking pizza ["
-                + pizza.getId() + "]. Status: " + pizza.getStatus());
+        System.out.println("Cook " + id + " finished cooking pizza " + pizza);
     }
 
     /**

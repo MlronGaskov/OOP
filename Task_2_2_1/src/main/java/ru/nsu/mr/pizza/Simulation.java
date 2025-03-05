@@ -3,6 +3,7 @@ package ru.nsu.mr.pizza;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
@@ -19,55 +20,59 @@ public class Simulation {
         int maxDeliveryTime;
     }
 
-    public static void main(String[] args) {
-        InputStream inputStream = Simulation.class.getClassLoader().getResourceAsStream("config.json");
-        if (inputStream == null) {
-            System.err.println("No config.json file.");
-            return;
-        }
-
-        Gson gson = new Gson();
-        Config config = gson.fromJson(new JsonReader(new InputStreamReader(inputStream)), Config.class);
-
-        Pizzeria pizzeria = new Pizzeria(
-                config.cookingTimes,
-                config.truckSizes,
-                config.workingTime,
-                config.orderQueueCapacity,
-                config.warehouseCapacity
-        );
-
-        RandomOrderGenerator orderGenerator = new RandomOrderGenerator(
-                pizzeria::orderPizza,
-                config.orderGenerationAverage,
-                config.minDeliveryTime,
-                config.maxDeliveryTime
-        );
-
-        Thread pizzeriaThread = new Thread(() -> {
-            try {
-                pizzeria.start();
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+    public static void main(String[] args) throws IOException {
+        try (InputStream inputStream = Simulation.class.getClassLoader()
+                .getResourceAsStream("config.json")) {
+            if (inputStream == null) {
+                System.err.println("No config.json file.");
+                return;
             }
-        }, "PizzeriaThread");
+            try (InputStreamReader isr = new InputStreamReader(inputStream);
+                 JsonReader jsonReader = new JsonReader(isr)) {
+                Gson gson = new Gson();
+                Config config = gson.fromJson(jsonReader, Config.class);
 
-        Thread generatorThread = new Thread(orderGenerator, "OrderGeneratorThread");
+                Pizzeria pizzeria = new Pizzeria(
+                        config.cookingTimes,
+                        config.truckSizes,
+                        config.workingTime,
+                        config.orderQueueCapacity,
+                        config.warehouseCapacity
+                );
 
-        pizzeriaThread.start();
-        generatorThread.start();
+                RandomOrderGenerator orderGenerator = new RandomOrderGenerator(
+                        pizzeria::orderPizza,
+                        config.orderGenerationAverage,
+                        config.minDeliveryTime,
+                        config.maxDeliveryTime
+                );
 
-        try {
-            pizzeriaThread.join();
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+                Thread pizzeriaThread = new Thread(() -> {
+                    try {
+                        pizzeria.start();
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }, "PizzeriaThread");
 
-        orderGenerator.stop();
-        try {
-            generatorThread.join();
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+                Thread generatorThread = new Thread(orderGenerator, "OrderGeneratorThread");
+
+                pizzeriaThread.start();
+                generatorThread.start();
+
+                try {
+                    pizzeriaThread.join();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+
+                orderGenerator.stop();
+                try {
+                    generatorThread.join();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
         }
     }
 }

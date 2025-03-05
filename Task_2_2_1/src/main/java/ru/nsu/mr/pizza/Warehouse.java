@@ -27,7 +27,7 @@ class Warehouse {
     public void putPizza(Pizza pizza) throws InterruptedException {
         storage.put(pizza);
         pizza.setStatus(PizzaStatus.IN_WAREHOUSE);
-        System.out.println("[" + pizza.getId() + "] " + pizza.getStatus());
+        System.out.println(pizza);
     }
 
     /**

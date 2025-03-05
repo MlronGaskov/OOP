@@ -95,7 +95,7 @@ public class Pizzeria {
         int id = ordersCount;
         Pizza pizza = new Pizza(id, deliveryTime);
         pizza.setStatus(PizzaStatus.ORDER_RECEIVED);
-        System.out.printf("Order accepted: Pizza [%d] status: %s%n", pizza.getId(), pizza.getStatus());
+        System.out.printf("Order accepted: " + pizza);
         try {
             orderQueue.put(pizza);
         } catch (InterruptedException e) {

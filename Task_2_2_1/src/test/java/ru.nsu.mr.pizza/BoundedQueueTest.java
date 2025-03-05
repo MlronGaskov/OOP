@@ -1,5 +1,9 @@
 package ru.nsu.mr.pizza;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -8,10 +12,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Tests.
@@ -59,6 +59,7 @@ class BoundedQueueTest {
         });
         Thread.sleep(100);
         assertFalse(future.isDone());
+        int taken = queue.take();
         future.get(1, TimeUnit.SECONDS);
         int newTaken = queue.take();
         assertEquals(20, newTaken);

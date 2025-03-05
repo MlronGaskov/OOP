@@ -42,7 +42,8 @@ public class RandomOrderGenerator implements Runnable {
 
     /**
      * Continuously generates random orders while running.
-     * The thread sleeps for a random time (based on the average generation time) between generating orders.
+     * The thread sleeps for a random time
+     * (based on the average generation time) between generating orders.
      */
     @Override
     public void run() {

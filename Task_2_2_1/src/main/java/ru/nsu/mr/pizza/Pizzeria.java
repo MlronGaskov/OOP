@@ -67,7 +67,7 @@ public class Pizzeria {
         acceptingOrders = false;
         System.out.println("Pizzeria stopped accepting new orders.");
 
-        synchronized(this) {
+        synchronized (this) {
             while (ordersCount > deliveredOrdersCount) {
                 wait();
             }
@@ -106,7 +106,8 @@ public class Pizzeria {
     }
 
     /**
-     * Increases the count of delivered orders and notifies waiting threads if all orders are delivered.
+     * Increases the count of delivered orders.
+     * Notifies waiting threads if all orders are delivered.
      */
     private synchronized void acceptOrderDelivered() {
         deliveredOrdersCount++;

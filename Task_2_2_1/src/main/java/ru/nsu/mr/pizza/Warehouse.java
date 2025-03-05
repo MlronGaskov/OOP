@@ -19,10 +19,12 @@ class Warehouse {
     }
 
     /**
-     * Stores the given pizza in the warehouse. After storing, the pizza status is set to IN_WAREHOUSE.
+     * Stores the given pizza in the warehouse.
+     * After storing, the pizza status is set to IN_WAREHOUSE.
      *
      * @param pizza the pizza to store
-     * @throws InterruptedException if the thread is interrupted while waiting to store the pizza
+     * @throws InterruptedException if the thread is interrupted
+     * while waiting to store the pizza
      */
     public void putPizza(Pizza pizza) throws InterruptedException {
         storage.put(pizza);
@@ -34,8 +36,10 @@ class Warehouse {
      * Retrieves up to {@code maxCount} pizzas from the warehouse.
      *
      * @param maxCount the maximum number of pizzas to retrieve
-     * @return a list of retrieved pizzas (maybe fewer than {@code maxCount} if not enough pizzas are available)
-     * @throws InterruptedException if the thread is interrupted while waiting for pizzas to become available
+     * @return a list of retrieved pizzas
+     * (maybe fewer than {@code maxCount} if not enough pizzas are available)
+     * @throws InterruptedException if the thread is interrupted
+     * while waiting for pizzas to become available
      */
     public List<Pizza> getPizzas(int maxCount) throws InterruptedException {
         return storage.takeUpTo(maxCount);

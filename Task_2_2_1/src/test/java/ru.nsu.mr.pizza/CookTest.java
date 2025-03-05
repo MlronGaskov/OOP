@@ -1,9 +1,9 @@
 package ru.nsu.mr.pizza;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Tests.
@@ -29,8 +29,8 @@ class CookTest {
         cookThread.join(1000);
 
         List<Pizza> cookedPizzas = warehouse.getPizzas(1);
-        assertEquals(1, cookedPizzas.size(), "Warehouse should contain one pizza");
+        assertEquals(1, cookedPizzas.size());
         Pizza cookedPizza = cookedPizzas.getFirst();
-        assertEquals(PizzaStatus.IN_WAREHOUSE, cookedPizza.getStatus(), "Pizza status should be COOKED");
+        assertEquals(PizzaStatus.IN_WAREHOUSE, cookedPizza.getStatus());
     }
 }

@@ -2,13 +2,20 @@ package ru.nsu.mr.pizza;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 
+/**
+ * Simulation class for running the pizzeria simulation.
+ * This class reads configuration parameters from a JSON file and starts the simulation.
+ */
 public class Simulation {
+
+    /**
+     * Holds configuration parameters for the simulation.
+     */
     static class Config {
         List<Integer> cookingTimes;
         List<Integer> truckSizes;
@@ -20,6 +27,12 @@ public class Simulation {
         int maxDeliveryTime;
     }
 
+    /**
+     * The entry point of the simulation.
+     *
+     * @param args the command line arguments (not used)
+     * @throws IOException if an I/O error occurs while reading the configuration
+     */
     public static void main(String[] args) throws IOException {
         try (InputStream inputStream = Simulation.class.getClassLoader()
                 .getResourceAsStream("config.json")) {

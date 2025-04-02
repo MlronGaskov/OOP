@@ -1,8 +1,8 @@
 package ru.nsu.gaskov.snake.models;
 
-import javafx.scene.paint.Color;
 import java.util.Queue;
 import java.util.LinkedList;
+import javafx.scene.paint.Color;
 
 /**
  * An enemy that uses BFS to find the nearest food.
@@ -30,16 +30,10 @@ public class SmartEnemy extends Enemy {
         int rows = board.getRows();
 
         boolean[][] visited = new boolean[cols][rows];
-        class Node {
-            final int x;
-            final int y;
-            final Direction firstDirection;
-            Node(int x, int y, Direction firstDirection) {
-                this.x = x;
-                this.y = y;
-                this.firstDirection = firstDirection;
-            }
+
+        record Node(int x, int y, Direction firstDirection) {
         }
+
         Queue<Node> queue = new LinkedList<>();
         visited[headX][headY] = true;
 

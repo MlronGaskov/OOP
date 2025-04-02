@@ -1,9 +1,9 @@
 package ru.nsu.gaskov.snake.models;
 
-import javafx.scene.canvas.GraphicsContext;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javafx.scene.canvas.GraphicsContext;
 
 /**
  * Game board for the snake game.

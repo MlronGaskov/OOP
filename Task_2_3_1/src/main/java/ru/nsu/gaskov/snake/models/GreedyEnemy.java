@@ -1,8 +1,8 @@
 package ru.nsu.gaskov.snake.models;
 
-import javafx.scene.paint.Color;
 import java.util.Random;
 import java.util.List;
+import javafx.scene.paint.Color;
 
 /**
  * Greedy enemy that chases the nearest food.

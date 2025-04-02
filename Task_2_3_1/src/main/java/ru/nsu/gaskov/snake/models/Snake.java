@@ -1,10 +1,10 @@
 package ru.nsu.gaskov.snake.models;
 
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 /**
  * Represents the snake in the game.
@@ -57,7 +57,8 @@ public class Snake {
      * Updates the snake's direction if allowed.
      */
     public void setDirection(Direction direction) {
-        if (this.direction == null || this.direction.opposite() != direction && !isDirectionChanged) {
+        if (this.direction == null || this.direction.opposite() != direction
+                && !isDirectionChanged) {
             this.direction = direction;
             isDirectionChanged = true;
         }

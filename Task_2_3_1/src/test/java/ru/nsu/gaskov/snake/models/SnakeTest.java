@@ -1,8 +1,9 @@
 package ru.nsu.gaskov.snake.models;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Tests.
@@ -29,5 +30,14 @@ public class SnakeTest {
         snake.move();
         assertEquals(50, snake.getSegments().getFirst().x());
         assertEquals(51, snake.getSegments().getFirst().y());
+    }
+
+    @Test
+    public void testAlive() {
+        assertTrue(snake.isAlive());
+        for (int i = 0; i < 50; ++i) {
+            snake.move();
+        }
+        assertFalse(snake.isAlive());
     }
 }

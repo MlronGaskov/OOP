@@ -20,12 +20,16 @@ public class GameBoardTest {
 
     @BeforeAll
     public static void initJFX() throws Exception {
-        CountDownLatch latch = new CountDownLatch(1);
-        Platform.startup(latch::countDown);
-        if (!latch.await(5, TimeUnit.SECONDS)) {
-            throw new Exception("JavaFX Platform failed to start.");
+        try {
+            CountDownLatch latch = new CountDownLatch(1);
+            Platform.startup(latch::countDown);
+            if (!latch.await(5, TimeUnit.SECONDS)) {
+                throw new Exception("JavaFX Platform failed to start.");
+            }
+        } catch (IllegalStateException ignored) {
         }
     }
+
 
     @Test
     public void testInitialization() throws Exception {

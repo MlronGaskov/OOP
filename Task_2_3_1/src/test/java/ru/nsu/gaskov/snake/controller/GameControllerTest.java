@@ -16,10 +16,13 @@ public class GameControllerTest {
 
     @BeforeAll
     public static void initJFX() throws Exception {
-        CountDownLatch latch = new CountDownLatch(1);
-        Platform.startup(latch::countDown);
-        if (!latch.await(5, TimeUnit.SECONDS)) {
-            throw new Exception("JavaFX Platform failed to start.");
+        try {
+            CountDownLatch latch = new CountDownLatch(1);
+            Platform.startup(latch::countDown);
+            if (!latch.await(5, TimeUnit.SECONDS)) {
+                throw new Exception("JavaFX Platform failed to start.");
+            }
+        } catch (IllegalStateException ignored) {
         }
     }
 
@@ -27,7 +30,6 @@ public class GameControllerTest {
     public void testInitializeDoesNotThrowException() throws Exception {
         GameController controller = new GameController();
 
-        // Устанавливаем необходимые поля через рефлексию
         Field gameCanvasField = GameController.class.getDeclaredField("gameCanvas");
         gameCanvasField.setAccessible(true);
         gameCanvasField.set(controller, new Canvas(400, 400));
@@ -36,10 +38,9 @@ public class GameControllerTest {
         scoreLabelField.setAccessible(true);
         scoreLabelField.set(controller, new Label());
 
-        // Выполнение инициализации в потоке JavaFX
         CountDownLatch latch = new CountDownLatch(1);
         Platform.runLater(() -> {
-            assertDoesNotThrow(controller::initialize);
+            assertDoesNotThrow(() -> controller.initialize());
             latch.countDown();
         });
         if (!latch.await(5, TimeUnit.SECONDS)) {

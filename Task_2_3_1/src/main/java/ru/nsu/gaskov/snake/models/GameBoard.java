@@ -201,7 +201,8 @@ public class GameBoard {
         enemies.clear();
         Random rand = new Random();
         for (int i = 0; i < level.getEnemiesCount(); i++) {
-            int x, y;
+            int x;
+            int y;
             do {
                 x = rand.nextInt(cols);
                 y = rand.nextInt(rows);

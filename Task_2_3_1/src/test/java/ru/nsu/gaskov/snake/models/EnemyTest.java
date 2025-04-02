@@ -21,13 +21,12 @@ public class EnemyTest {
     @Test
     public void testChoseDirectionForAllEnemies() {
         Enemy stupidEnemy = new StupidEnemy(board, 50, 50);
-        Enemy smartEnemy = new SmartEnemy(board, 50, 50);
-        Enemy greedyEnemy = new GreedyEnemy(board, 50, 50);
-        Enemy satiatedEnemy = new SatiatedEnemy(board, 50, 50);
-
         stupidEnemy.choseDirection();
+        Enemy smartEnemy = new SmartEnemy(board, 50, 50);
         smartEnemy.choseDirection();
+        Enemy greedyEnemy = new GreedyEnemy(board, 50, 50);
         greedyEnemy.choseDirection();
+        Enemy satiatedEnemy = new SatiatedEnemy(board, 50, 50);
         satiatedEnemy.choseDirection();
 
         assertAll("Enemy choseDirection checks",

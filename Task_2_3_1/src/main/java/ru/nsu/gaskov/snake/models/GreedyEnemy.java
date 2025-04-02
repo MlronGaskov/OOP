@@ -1,7 +1,7 @@
 package ru.nsu.gaskov.snake.models;
 
-import java.util.Random;
 import java.util.List;
+import java.util.Random;
 import javafx.scene.paint.Color;
 
 /**

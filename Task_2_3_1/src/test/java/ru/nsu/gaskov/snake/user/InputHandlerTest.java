@@ -39,25 +39,24 @@ public class InputHandlerTest {
         KeyEvent upEvent = new KeyEvent(
                 KeyEvent.KEY_PRESSED, "", "", KeyCode.UP, false, false, false, false
         );
-        KeyEvent downEvent = new KeyEvent(
-                KeyEvent.KEY_PRESSED, "", "", KeyCode.DOWN, false, false, false, false
-        );
-        KeyEvent leftEvent = new KeyEvent(
-                KeyEvent.KEY_PRESSED, "", "", KeyCode.LEFT, false, false, false, false
-        );
-        KeyEvent rightEvent = new KeyEvent(
-                KeyEvent.KEY_PRESSED, "", "", KeyCode.RIGHT, false, false, false, false
-        );
-
         handler.handleKeyPressed(upEvent);
         Direction upDirection = dummySnake.getDirection();
 
+        KeyEvent downEvent = new KeyEvent(
+                KeyEvent.KEY_PRESSED, "", "", KeyCode.DOWN, false, false, false, false
+        );
         handler.handleKeyPressed(downEvent);
         Direction downDirection = dummySnake.getDirection();
 
+        KeyEvent leftEvent = new KeyEvent(
+                KeyEvent.KEY_PRESSED, "", "", KeyCode.LEFT, false, false, false, false
+        );
         handler.handleKeyPressed(leftEvent);
         Direction leftDirection = dummySnake.getDirection();
 
+        KeyEvent rightEvent = new KeyEvent(
+                KeyEvent.KEY_PRESSED, "", "", KeyCode.RIGHT, false, false, false, false
+        );
         handler.handleKeyPressed(rightEvent);
         Direction rightDirection = dummySnake.getDirection();
 

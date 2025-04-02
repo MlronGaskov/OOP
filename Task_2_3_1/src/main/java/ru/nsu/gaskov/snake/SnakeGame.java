@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Snake game application.
+ */
 public class SnakeGame extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {

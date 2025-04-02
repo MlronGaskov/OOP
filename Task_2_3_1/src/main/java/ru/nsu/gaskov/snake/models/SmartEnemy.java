@@ -1,7 +1,7 @@
 package ru.nsu.gaskov.snake.models;
 
-import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Queue;
 import javafx.scene.paint.Color;
 
 /**

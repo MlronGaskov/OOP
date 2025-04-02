@@ -91,6 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GameBoard</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Game board for the snake game.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -102,10 +103,12 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int,ru.nsu.gaskov.snake.models.Level)" class="member-name-link">GameBoard</a><wbr>(int&nbsp;rows,
- int&nbsp;cols,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int,ru.nsu.gaskov.snake.models.Level)" class="member-name-link">GameBoard</a><wbr>(int&nbsp;cols,
+ int&nbsp;rows,
  <a href="Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a>&nbsp;level)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs the game board.</div>
+</div>
 </div>
 </section>
 </li>
@@ -121,26 +124,96 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateObstacles(int,int)" class="member-name-link">generateObstacles</a><wbr>(int&nbsp;startX,
- int&nbsp;startY)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(javafx.scene.canvas.GraphicsContext)" class="member-name-link">draw</a><wbr>(javafx.scene.canvas.GraphicsContext&nbsp;gc)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Renders the game board.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#eatFood(int,int)" class="member-name-link">eatFood</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes food from the specified cell and generates new food.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateEnemies()" class="member-name-link">generateEnemies</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Generates enemies on the board.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateFood()" class="member-name-link">generateFood</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Generates food on the board.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateObstacles()" class="member-name-link">generateObstacles</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Generates obstacles on the board.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCols()" class="member-name-link">getCols</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Obstacle.html" title="class in ru.nsu.gaskov.snake.models">Obstacle</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObstacles()" class="member-name-link">getObstacles</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRows()" class="member-name-link">getRows</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNotInside(int,int)" class="member-name-link">isNotInside</a><wbr>(int&nbsp;x,
- int&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the number of columns.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Food.html" title="class in ru.nsu.gaskov.snake.models">Food</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFood()" class="member-name-link">getFood</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a copy list of food.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Obstacle.html" title="class in ru.nsu.gaskov.snake.models">Obstacle</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObstacles()" class="member-name-link">getObstacles</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a copy list of obstacles.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRows()" class="member-name-link">getRows</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the number of rows.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSnakes()" class="member-name-link">getSnakes</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a list of all snakes.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUserSnake()" class="member-name-link">getUserSnake</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the user-controlled snake.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isObstacle(int,int)" class="member-name-link">isObstacle</a><wbr>(int&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFood(int,int)" class="member-name-link">isFood</a><wbr>(int&nbsp;x,
  int&nbsp;y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the cell has food.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFreeCell(int,int)" class="member-name-link">isFreeCell</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the cell is free.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNotInside(int,int)" class="member-name-link">isNotInside</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the coordinates are outside the board.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNotObstacle(int,int)" class="member-name-link">isNotObstacle</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the cell is not occupied by an obstacle.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNotSnake(int,int)" class="member-name-link">isNotSnake</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the cell is not occupied by any snake.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the game board state.</div>
+</div>
 </div>
 </div>
 </div>
@@ -161,9 +234,10 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(int,int,ru.nsu.gaskov.snake.models.Level)">
 <h3>GameBoard</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GameBoard</span><wbr><span class="parameters">(int&nbsp;rows,
- int&nbsp;cols,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GameBoard</span><wbr><span class="parameters">(int&nbsp;cols,
+ int&nbsp;rows,
  <a href="Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a>&nbsp;level)</span></div>
+<div class="block">Constructs the game board.</div>
 </section>
 </li>
 </ul>
@@ -175,15 +249,67 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getRows()">
-<h3>getRows</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getRows</span>()</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getCols()">
 <h3>getCols</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCols</span>()</div>
+<div class="block">Returns the number of columns.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getRows()">
+<h3>getRows</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getRows</span>()</div>
+<div class="block">Returns the number of rows.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getFood()">
+<h3>getFood</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Food.html" title="class in ru.nsu.gaskov.snake.models">Food</a>&gt;</span>&nbsp;<span class="element-name">getFood</span>()</div>
+<div class="block">Returns a copy list of food.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getObstacles()">
+<h3>getObstacles</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Obstacle.html" title="class in ru.nsu.gaskov.snake.models">Obstacle</a>&gt;</span>&nbsp;<span class="element-name">getObstacles</span>()</div>
+<div class="block">Returns a copy list of obstacles.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getUserSnake()">
+<h3>getUserSnake</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></span>&nbsp;<span class="element-name">getUserSnake</span>()</div>
+<div class="block">Returns the user-controlled snake.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getSnakes()">
+<h3>getSnakes</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a>&gt;</span>&nbsp;<span class="element-name">getSnakes</span>()</div>
+<div class="block">Returns a list of all snakes.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="update()">
+<h3>update</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
+<div class="block">Updates the game board state.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="draw(javafx.scene.canvas.GraphicsContext)">
+<h3>draw</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span><wbr><span class="parameters">(javafx.scene.canvas.GraphicsContext&nbsp;gc)</span></div>
+<div class="block">Renders the game board.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="eatFood(int,int)">
+<h3>eatFood</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">eatFood</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y)</span></div>
+<div class="block">Removes food from the specified cell and generates new food.</div>
 </section>
 </li>
 <li>
@@ -191,26 +317,60 @@ loadScripts(document, 'script');</script>
 <h3>isNotInside</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNotInside</span><wbr><span class="parameters">(int&nbsp;x,
  int&nbsp;y)</span></div>
+<div class="block">Checks if the coordinates are outside the board.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="isObstacle(int,int)">
-<h3>isObstacle</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isObstacle</span><wbr><span class="parameters">(int&nbsp;x,
+<section class="detail" id="isNotObstacle(int,int)">
+<h3>isNotObstacle</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNotObstacle</span><wbr><span class="parameters">(int&nbsp;x,
  int&nbsp;y)</span></div>
+<div class="block">Checks if the cell is not occupied by an obstacle.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="getObstacles()">
-<h3>getObstacles</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Obstacle.html" title="class in ru.nsu.gaskov.snake.models">Obstacle</a>&gt;</span>&nbsp;<span class="element-name">getObstacles</span>()</div>
+<section class="detail" id="isNotSnake(int,int)">
+<h3>isNotSnake</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNotSnake</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y)</span></div>
+<div class="block">Checks if the cell is not occupied by any snake.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="generateObstacles(int,int)">
+<section class="detail" id="isFreeCell(int,int)">
+<h3>isFreeCell</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFreeCell</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y)</span></div>
+<div class="block">Checks if the cell is free.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isFood(int,int)">
+<h3>isFood</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFood</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y)</span></div>
+<div class="block">Checks if the cell has food.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="generateObstacles()">
 <h3>generateObstacles</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">generateObstacles</span><wbr><span class="parameters">(int&nbsp;startX,
- int&nbsp;startY)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">generateObstacles</span>()</div>
+<div class="block">Generates obstacles on the board.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="generateEnemies()">
+<h3>generateEnemies</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">generateEnemies</span>()</div>
+<div class="block">Generates enemies on the board.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="generateFood()">
+<h3>generateFood</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">generateFood</span>()</div>
+<div class="block">Generates food on the board.</div>
 </section>
 </li>
 </ul>

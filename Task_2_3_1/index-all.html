@@ -49,30 +49,56 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1>Index</h1>
 </div>
-<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<a href="#I:X">X</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a>
-<h2 class="title" id="I:A">A</h2>
-<dl class="index">
-<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#addSegmentAtHead(ru.nsu.gaskov.snake.models.SnakeSegment)" class="member-name-link">addSegmentAtHead(SnakeSegment)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
-<dd>&nbsp;</dd>
-</dl>
-<h2 class="title" id="I:B">B</h2>
-<dl class="index">
-<dt><a href="ru/nsu/gaskov/snake/view/BoardRenderer.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.view">BoardRenderer</a> - Class in <a href="ru/nsu/gaskov/snake/view/package-summary.html">ru.nsu.gaskov.snake.view</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/view/BoardRenderer.html#%3Cinit%3E(javafx.scene.canvas.GraphicsContext,ru.nsu.gaskov.snake.controller.Game)" class="member-name-link">BoardRenderer(GraphicsContext, Game)</a> - Constructor for class ru.nsu.gaskov.snake.view.<a href="ru/nsu/gaskov/snake/view/BoardRenderer.html" title="class in ru.nsu.gaskov.snake.view">BoardRenderer</a></dt>
-<dd>&nbsp;</dd>
-</dl>
+<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<a href="#I:X">X</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a>
 <h2 class="title" id="I:C">C</h2>
 <dl class="index">
-<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#contains(int,int)" class="member-name-link">contains(int, int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
+<dt><a href="ru/nsu/gaskov/snake/models/Enemy.html#choseDirection()" class="member-name-link">choseDirection()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Enemy.html" title="class in ru.nsu.gaskov.snake.models">Enemy</a></dt>
+<dd>
+<div class="block">Chooses the enemy direction.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GreedyEnemy.html#choseDirection()" class="member-name-link">choseDirection()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GreedyEnemy.html" title="class in ru.nsu.gaskov.snake.models">GreedyEnemy</a></dt>
+<dd>
+<div class="block">Chooses the direction towards the nearest food ignoring obstacles and snakes.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/SatiatedEnemy.html#choseDirection()" class="member-name-link">choseDirection()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/SatiatedEnemy.html" title="class in ru.nsu.gaskov.snake.models">SatiatedEnemy</a></dt>
+<dd>
+<div class="block">Chooses a random safe direction.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/SmartEnemy.html#choseDirection()" class="member-name-link">choseDirection()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/SmartEnemy.html" title="class in ru.nsu.gaskov.snake.models">SmartEnemy</a></dt>
+<dd>
+<div class="block">Chooses the direction towards the nearest food using BFS.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/StupidEnemy.html#choseDirection()" class="member-name-link">choseDirection()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/StupidEnemy.html" title="class in ru.nsu.gaskov.snake.models">StupidEnemy</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:D">D</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/snake/models/Direction.html" class="type-name-link" title="enum class in ru.nsu.gaskov.snake.models">Direction</a> - Enum Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Enum representing movement directions.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Direction.html#DOWN" class="member-name-link">DOWN</a> - Enum constant in enum class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#draw(javafx.scene.canvas.GraphicsContext)" class="member-name-link">draw(GraphicsContext)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Renders the game board.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Food.html#draw(javafx.scene.canvas.GraphicsContext,double,double)" class="member-name-link">draw(GraphicsContext, double, double)</a> - Method in record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Food.html" title="class in ru.nsu.gaskov.snake.models">Food</a></dt>
+<dd>
+<div class="block">Draws the food.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Obstacle.html#draw(javafx.scene.canvas.GraphicsContext,double,double)" class="member-name-link">draw(GraphicsContext, double, double)</a> - Method in record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Obstacle.html" title="class in ru.nsu.gaskov.snake.models">Obstacle</a></dt>
+<dd>
+<div class="block">Draws the obstacle.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#draw(javafx.scene.canvas.GraphicsContext,double,double)" class="member-name-link">draw(GraphicsContext, double, double)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
+<dd>
+<div class="block">Draws the snake on the provided graphics context.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/SnakeSegment.html#draw(javafx.scene.canvas.GraphicsContext,javafx.scene.paint.Color,double,double)" class="member-name-link">draw(GraphicsContext, Color, double, double)</a> - Method in record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a></dt>
+<dd>
+<div class="block">Draws the snake segment.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Direction.html#dx" class="member-name-link">dx</a> - Variable in enum class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Direction.html#dy" class="member-name-link">dy</a> - Variable in enum class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></dt>
@@ -80,6 +106,18 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:E">E</h2>
 <dl class="index">
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#eatFood(int,int)" class="member-name-link">eatFood(int, int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Removes food from the specified cell and generates new food.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Enemy.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">Enemy</a> - Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
+<dd>
+<div class="block">Abstract enemy class.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Enemy.html#%3Cinit%3E(ru.nsu.gaskov.snake.models.GameBoard,int,int)" class="member-name-link">Enemy(GameBoard, int, int)</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Enemy.html" title="class in ru.nsu.gaskov.snake.models">Enemy</a></dt>
+<dd>
+<div class="block">Creates an enemy.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Food.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Food.html" title="class in ru.nsu.gaskov.snake.models">Food</a></dt>
 <dd>
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
@@ -96,69 +134,121 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:F">F</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/snake/models/Food.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">Food</a> - Record Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/Food.html#%3Cinit%3E(int,int,int)" class="member-name-link">Food(int, int, int)</a> - Constructor for record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Food.html" title="class in ru.nsu.gaskov.snake.models">Food</a></dt>
+<dd>
+<div class="block">Food record.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Food.html#%3Cinit%3E(int,int)" class="member-name-link">Food(int, int)</a> - Constructor for record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Food.html" title="class in ru.nsu.gaskov.snake.models">Food</a></dt>
 <dd>
 <div class="block">Creates an instance of a <code>Food</code> record class.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:G">G</h2>
 <dl class="index">
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.controller">Game</a> - Class in <a href="ru/nsu/gaskov/snake/controller/package-summary.html">ru.nsu.gaskov.snake.controller</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#%3Cinit%3E(int,int)" class="member-name-link">Game(int, int)</a> - Constructor for class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">GameBoard</a> - Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Game board for the snake game.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#%3Cinit%3E(int,int,ru.nsu.gaskov.snake.models.Level)" class="member-name-link">GameBoard(int, int, Level)</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Constructs the game board.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/controller/GameController.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.controller">GameController</a> - Class in <a href="ru/nsu/gaskov/snake/controller/package-summary.html">ru.nsu.gaskov.snake.controller</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Combines game logic and controller for the snake game.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/controller/GameController.html#%3Cinit%3E()" class="member-name-link">GameController()</a> - Constructor for class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/GameController.html" title="class in ru.nsu.gaskov.snake.controller">GameController</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/snake/controller/GameState.html" class="type-name-link" title="enum class in ru.nsu.gaskov.snake.controller">GameState</a> - Enum Class in <a href="ru/nsu/gaskov/snake/controller/package-summary.html">ru.nsu.gaskov.snake.controller</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#generateObstacles(int,int)" class="member-name-link">generateObstacles(int, int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#getBoard()" class="member-name-link">getBoard()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Represents the current state of the game.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#generateEnemies()" class="member-name-link">generateEnemies()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Generates enemies on the board.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#generateFood()" class="member-name-link">generateFood()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Generates food on the board.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#generateObstacles()" class="member-name-link">generateObstacles()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Generates obstacles on the board.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#getCols()" class="member-name-link">getCols()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the number of columns.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Snake.html#getDirection()" class="member-name-link">getDirection()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#getFoodList()" class="member-name-link">getFoodList()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#getHead()" class="member-name-link">getHead()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#getLength()" class="member-name-link">getLength()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#getLevel()" class="member-name-link">getLevel()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the current movement direction of the snake.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Level.html#getEnemiesCount()" class="member-name-link">getEnemiesCount()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a></dt>
+<dd>
+<div class="block">Returns the number of enemies.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#getFood()" class="member-name-link">getFood()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Returns a copy list of food.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Level.html#getFoodCount()" class="member-name-link">getFoodCount()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a></dt>
+<dd>
+<div class="block">Returns the food count.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Enemy.html#getGameBoard()" class="member-name-link">getGameBoard()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Enemy.html" title="class in ru.nsu.gaskov.snake.models">Enemy</a></dt>
+<dd>
+<div class="block">Returns the game board.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Level.html#getObstacleParameter()" class="member-name-link">getObstacleParameter()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the obstacle parameter.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#getObstacles()" class="member-name-link">getObstacles()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns a copy list of obstacles.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#getRows()" class="member-name-link">getRows()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/ScoreManager.html#getScore()" class="member-name-link">getScore()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/ScoreManager.html" title="class in ru.nsu.gaskov.snake.models">ScoreManager</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#getScoreManager()" class="member-name-link">getScoreManager()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the number of rows.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Snake.html#getSegments()" class="member-name-link">getSegments()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#getSnake()" class="member-name-link">getSnake()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/Level.html#getSpeedNano()" class="member-name-link">getSpeedNano()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#getState()" class="member-name-link">getState()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns a copy of the snake's segments.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Enemy.html#getSnake()" class="member-name-link">getSnake()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Enemy.html" title="class in ru.nsu.gaskov.snake.models">Enemy</a></dt>
+<dd>
+<div class="block">Returns the enemy snake.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#getSnakes()" class="member-name-link">getSnakes()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Returns a list of all snakes.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Level.html#getTargetScore()" class="member-name-link">getTargetScore()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the target score.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Level.html#getUpdateSpeedNano()" class="member-name-link">getUpdateSpeedNano()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a></dt>
+<dd>
+<div class="block">Returns the update speed in nanoseconds.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#getUserSnake()" class="member-name-link">getUserSnake()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Returns the user-controlled snake.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GreedyEnemy.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">GreedyEnemy</a> - Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
+<dd>
+<div class="block">Greedy enemy that chases the nearest food.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GreedyEnemy.html#%3Cinit%3E(ru.nsu.gaskov.snake.models.GameBoard,int,int)" class="member-name-link">GreedyEnemy(GameBoard, int, int)</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GreedyEnemy.html" title="class in ru.nsu.gaskov.snake.models">GreedyEnemy</a></dt>
+<dd>
+<div class="block">Constructs a greedy enemy.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:H">H</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/snake/user/InputHandler.html#handleKeyPressed(javafx.scene.input.KeyEvent)" class="member-name-link">handleKeyPressed(KeyEvent)</a> - Method in class ru.nsu.gaskov.snake.user.<a href="ru/nsu/gaskov/snake/user/InputHandler.html" title="class in ru.nsu.gaskov.snake.user">InputHandler</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Processes a key pressed event and updates the snake's direction.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Food.html#hashCode()" class="member-name-link">hashCode()</a> - Method in record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Food.html" title="class in ru.nsu.gaskov.snake.models">Food</a></dt>
 <dd>
 <div class="block">Returns a hash code value for this object.</div>
@@ -175,28 +265,58 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:I">I</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/snake/models/Level.html#increaseDifficulty()" class="member-name-link">increaseDifficulty()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/ScoreManager.html#incrementScore(int)" class="member-name-link">incrementScore(int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/ScoreManager.html" title="class in ru.nsu.gaskov.snake.models">ScoreManager</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Increases the difficulty of the level.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/controller/GameController.html#initialize()" class="member-name-link">initialize()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/GameController.html" title="class in ru.nsu.gaskov.snake.controller">GameController</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Initializes the game, sets up input handling and starts the game loop.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/user/InputHandler.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.user">InputHandler</a> - Class in <a href="ru/nsu/gaskov/snake/user/package-summary.html">ru.nsu.gaskov.snake.user</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/user/InputHandler.html#%3Cinit%3E(ru.nsu.gaskov.snake.controller.Game)" class="member-name-link">InputHandler(Game)</a> - Constructor for class ru.nsu.gaskov.snake.user.<a href="ru/nsu/gaskov/snake/user/InputHandler.html" title="class in ru.nsu.gaskov.snake.user">InputHandler</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Handles keyboard input for the snake movement.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/user/InputHandler.html#%3Cinit%3E(ru.nsu.gaskov.snake.models.Snake)" class="member-name-link">InputHandler(Snake)</a> - Constructor for class ru.nsu.gaskov.snake.user.<a href="ru/nsu/gaskov/snake/user/InputHandler.html" title="class in ru.nsu.gaskov.snake.user">InputHandler</a></dt>
+<dd>
+<div class="block">Creates an input handler for the specified snake.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#isAlive()" class="member-name-link">isAlive()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
+<dd>
+<div class="block">Returns whether the snake is alive.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#isFood(int,int)" class="member-name-link">isFood(int, int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Checks if the cell has food.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#isFreeCell(int,int)" class="member-name-link">isFreeCell(int, int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Checks if the cell is free.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#isNotInside(int,int)" class="member-name-link">isNotInside(int, int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#isObstacle(int,int)" class="member-name-link">isObstacle(int, int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Checks if the coordinates are outside the board.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#isNotObstacle(int,int)" class="member-name-link">isNotObstacle(int, int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Checks if the cell is not occupied by an obstacle.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#isNotSnake(int,int)" class="member-name-link">isNotSnake(int, int)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Checks if the cell is not occupied by any snake.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:L">L</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/snake/models/Direction.html#LEFT" class="member-name-link">LEFT</a> - Enum constant in enum class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Level.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">Level</a> - Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Represents the game level settings.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Level.html#%3Cinit%3E()" class="member-name-link">Level()</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Level.html" title="class in ru.nsu.gaskov.snake.models">Level</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Creates a level with default settings.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/controller/GameState.html#LOST" class="member-name-link">LOST</a> - Enum constant in enum class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/GameState.html" title="enum class in ru.nsu.gaskov.snake.controller">GameState</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -204,35 +324,39 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/snake/SnakeGame.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Static method in class ru.nsu.gaskov.snake.<a href="ru/nsu/gaskov/snake/SnakeGame.html" title="class in ru.nsu.gaskov.snake">SnakeGame</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#move()" class="member-name-link">move()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
+<dd>
+<div class="block">Moves the snake one step forward.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:N">N</h2>
 <dl class="index">
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#nextLevel()" class="member-name-link">nextLevel()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/gaskov/snake/controller/GameController.html#nextLevel()" class="member-name-link">nextLevel()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/GameController.html" title="class in ru.nsu.gaskov.snake.controller">GameController</a></dt>
+<dd>
+<div class="block">Advances the game to the next level.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:O">O</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/snake/models/Obstacle.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">Obstacle</a> - Record Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Represents an obstacle on the game board.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Obstacle.html#%3Cinit%3E(int,int)" class="member-name-link">Obstacle(int, int)</a> - Constructor for record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Obstacle.html" title="class in ru.nsu.gaskov.snake.models">Obstacle</a></dt>
 <dd>
 <div class="block">Creates an instance of a <code>Obstacle</code> record class.</div>
 </dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Direction.html#opposite()" class="member-name-link">opposite()</a> - Method in enum class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the opposite direction.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:R">R</h2>
 <dl class="index">
-<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#removeTail()" class="member-name-link">removeTail()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/view/BoardRenderer.html#render()" class="member-name-link">render()</a> - Method in class ru.nsu.gaskov.snake.view.<a href="ru/nsu/gaskov/snake/view/BoardRenderer.html" title="class in ru.nsu.gaskov.snake.view">BoardRenderer</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#reset()" class="member-name-link">reset()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/ScoreManager.html#resetScore()" class="member-name-link">resetScore()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/ScoreManager.html" title="class in ru.nsu.gaskov.snake.models">ScoreManager</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#restartLevel()" class="member-name-link">restartLevel()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/gaskov/snake/controller/GameController.html#restartLevel()" class="member-name-link">restartLevel()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/GameController.html" title="class in ru.nsu.gaskov.snake.controller">GameController</a></dt>
+<dd>
+<div class="block">Restarts the current level.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Direction.html#RIGHT" class="member-name-link">RIGHT</a> - Enum constant in enum class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/snake/package-summary.html">ru.nsu.gaskov.snake</a> - package ru.nsu.gaskov.snake</dt>
@@ -243,38 +367,64 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/snake/user/package-summary.html">ru.nsu.gaskov.snake.user</a> - package ru.nsu.gaskov.snake.user</dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/view/package-summary.html">ru.nsu.gaskov.snake.view</a> - package ru.nsu.gaskov.snake.view</dt>
-<dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/snake/controller/GameState.html#RUNNING" class="member-name-link">RUNNING</a> - Enum constant in enum class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/GameState.html" title="enum class in ru.nsu.gaskov.snake.controller">GameState</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:S">S</h2>
 <dl class="index">
-<dt><a href="ru/nsu/gaskov/snake/models/Food.html#score()" class="member-name-link">score()</a> - Method in record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Food.html" title="class in ru.nsu.gaskov.snake.models">Food</a></dt>
+<dt><a href="ru/nsu/gaskov/snake/models/SatiatedEnemy.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">SatiatedEnemy</a> - Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
 <dd>
-<div class="block">Returns the value of the <code>score</code> record component.</div>
+<div class="block">An enemy that chooses a random safe direction.</div>
 </dd>
-<dt><a href="ru/nsu/gaskov/snake/models/ScoreManager.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">ScoreManager</a> - Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/ScoreManager.html#%3Cinit%3E()" class="member-name-link">ScoreManager()</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/ScoreManager.html" title="class in ru.nsu.gaskov.snake.models">ScoreManager</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/SatiatedEnemy.html#%3Cinit%3E(ru.nsu.gaskov.snake.models.GameBoard,int,int)" class="member-name-link">SatiatedEnemy(GameBoard, int, int)</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/SatiatedEnemy.html" title="class in ru.nsu.gaskov.snake.models">SatiatedEnemy</a></dt>
+<dd>
+<div class="block">Creates a satiated enemy.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#setColor(javafx.scene.paint.Color)" class="member-name-link">setColor(Color)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
+<dd>
+<div class="block">Sets the snake's color.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Snake.html#setDirection(ru.nsu.gaskov.snake.models.Direction)" class="member-name-link">setDirection(Direction)</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Updates the snake's direction if allowed.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/user/InputHandler.html#setSnake(ru.nsu.gaskov.snake.models.Snake)" class="member-name-link">setSnake(Snake)</a> - Method in class ru.nsu.gaskov.snake.user.<a href="ru/nsu/gaskov/snake/user/InputHandler.html" title="class in ru.nsu.gaskov.snake.user">InputHandler</a></dt>
+<dd>
+<div class="block">Sets snake to move.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/SmartEnemy.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">SmartEnemy</a> - Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
+<dd>
+<div class="block">An enemy that uses BFS to find the nearest food.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/SmartEnemy.html#%3Cinit%3E(ru.nsu.gaskov.snake.models.GameBoard,int,int)" class="member-name-link">SmartEnemy(GameBoard, int, int)</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/SmartEnemy.html" title="class in ru.nsu.gaskov.snake.models">SmartEnemy</a></dt>
+<dd>
+<div class="block">Creates a smart enemy.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/Snake.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">Snake</a> - Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#%3Cinit%3E(int,int)" class="member-name-link">Snake(int, int)</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Represents the snake in the game.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/Snake.html#%3Cinit%3E(ru.nsu.gaskov.snake.models.GameBoard,int,int)" class="member-name-link">Snake(GameBoard, int, int)</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a></dt>
+<dd>
+<div class="block">Constructs a snake with the specified starting position.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/SnakeGame.html" class="type-name-link" title="class in ru.nsu.gaskov.snake">SnakeGame</a> - Class in <a href="ru/nsu/gaskov/snake/package-summary.html">ru.nsu.gaskov.snake</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/snake/SnakeGame.html#%3Cinit%3E()" class="member-name-link">SnakeGame()</a> - Constructor for class ru.nsu.gaskov.snake.<a href="ru/nsu/gaskov/snake/SnakeGame.html" title="class in ru.nsu.gaskov.snake">SnakeGame</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/SnakeSegment.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a> - Record Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Represents a segment of the snake.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/snake/models/SnakeSegment.html#%3Cinit%3E(int,int)" class="member-name-link">SnakeSegment(int, int)</a> - Constructor for record class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a></dt>
 <dd>
 <div class="block">Creates an instance of a <code>SnakeSegment</code> record class.</div>
 </dd>
 <dt><a href="ru/nsu/gaskov/snake/SnakeGame.html#start(javafx.stage.Stage)" class="member-name-link">start(Stage)</a> - Method in class ru.nsu.gaskov.snake.<a href="ru/nsu/gaskov/snake/SnakeGame.html" title="class in ru.nsu.gaskov.snake">SnakeGame</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/StupidEnemy.html" class="type-name-link" title="class in ru.nsu.gaskov.snake.models">StupidEnemy</a> - Class in <a href="ru/nsu/gaskov/snake/models/package-summary.html">ru.nsu.gaskov.snake.models</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/StupidEnemy.html#%3Cinit%3E(ru.nsu.gaskov.snake.models.GameBoard,int,int)" class="member-name-link">StupidEnemy(GameBoard, int, int)</a> - Constructor for class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/StupidEnemy.html" title="class in ru.nsu.gaskov.snake.models">StupidEnemy</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:T">T</h2>
@@ -296,8 +446,14 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/snake/models/Direction.html#UP" class="member-name-link">UP</a> - Enum constant in enum class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/snake/controller/Game.html#update()" class="member-name-link">update()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/gaskov/snake/controller/GameController.html#update()" class="member-name-link">update()</a> - Method in class ru.nsu.gaskov.snake.controller.<a href="ru/nsu/gaskov/snake/controller/GameController.html" title="class in ru.nsu.gaskov.snake.controller">GameController</a></dt>
+<dd>
+<div class="block">Updates the game state and redraws the game board.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/snake/models/GameBoard.html#update()" class="member-name-link">update()</a> - Method in class ru.nsu.gaskov.snake.models.<a href="ru/nsu/gaskov/snake/models/GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a></dt>
+<dd>
+<div class="block">Updates the game board state.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:V">V</h2>
 <dl class="index">
@@ -355,7 +511,7 @@ the order they are declared.</div>
 <div class="block">Returns the value of the <code>y</code> record component.</div>
 </dd>
 </dl>
-<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<a href="#I:X">X</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a></main>
+<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<a href="#I:X">X</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a></main>
 </div>
 </div>
 </body>

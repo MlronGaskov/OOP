@@ -91,6 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">InputHandler</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Handles keyboard input for the snake movement.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -102,8 +103,10 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.gaskov.snake.controller.Game)" class="member-name-link">InputHandler</a><wbr>(<a href="../controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a>&nbsp;game)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.gaskov.snake.models.Snake)" class="member-name-link">InputHandler</a><wbr>(<a href="../models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a>&nbsp;snake)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Creates an input handler for the specified snake.</div>
+</div>
 </div>
 </section>
 </li>
@@ -120,7 +123,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleKeyPressed(javafx.scene.input.KeyEvent)" class="member-name-link">handleKeyPressed</a><wbr>(javafx.scene.input.KeyEvent&nbsp;event)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Processes a key pressed event and updates the snake's direction.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSnake(ru.nsu.gaskov.snake.models.Snake)" class="member-name-link">setSnake</a><wbr>(<a href="../models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a>&nbsp;snake)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets snake to move.</div>
+</div>
 </div>
 </div>
 </div>
@@ -139,9 +149,10 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(ru.nsu.gaskov.snake.controller.Game)">
+<section class="detail" id="&lt;init&gt;(ru.nsu.gaskov.snake.models.Snake)">
 <h3>InputHandler</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">InputHandler</span><wbr><span class="parameters">(<a href="../controller/Game.html" title="class in ru.nsu.gaskov.snake.controller">Game</a>&nbsp;game)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">InputHandler</span><wbr><span class="parameters">(<a href="../models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a>&nbsp;snake)</span></div>
+<div class="block">Creates an input handler for the specified snake.</div>
 </section>
 </li>
 </ul>
@@ -153,9 +164,17 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="setSnake(ru.nsu.gaskov.snake.models.Snake)">
+<h3>setSnake</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSnake</span><wbr><span class="parameters">(<a href="../models/Snake.html" title="class in ru.nsu.gaskov.snake.models">Snake</a>&nbsp;snake)</span></div>
+<div class="block">Sets snake to move.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="handleKeyPressed(javafx.scene.input.KeyEvent)">
 <h3>handleKeyPressed</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handleKeyPressed</span><wbr><span class="parameters">(javafx.scene.input.KeyEvent&nbsp;event)</span></div>
+<div class="block">Processes a key pressed event and updates the snake's direction.</div>
 </section>
 </li>
 </ul>

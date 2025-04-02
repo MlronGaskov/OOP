@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.gaskov.snake"},{"l":"ru.nsu.gaskov.snake.controller"},{"l":"ru.nsu.gaskov.snake.models"},{"l":"ru.nsu.gaskov.snake.user"},{"l":"ru.nsu.gaskov.snake.view"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.gaskov.snake"},{"l":"ru.nsu.gaskov.snake.controller"},{"l":"ru.nsu.gaskov.snake.models"},{"l":"ru.nsu.gaskov.snake.user"}];updateSearchResults();

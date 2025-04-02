@@ -91,6 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Snake</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Represents the snake in the game.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -102,9 +103,12 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int)" class="member-name-link">Snake</a><wbr>(int&nbsp;startX,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.gaskov.snake.models.GameBoard,int,int)" class="member-name-link">Snake</a><wbr>(<a href="GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a>&nbsp;gameBoard,
+ int&nbsp;startX,
  int&nbsp;startY)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a snake with the specified starting position.</div>
+</div>
 </div>
 </section>
 </li>
@@ -120,33 +124,42 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSegmentAtHead(ru.nsu.gaskov.snake.models.SnakeSegment)" class="member-name-link">addSegmentAtHead</a><wbr>(<a href="SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a>&nbsp;segment)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(javafx.scene.canvas.GraphicsContext,double,double)" class="member-name-link">draw</a><wbr>(javafx.scene.canvas.GraphicsContext&nbsp;gc,
+ double&nbsp;cellWidth,
+ double&nbsp;cellHeight)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Draws the snake on the provided graphics context.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDirection()" class="member-name-link">getDirection</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the current movement direction of the snake.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSegments()" class="member-name-link">getSegments</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a copy of the snake's segments.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#contains(int,int)" class="member-name-link">contains</a><wbr>(int&nbsp;x,
- int&nbsp;y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDirection()" class="member-name-link">getDirection</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHead()" class="member-name-link">getHead</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLength()" class="member-name-link">getLength</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSegments()" class="member-name-link">getSegments</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAlive()" class="member-name-link">isAlive</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the snake is alive.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeTail()" class="member-name-link">removeTail</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#move()" class="member-name-link">move</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Moves the snake one step forward.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setColor(javafx.scene.paint.Color)" class="member-name-link">setColor</a><wbr>(javafx.scene.paint.Color&nbsp;color)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the snake's color.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDirection(ru.nsu.gaskov.snake.models.Direction)" class="member-name-link">setDirection</a><wbr>(<a href="Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a>&nbsp;direction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the snake's direction if allowed.</div>
+</div>
 </div>
 </div>
 </div>
@@ -165,10 +178,12 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(int,int)">
+<section class="detail" id="&lt;init&gt;(ru.nsu.gaskov.snake.models.GameBoard,int,int)">
 <h3>Snake</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Snake</span><wbr><span class="parameters">(int&nbsp;startX,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Snake</span><wbr><span class="parameters">(<a href="GameBoard.html" title="class in ru.nsu.gaskov.snake.models">GameBoard</a>&nbsp;gameBoard,
+ int&nbsp;startX,
  int&nbsp;startY)</span></div>
+<div class="block">Constructs a snake with the specified starting position.</div>
 </section>
 </li>
 </ul>
@@ -180,58 +195,54 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="reset()">
-<h3>reset</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">reset</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addSegmentAtHead(ru.nsu.gaskov.snake.models.SnakeSegment)">
-<h3>addSegmentAtHead</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSegmentAtHead</span><wbr><span class="parameters">(<a href="SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a>&nbsp;segment)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="removeTail()">
-<h3>removeTail</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeTail</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getHead()">
-<h3>getHead</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a></span>&nbsp;<span class="element-name">getHead</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getLength()">
-<h3>getLength</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getLength</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="contains(int,int)">
-<h3>contains</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">contains</span><wbr><span class="parameters">(int&nbsp;x,
- int&nbsp;y)</span></div>
+<section class="detail" id="getSegments()">
+<h3>getSegments</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a>&gt;</span>&nbsp;<span class="element-name">getSegments</span>()</div>
+<div class="block">Returns a copy of the snake's segments.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getDirection()">
 <h3>getDirection</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a></span>&nbsp;<span class="element-name">getDirection</span>()</div>
+<div class="block">Returns the current movement direction of the snake.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAlive()">
+<h3>isAlive</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAlive</span>()</div>
+<div class="block">Returns whether the snake is alive.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setColor(javafx.scene.paint.Color)">
+<h3>setColor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setColor</span><wbr><span class="parameters">(javafx.scene.paint.Color&nbsp;color)</span></div>
+<div class="block">Sets the snake's color.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="setDirection(ru.nsu.gaskov.snake.models.Direction)">
 <h3>setDirection</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDirection</span><wbr><span class="parameters">(<a href="Direction.html" title="enum class in ru.nsu.gaskov.snake.models">Direction</a>&nbsp;direction)</span></div>
+<div class="block">Updates the snake's direction if allowed.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="getSegments()">
-<h3>getSegments</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="SnakeSegment.html" title="class in ru.nsu.gaskov.snake.models">SnakeSegment</a>&gt;</span>&nbsp;<span class="element-name">getSegments</span>()</div>
+<section class="detail" id="move()">
+<h3>move</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">move</span>()</div>
+<div class="block">Moves the snake one step forward.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="draw(javafx.scene.canvas.GraphicsContext,double,double)">
+<h3>draw</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span><wbr><span class="parameters">(javafx.scene.canvas.GraphicsContext&nbsp;gc,
+ double&nbsp;cellWidth,
+ double&nbsp;cellHeight)</span></div>
+<div class="block">Draws the snake on the provided graphics context.</div>
 </section>
 </li>
 </ul>

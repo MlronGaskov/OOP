@@ -1,67 +1,97 @@
 package ru.nsu.gaskov.snake.models;
 
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Represents the snake in the game.
+ */
 public class Snake {
-    private final LinkedList<SnakeSegment> segments;
-    private Direction direction;
+    private final LinkedList<SnakeSegment> segments = new LinkedList<>();
+    private Direction direction = Direction.RIGHT;
     private boolean isDirectionChanged = false;
-    private final int startX;
-    private final int startY;
+    private boolean isAlive = true;
+    private final GameBoard gameBoard;
+    private Color color = Color.BLACK;
 
-    public Snake(int startX, int startY) {
-        this.startX = startX;
-        this.startY = startY;
-        segments = new LinkedList<>();
-        direction = Direction.RIGHT;
+    /**
+     * Constructs a snake with the specified starting position.
+     */
+    public Snake(GameBoard gameBoard, int startX, int startY) {
+        this.gameBoard = gameBoard;
         segments.add(new SnakeSegment(startX, startY));
     }
 
-    public void reset() {
-        segments.clear();
-        segments.add(new SnakeSegment(startX, startY));
-        direction = Direction.RIGHT;
+    /**
+     * Returns a copy of the snake's segments.
+     */
+    public List<SnakeSegment> getSegments() {
+        return new ArrayList<>(segments);
     }
 
-    public void addSegmentAtHead(SnakeSegment segment) {
-        segments.addFirst(segment);
-        isDirectionChanged = false;
-    }
-
-    public void removeTail() {
-        segments.removeLast();
-    }
-
-    public SnakeSegment getHead() {
-        return segments.getFirst();
-    }
-
-    public int getLength() {
-        return segments.size();
-    }
-
-    public boolean contains(int x, int y) {
-        for (SnakeSegment segment : segments) {
-            if (segment.x() == x && segment.y() == y) {
-                return true;
-            }
-        }
-        return false;
-    }
-
+    /**
+     * Returns the current movement direction of the snake.
+     */
     public Direction getDirection() {
         return direction;
     }
 
+    /**
+     * Returns whether the snake is alive.
+     */
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    /**
+     * Sets the snake's color.
+     */
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    /**
+     * Updates the snake's direction if allowed.
+     */
     public void setDirection(Direction direction) {
-        if (this.direction.opposite() != direction && !isDirectionChanged) {
+        if (this.direction == null || this.direction.opposite() != direction && !isDirectionChanged) {
             this.direction = direction;
             isDirectionChanged = true;
         }
     }
 
-    public List<SnakeSegment> getSegments() {
-        return segments;
+    /**
+     * Moves the snake one step forward.
+     */
+    public void move() {
+        isDirectionChanged = false;
+        if (!isAlive) {
+            throw new IllegalStateException("Dead snakes can not move.");
+        }
+        int newHeadX = segments.getFirst().x() + direction.dx;
+        int newHeadY = segments.getFirst().y() + direction.dy;
+        if (!gameBoard.isFreeCell(newHeadX, newHeadY)) {
+            isAlive = false;
+            segments.clear();
+            return;
+        }
+        segments.addFirst(new SnakeSegment(newHeadX, newHeadY));
+        if (gameBoard.isFood(newHeadX, newHeadY)) {
+            gameBoard.eatFood(newHeadX, newHeadY);
+        } else {
+            segments.removeLast();
+        }
+    }
+
+    /**
+     * Draws the snake on the provided graphics context.
+     */
+    public void draw(GraphicsContext gc, double cellWidth, double cellHeight) {
+        for (SnakeSegment segment : segments) {
+            segment.draw(gc, color, cellWidth, cellHeight);
+        }
     }
 }

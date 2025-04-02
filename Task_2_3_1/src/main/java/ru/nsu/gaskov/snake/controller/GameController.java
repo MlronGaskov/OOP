@@ -1,13 +1,21 @@
 package ru.nsu.gaskov.snake.controller;
 
 import javafx.animation.AnimationTimer;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
+import ru.nsu.gaskov.snake.models.GameBoard;
+import ru.nsu.gaskov.snake.models.Level;
 import ru.nsu.gaskov.snake.user.InputHandler;
-import ru.nsu.gaskov.snake.view.BoardRenderer;
 
+/**
+ * Combines game logic and controller for the snake game.
+ */
 public class GameController {
     @FXML
     private Canvas gameCanvas;
@@ -15,15 +23,21 @@ public class GameController {
     @FXML
     private Label scoreLabel;
 
-    private Game game;
-    private BoardRenderer renderer;
+    private GameState state;
+    private final Level level = new Level();
+    private GameBoard gameBoard;
+    private GraphicsContext gc;
     private InputHandler inputHandler;
+    private final IntegerProperty scoreProperty = new SimpleIntegerProperty();
 
+    /**
+     * Initializes the game, sets up input handling and starts the game loop.
+     */
+    @FXML
     public void initialize() {
-        game = new Game(9 * 3, 16 * 3);
-        renderer = new BoardRenderer(gameCanvas.getGraphicsContext2D(), game);
-        inputHandler = new InputHandler(game);
-
+        gc = gameCanvas.getGraphicsContext2D();
+        startLevel();
+        inputHandler = new InputHandler(gameBoard.getUserSnake());
         gameCanvas.sceneProperty().addListener((obs, oldScene, newScene) -> {
             if (newScene != null) {
                 newScene.setOnKeyPressed((KeyEvent event) ->
@@ -36,26 +50,61 @@ public class GameController {
 
             @Override
             public void handle(long now) {
-                if (now - lastUpdate >= game.getLevel().getSpeedNano()) {
-                    if (game.getState() == GameState.RUNNING) {
-                        try {
-                            game.update();
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
-                    renderer.render();
-                    scoreLabel.setText("Score: " + game.getScoreManager().getScore()
-                            + "/" + game.getLevel().getTargetScore());
-                    if (game.getState() == GameState.WON) {
-                        game.nextLevel();
-                    } else if (game.getState() == GameState.LOST) {
-                        game.restartLevel();
+                if (now - lastUpdate >= level.getUpdateSpeedNano()) {
+                    update();
+                    scoreLabel.textProperty().bind(Bindings.createStringBinding(
+                            () -> "Score: " + scoreProperty.get() + "/" + level.getTargetScore(),
+                            scoreProperty));
+                    if (state == GameState.WON) {
+                        nextLevel();
+                    } else if (state == GameState.LOST) {
+                        restartLevel();
                     }
                     lastUpdate = now;
                 }
             }
         };
         gameLoop.start();
+    }
+
+    /**
+     * Updates the game state and redraws the game board.
+     */
+    public void update() {
+        gameBoard.update();
+        gameBoard.draw(gc);
+        scoreProperty.set(gameBoard.getUserSnake().getSegments().size());
+        if (scoreProperty.get() >= level.getTargetScore()) {
+            state = GameState.WON;
+        } else if (!gameBoard.getUserSnake().isAlive()) {
+            state = GameState.LOST;
+        }
+    }
+
+    /**
+     * Starts or restarts the level.
+     */
+    private void startLevel() {
+        state = GameState.RUNNING;
+        int initialRows = 9 * 3;
+        int initialCols = 16 * 3;
+        gameBoard = new GameBoard(initialCols, initialRows, level);
+    }
+
+    /**
+     * Advances the game to the next level.
+     */
+    public void nextLevel() {
+        level.increaseDifficulty();
+        startLevel();
+        inputHandler.setSnake(gameBoard.getUserSnake());
+    }
+
+    /**
+     * Restarts the current level.
+     */
+    public void restartLevel() {
+        startLevel();
+        inputHandler.setSnake(gameBoard.getUserSnake());
     }
 }

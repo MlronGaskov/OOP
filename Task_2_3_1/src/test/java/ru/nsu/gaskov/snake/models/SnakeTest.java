@@ -13,6 +13,9 @@ import org.junit.jupiter.api.Test;
 public class SnakeTest {
     private Snake snake;
 
+    /**
+     * Setup.
+     */
     @BeforeEach
     public void setUp() {
         Level level = new Level();

@@ -1,6 +1,5 @@
 package ru.nsu.gaskov.snake.controller;
 
-import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 import javafx.application.Platform;
@@ -28,6 +27,7 @@ public class GameControllerTest {
     public void testInitializeDoesNotThrowException() throws Exception {
         GameController controller = new GameController();
 
+        // Устанавливаем необходимые поля через рефлексию
         Field gameCanvasField = GameController.class.getDeclaredField("gameCanvas");
         gameCanvasField.setAccessible(true);
         gameCanvasField.set(controller, new Canvas(400, 400));
@@ -36,9 +36,14 @@ public class GameControllerTest {
         scoreLabelField.setAccessible(true);
         scoreLabelField.set(controller, new Label());
 
-        assertDoesNotThrow(() -> {
-            controller.initialize();
-            sleep(5);
+        // Выполнение инициализации в потоке JavaFX
+        CountDownLatch latch = new CountDownLatch(1);
+        Platform.runLater(() -> {
+            assertDoesNotThrow(controller::initialize);
+            latch.countDown();
         });
+        if (!latch.await(5, TimeUnit.SECONDS)) {
+            throw new RuntimeException("Initialization did not complete in time");
+        }
     }
 }

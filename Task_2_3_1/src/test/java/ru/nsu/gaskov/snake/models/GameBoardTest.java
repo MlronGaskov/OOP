@@ -16,9 +16,6 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Tests.
- */
 public class GameBoardTest {
 
     @BeforeAll
@@ -31,15 +28,23 @@ public class GameBoardTest {
     }
 
     @Test
-    public void testInitialization() {
-        Level level = new Level();
-        int cols = 20;
-        int rows = 20;
-        GameBoard board = new GameBoard(cols, rows, level);
-
+    public void testInitialization() throws Exception {
+        CountDownLatch latch = new CountDownLatch(1);
+        final GameBoard[] boardHolder = new GameBoard[1];
+        Platform.runLater(() -> {
+            Level level = new Level();
+            int cols = 20;
+            int rows = 20;
+            boardHolder[0] = new GameBoard(cols, rows, level);
+            latch.countDown();
+        });
+        if (!latch.await(5, TimeUnit.SECONDS)) {
+            throw new RuntimeException("Initialization did not complete in time");
+        }
+        GameBoard board = boardHolder[0];
         assertAll(
-                () -> assertEquals(cols, board.getCols()),
-                () -> assertEquals(rows, board.getRows()),
+                () -> assertEquals(20, board.getCols()),
+                () -> assertEquals(20, board.getRows()),
                 () -> assertNotNull(board.getUserSnake()),
                 () -> assertNotNull(board.getObstacles()),
                 () -> assertNotNull(board.getFood()),
@@ -48,28 +53,44 @@ public class GameBoardTest {
     }
 
     @Test
-    public void testUpdate() {
+    public void testUpdate() throws Exception {
         Level level = new Level();
         GameBoard board = new GameBoard(20, 20, level);
 
-        int initialX = board.getUserSnake().getSegments().getFirst().x();
-        int initialY = board.getUserSnake().getSegments().getFirst().y();
+        final int[] initialX = new int[1];
+        final int[] initialY = new int[1];
+        final int[] newX = new int[1];
+        final int[] newY = new int[1];
 
-        board.update();
-
-        int newX = board.getUserSnake().getSegments().getFirst().x();
-        int newY = board.getUserSnake().getSegments().getFirst().y();
-
-        assertTrue((initialX != newX) || (initialY != newY));
+        CountDownLatch latch = new CountDownLatch(1);
+        Platform.runLater(() -> {
+            initialX[0] = board.getUserSnake().getSegments().getFirst().x();
+            initialY[0] = board.getUserSnake().getSegments().getFirst().y();
+            board.update();
+            newX[0] = board.getUserSnake().getSegments().getFirst().x();
+            newY[0] = board.getUserSnake().getSegments().getFirst().y();
+            latch.countDown();
+        });
+        if (!latch.await(5, TimeUnit.SECONDS)) {
+            throw new RuntimeException("Update did not complete in time");
+        }
+        assertTrue((initialX[0] != newX[0]) || (initialY[0] != newY[0]));
     }
 
     @Test
-    public void testDraw() {
+    public void testDraw() throws Exception {
         Level level = new Level();
         level.increaseDifficulty();
         GameBoard board = new GameBoard(20, 20, level);
         Canvas canvas = new Canvas(400, 400);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        assertDoesNotThrow(() -> board.draw(gc));
+        CountDownLatch latch = new CountDownLatch(1);
+        Platform.runLater(() -> {
+            assertDoesNotThrow(() -> board.draw(gc));
+            latch.countDown();
+        });
+        if (!latch.await(5, TimeUnit.SECONDS)) {
+            throw new RuntimeException("Draw did not complete in time");
+        }
     }
 }

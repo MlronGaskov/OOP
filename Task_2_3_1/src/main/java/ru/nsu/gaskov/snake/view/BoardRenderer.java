@@ -21,6 +21,9 @@ public class BoardRenderer {
         this.gc = gc;
     }
 
+    /**
+     * Renders the game board.
+     */
     public void render(GameBoard gameBoard) {
         double width = gc.getCanvas().getWidth();
         double height = gc.getCanvas().getHeight();
@@ -40,7 +43,9 @@ public class BoardRenderer {
         for (Snake snake : gameBoard.getSnakes()) {
             gc.setFill(snake.getColor());
             for (SnakeSegment segment : snake.getSegments()) {
-                gc.fillRect(segment.x() * cellWidth, segment.y() * cellHeight, cellWidth, cellHeight);
+                gc.fillRect(
+                        segment.x() * cellWidth, segment.y() * cellHeight, cellWidth, cellHeight
+                );
             }
         }
 

@@ -12,6 +12,7 @@ import javafx.scene.input.KeyEvent;
 import ru.nsu.gaskov.snake.models.GameBoard;
 import ru.nsu.gaskov.snake.models.Level;
 import ru.nsu.gaskov.snake.user.InputHandler;
+import ru.nsu.gaskov.snake.view.BoardRenderer;
 
 /**
  * Combines game logic and controller for the snake game.
@@ -28,6 +29,7 @@ public class GameController {
     private GameBoard gameBoard;
     private GraphicsContext gc;
     private InputHandler inputHandler;
+    private BoardRenderer renderer;
     private final IntegerProperty scoreProperty = new SimpleIntegerProperty();
 
     /**
@@ -38,6 +40,7 @@ public class GameController {
         gc = gameCanvas.getGraphicsContext2D();
         startLevel();
         inputHandler = new InputHandler(gameBoard.getUserSnake());
+        renderer = new BoardRenderer(gameCanvas.getGraphicsContext2D());
         gameCanvas.sceneProperty().addListener((obs, oldScene, newScene) -> {
             if (newScene != null) {
                 newScene.setOnKeyPressed((KeyEvent event) ->
@@ -72,7 +75,7 @@ public class GameController {
      */
     public void update() {
         gameBoard.update();
-        gameBoard.draw(gc);
+        renderer.render(gameBoard);
         scoreProperty.set(gameBoard.getUserSnake().getSegments().size());
         if (scoreProperty.get() >= level.getTargetScore()) {
             state = GameState.WON;

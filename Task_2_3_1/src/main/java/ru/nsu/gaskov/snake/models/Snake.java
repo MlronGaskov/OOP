@@ -3,7 +3,6 @@ package ru.nsu.gaskov.snake.models;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 /**
@@ -37,6 +36,13 @@ public class Snake {
      */
     public Direction getDirection() {
         return direction;
+    }
+
+    /**
+     * Returns the color of the snake.
+     */
+    public Color getColor() {
+        return color;
     }
 
     /**
@@ -84,15 +90,6 @@ public class Snake {
             gameBoard.eatFood(newHeadX, newHeadY);
         } else {
             segments.removeLast();
-        }
-    }
-
-    /**
-     * Draws the snake on the provided graphics context.
-     */
-    public void draw(GraphicsContext gc, double cellWidth, double cellHeight) {
-        for (SnakeSegment segment : segments) {
-            segment.draw(gc, color, cellWidth, cellHeight);
         }
     }
 }

@@ -91,27 +91,6 @@ public class GameBoard {
     }
 
     /**
-     * Renders the game board.
-     */
-    public void draw(GraphicsContext gc) {
-        double width = gc.getCanvas().getWidth();
-        double height = gc.getCanvas().getHeight();
-        gc.clearRect(0, 0, width, height);
-        double cellWidth = width / cols;
-        double cellHeight = height / rows;
-        for (Obstacle obstacle : obstacles) {
-            obstacle.draw(gc, cellWidth, cellHeight);
-        }
-        userSnake.draw(gc, cellWidth, cellHeight);
-        for (Enemy enemy : enemies) {
-            enemy.getSnake().draw(gc, cellWidth, cellHeight);
-        }
-        for (Food food : food) {
-            food.draw(gc, cellWidth, cellHeight);
-        }
-    }
-
-    /**
      * Removes food from the specified cell and generates new food.
      */
     public void eatFood(int x, int y) {

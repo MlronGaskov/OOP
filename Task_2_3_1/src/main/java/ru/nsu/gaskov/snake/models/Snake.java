@@ -25,6 +25,13 @@ public class Snake {
     }
 
     /**
+     * Returns a head of the snake.
+     */
+    public SnakeSegment getHead() {
+        return segments.getFirst();
+    }
+
+    /**
      * Returns a copy of the snake's segments.
      */
     public List<SnakeSegment> getSegments() {

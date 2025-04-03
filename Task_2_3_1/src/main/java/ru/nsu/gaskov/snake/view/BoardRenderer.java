@@ -14,6 +14,9 @@ import ru.nsu.gaskov.snake.models.SnakeSegment;
 public class BoardRenderer {
     private final GraphicsContext gc;
 
+    /**
+     * Constructs a new BoardRenderer.
+     */
     public BoardRenderer(GraphicsContext gc) {
         this.gc = gc;
     }

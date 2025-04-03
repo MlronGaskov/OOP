@@ -33,8 +33,8 @@ public class SnakeTest {
     public void testMove() {
         snake.setDirection(Direction.DOWN);
         snake.move();
-        assertEquals(50, snake.getSegments().getFirst().x());
-        assertEquals(51, snake.getSegments().getFirst().y());
+        assertEquals(50, snake.getHead().x());
+        assertEquals(51, snake.getHead().y());
     }
 
     @Test

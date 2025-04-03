@@ -24,8 +24,8 @@ public class GreedyEnemy extends Enemy {
     @Override
     public void choseDirection() {
         Snake snake = getSnake();
-        int headX = snake.getSegments().getFirst().x();
-        int headY = snake.getSegments().getFirst().y();
+        int headX = snake.getHead().x();
+        int headY = snake.getHead().y();
         GameBoard board = getGameBoard();
 
         List<Food> foods = board.getFood();

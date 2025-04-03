@@ -23,8 +23,8 @@ public class SmartEnemy extends Enemy {
     @Override
     public void choseDirection() {
         Snake snake = getSnake();
-        int headX = snake.getSegments().getFirst().x();
-        int headY = snake.getSegments().getFirst().y();
+        int headX = snake.getHead().x();
+        int headY = snake.getHead().y();
         GameBoard board = getGameBoard();
         int cols = board.getCols();
         int rows = board.getRows();

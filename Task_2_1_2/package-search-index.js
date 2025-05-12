@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.gaskov.prime.inspector"},{"l":"ru.nsu.gaskov.prime.inspector.master"},{"l":"ru.nsu.gaskov.prime.inspector.worker"}];updateSearchResults();

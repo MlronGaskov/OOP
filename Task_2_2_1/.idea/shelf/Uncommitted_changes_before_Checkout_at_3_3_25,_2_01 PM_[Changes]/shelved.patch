@@ -1,0 +1,73 @@
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\n    id 'java'\n    id 'jacoco'\n}\n\ngroup = 'ru.nsu.gaskov.pizza'\nversion = '1.0-SNAPSHOT'\n\nrepositories {\n    mavenCentral()\n}\n\ndependencies {\n    testImplementation platform('org.junit:junit-bom:5.10.0')\n    testImplementation 'org.junit.jupiter:junit-jupiter'\n    implementation 'com.google.code.gson:gson:2.8.9'\n}\n\ntest {\n    useJUnitPlatform()\n}\n\njacocoTestReport {\n    reports {\n        xml.required = true\n    }\n}\n\njava {\n    toolchain {\n        languageVersion = JavaLanguageVersion.of(21)\n    }\n}
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 0f7b00b8b700d71ad255426de1d2608e6aed984e)
++++ b/build.gradle	(date 1740985243832)
+@@ -1,9 +1,8 @@
+ plugins {
+     id 'java'
+-    id 'jacoco'
+ }
+ 
+-group = 'ru.nsu.gaskov.pizza'
++group = 'ru.nsu.mr.pizza'
+ version = '1.0-SNAPSHOT'
+ 
+ repositories {
+@@ -13,21 +12,8 @@
+ dependencies {
+     testImplementation platform('org.junit:junit-bom:5.10.0')
+     testImplementation 'org.junit.jupiter:junit-jupiter'
+-    implementation 'com.google.code.gson:gson:2.8.9'
+ }
+ 
+ test {
+     useJUnitPlatform()
+-}
+-
+-jacocoTestReport {
+-    reports {
+-        xml.required = true
+-    }
+-}
+-
+-java {
+-    toolchain {
+-        languageVersion = JavaLanguageVersion.of(21)
+-    }
+ }
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"VcsDirectoryMappings\">\n    <mapping directory=\"$PROJECT_DIR$/..\" vcs=\"Git\" />\n  </component>\n</project>
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 0f7b00b8b700d71ad255426de1d2608e6aed984e)
++++ b/.idea/vcs.xml	(date 1740985243091)
+@@ -1,6 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+-  </component>
++  <component name="VcsDirectoryMappings" defaultProject="true" />
+ </project>
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Mon Mar 03 15:39:07 NOVT 2025\ndistributionBase=GRADLE_USER_HOME\ndistributionPath=wrapper/dists\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-8.10-bin.zip\nzipStoreBase=GRADLE_USER_HOME\nzipStorePath=wrapper/dists\n
+===================================================================
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+--- a/gradle/wrapper/gradle-wrapper.properties	(revision 0f7b00b8b700d71ad255426de1d2608e6aed984e)
++++ b/gradle/wrapper/gradle-wrapper.properties	(date 1740985245090)
+@@ -1,4 +1,4 @@
+-#Mon Mar 03 15:39:07 NOVT 2025
++#Mon Mar 03 14:00:45 NOVT 2025
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+ distributionUrl=https\://services.gradle.org/distributions/gradle-8.10-bin.zip

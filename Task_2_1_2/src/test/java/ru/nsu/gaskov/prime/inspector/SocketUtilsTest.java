@@ -34,10 +34,12 @@ class SocketUtilsTest {
 
     static class FakeMulticastSocket extends MulticastSocket {
         private final String message;
+
         FakeMulticastSocket(String message) throws IOException {
             super();
             this.message = message;
         }
+
         @Override public void receive(DatagramPacket p) throws IOException {
             byte[] data = message.getBytes(StandardCharsets.UTF_8);
             System.arraycopy(data, 0, p.getData(), 0, data.length);
@@ -48,15 +50,19 @@ class SocketUtilsTest {
     static class FakeSocket extends Socket {
         private final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         private InputStream in = new ByteArrayInputStream(new byte[0]);
+
         void setInput(byte[] data) {
             in = new ByteArrayInputStream(data);
         }
+
         @Override public InputStream getInputStream() {
             return in;
         }
+
         @Override public OutputStream getOutputStream() {
             return byteArrayOutputStream;
         }
+
         byte[] getOutputBytes() {
             return byteArrayOutputStream.toByteArray();
         }
@@ -102,7 +108,8 @@ class SocketUtilsTest {
             int port = server.getLocalPort();
             FakeMulticastSocket fake = new FakeMulticastSocket("127.0.0.1:" + port);
             ExecutorService exec = Executors.newSingleThreadExecutor();
-            Future<Socket> clientF = exec.submit(() -> SocketUtils.openTcpSocketFromMulticast(fake));
+            Future<Socket> clientF = exec.submit(
+                    () -> SocketUtils.openTcpSocketFromMulticast(fake));
             try (Socket serverSide = server.accept()) {
                 Socket client = clientF.get(1, TimeUnit.SECONDS);
                 assertTrue(client.isConnected());

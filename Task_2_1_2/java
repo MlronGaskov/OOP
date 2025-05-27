@@ -1,0 +1,1 @@
+1 2 3 4 5 -cp build/classes/java/main ru.nsu.gaskov.prime.inspector.master.Master 230.0.0.1 4446 127.0.0.1 5556 2000

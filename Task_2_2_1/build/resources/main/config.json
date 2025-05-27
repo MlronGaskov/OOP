@@ -1,0 +1,10 @@
+{
+  "cookingTimes": [1000, 1500, 1200],
+  "truckSizes": [2, 3],
+  "workingTime": 6000,
+  "orderQueueCapacity": 10,
+  "warehouseCapacity": 5,
+  "orderGenerationAverage": 300,
+  "minDeliveryTime": 100,
+  "maxDeliveryTime": 500
+}

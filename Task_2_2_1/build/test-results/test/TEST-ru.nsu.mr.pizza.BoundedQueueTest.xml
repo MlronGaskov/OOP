@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.mr.pizza.BoundedQueueTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-05T16:09:11" hostname="miron-ASUS-Vivobook-S-14-M5406WA-M5406WA" time="0.128">
+  <properties/>
+  <testcase name="testBlockingBehavior()" classname="ru.nsu.mr.pizza.BoundedQueueTest" time="0.128"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

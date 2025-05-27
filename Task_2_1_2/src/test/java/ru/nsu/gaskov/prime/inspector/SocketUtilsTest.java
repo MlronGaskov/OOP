@@ -1,6 +1,7 @@
 package ru.nsu.gaskov.prime.inspector;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -85,6 +86,14 @@ class SocketUtilsTest {
         sock.setInput(tmp.toByteArray());
         List<Integer> list = SocketUtils.receiveIntList(sock);
         assertEquals(Arrays.asList(42, 99), list);
+    }
+
+    @Test
+    void testOpenTcpSocketFromMulticast_InvalidFormat() throws IOException {
+        FakeMulticastSocket fake = new FakeMulticastSocket("no-colon");
+        IOException ex = assertThrows(IOException.class,
+                () -> SocketUtils.openTcpSocketFromMulticast(fake));
+        assertTrue(ex.getMessage().contains("Invalid multicast message format"));
     }
 
     @Test

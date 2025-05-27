@@ -15,6 +15,7 @@ import ru.nsu.gaskov.prime.inspector.SocketUtils;
 public class WorkersConnector implements AutoCloseable {
 
     private final String multicastAddress;
+    private final String interfaceName;
     private final int multicastPort;
     private final String host;
     private final int listenPort;
@@ -25,10 +26,12 @@ public class WorkersConnector implements AutoCloseable {
      */
     public WorkersConnector(String multicastAddress,
                             int multicastPort,
+                            String interfaceName,
                             String host,
                             int listenPort) throws IOException {
         this.multicastAddress = multicastAddress;
         this.multicastPort = multicastPort;
+        this.interfaceName = interfaceName;
         this.host = host;
         this.listenPort = listenPort;
         serverSocket = new ServerSocket(listenPort);
@@ -39,7 +42,7 @@ public class WorkersConnector implements AutoCloseable {
      */
     public List<Socket> findWorkers(int timeoutMillis) throws IOException {
         SocketUtils.sendMulticastMessage(
-                multicastAddress, multicastPort, host, listenPort
+                multicastAddress, multicastPort, interfaceName, host, listenPort
         );
 
         List<Socket> workers = new ArrayList<>();

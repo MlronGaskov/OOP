@@ -4,7 +4,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.DatagramPacket;
-import java.net.DatagramSocket;
+import java.net.NetworkInterface;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.net.Socket;
@@ -59,9 +59,12 @@ public class SocketUtils {
     }
 
     /** Sends a discovery message to workers via multicast containing host and TCP port. */
-    public static void sendMulticastMessage(String multicastAddress, int multicastPort,
-                                            String host, int tcpPort) throws IOException {
-        try (DatagramSocket socket = new DatagramSocket()) {
+    public static void sendMulticastMessage(
+            String multicastAddress, int multicastPort,
+            String interfaceName, String host, int tcpPort
+    ) throws IOException {
+        try (MulticastSocket socket = new MulticastSocket()) {
+            socket.setNetworkInterface(NetworkInterface.getByName(interfaceName));
             String message = host + ":" + tcpPort;
             byte[] buf = message.getBytes(StandardCharsets.UTF_8);
             InetAddress group = InetAddress.getByName(multicastAddress);

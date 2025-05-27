@@ -17,10 +17,13 @@ public class DistributedPrimeInspector implements PrimeInspector, AutoCloseable 
     /** Creates an inspector discovering workers via multicast. */
     public DistributedPrimeInspector(String multicastAddress,
                                      int multicastPort,
+                                     String interfaceName,
                                      String host,
                                      int listenPort,
                                      int timeoutMillis) throws IOException {
-        this.connector = new WorkersConnector(multicastAddress, multicastPort, host, listenPort);
+        this.connector = new WorkersConnector(
+                multicastAddress, multicastPort, interfaceName, host, listenPort
+        );
         this.timeoutMillis = timeoutMillis;
     }
 

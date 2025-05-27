@@ -15,11 +15,12 @@ public class Master {
      * Main method: parses connection parameters,
      * reads input numbers, and prints whether any is non-prime. */
     public static void main(String[] args) {
-        if (args.length < 5) {
+        if (args.length < 6) {
             System.err.println(
                     "Usage: java Master "
                             + "<multicastAddress> "
                             + "<multicastPort> "
+                            + "<interfaceName> "
                             + "<host> "
                             + "<listenPort> "
                             + "<timeoutMillis>"
@@ -30,13 +31,15 @@ public class Master {
         String multicastAddress = args[0];
         int multicastPort;
         String host;
+        String interfaceName;
         int listenPort;
         int timeoutMillis;
         try {
             multicastPort = Integer.parseInt(args[1]);
-            host = args[2];
-            listenPort = Integer.parseInt(args[3]);
-            timeoutMillis = Integer.parseInt(args[4]);
+            interfaceName = args[2];
+            host = args[3];
+            listenPort = Integer.parseInt(args[4]);
+            timeoutMillis = Integer.parseInt(args[5]);
         } catch (NumberFormatException e) {
             System.err.println(
                     "Invalid number format for ports or timeout: "
@@ -44,13 +47,24 @@ public class Master {
             );
             return;
         }
-
         List<Integer> numbers = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter numbers:");
-        while (scanner.hasNextInt()) {
+        System.out.println("Enter count and numbers:");
+
+        if (!scanner.hasNextInt()) {
+            System.err.println("No count provided.");
+            System.exit(1);
+        }
+        int count = scanner.nextInt();
+
+        for (int i = 0; i < count; i++) {
+            if (!scanner.hasNextInt()) {
+                System.err.println("Expected " + count + " numbers, but got only " + i);
+                System.exit(1);
+            }
             numbers.add(scanner.nextInt());
         }
+
         scanner.close();
 
         if (numbers.isEmpty()) {
@@ -59,7 +73,7 @@ public class Master {
         }
 
         try (DistributedPrimeInspector inspector = new DistributedPrimeInspector(
-                multicastAddress, multicastPort, host, listenPort, timeoutMillis)) {
+                multicastAddress, multicastPort, interfaceName, host, listenPort, timeoutMillis)) {
 
             boolean hasNonPrime = inspector.hasNonPrime(numbers);
             System.out.println(hasNonPrime);

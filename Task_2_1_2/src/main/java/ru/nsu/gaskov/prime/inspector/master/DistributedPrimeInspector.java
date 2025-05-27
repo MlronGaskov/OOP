@@ -98,7 +98,9 @@ public class DistributedPrimeInspector implements PrimeInspector, AutoCloseable 
         for (Socket s : workers) {
             try {
                 s.close();
-            } catch (IOException ignored) {}
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
         }
 
         return new CheckResult(foundComposite.get(), untested);

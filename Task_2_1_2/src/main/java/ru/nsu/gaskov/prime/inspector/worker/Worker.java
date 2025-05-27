@@ -4,13 +4,24 @@ import java.io.IOException;
 import java.net.NetworkInterface;
 import java.util.List;
 
-/** Worker process that listens for master connections and checks numbers for primality. */
+/**
+ * Worker process that listens for master connections
+ * and checks numbers for primality.
+ */
 public class Worker {
 
-    /** Starts the worker, discovers masters, receives numbers, checks for composites, and sends results. */
+    /**
+     * Starts the worker, discovers masters, receives numbers,
+     * checks for composites, and sends results.
+     */
     public static void main(String[] args) {
         if (args.length != 3) {
-            System.err.println("Usage: java Worker <multicastAddress> <multicastPort> <networkInterfaceName>");
+            System.err.println(
+                    "Usage: java Worker "
+                            + "<multicastAddress> "
+                            + "<multicastPort> "
+                            + "<networkInterfaceName>"
+            );
             System.exit(1);
         }
         String multicastAddress = args[0];
@@ -40,8 +51,8 @@ public class Worker {
             return;
         }
 
-        System.out.println("Worker started. Waiting for masters on " +
-                multicastAddress + ":" + multicastPort + " via interface " + netIfName);
+        System.out.println("Worker started. Waiting for masters on "
+                + multicastAddress + ":" + multicastPort + " via interface " + netIfName);
 
         while (true) {
             try {

@@ -1,7 +1,5 @@
 package ru.nsu.gaskov.prime.inspector.master;
 
-import ru.nsu.gaskov.prime.inspector.SocketUtils;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -9,8 +7,11 @@ import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import ru.nsu.gaskov.prime.inspector.SocketUtils;
 
-/** Manages discovery and communication with worker nodes over sockets. */
+/**
+ * Manages discovery and communication with worker nodes over sockets.
+ */
 public class WorkersConnector implements AutoCloseable {
 
     private final String multicastAddress;
@@ -19,7 +20,9 @@ public class WorkersConnector implements AutoCloseable {
     private final int listenPort;
     private final ServerSocket serverSocket;
 
-    /** Initializes connector with multicast discovery and a listening server socket. */
+    /**
+     * Initializes connector with multicast discovery and a listening server socket.
+     */
     public WorkersConnector(String multicastAddress,
                             int multicastPort,
                             String host,
@@ -31,9 +34,13 @@ public class WorkersConnector implements AutoCloseable {
         serverSocket = new ServerSocket(listenPort);
     }
 
-    /** Discovers available workers by sending a multicast and accepting connections until timeout. */
+    /**
+     * Discovers available workers by sending a multicast and accepting connections until timeout.
+     */
     public List<Socket> findWorkers(int timeoutMillis) throws IOException {
-        SocketUtils.sendMulticastMessage(multicastAddress, multicastPort, host, listenPort);
+        SocketUtils.sendMulticastMessage(
+                multicastAddress, multicastPort, host, listenPort
+        );
 
         List<Socket> workers = new ArrayList<>();
         long deadline = System.currentTimeMillis() + timeoutMillis;
@@ -53,7 +60,9 @@ public class WorkersConnector implements AutoCloseable {
         return workers;
     }
 
-    /** Sends an array of integers to a worker and handles its boolean response or errors. */
+    /**
+     * Sends an array of integers to a worker and handles its boolean response or errors.
+     */
     public void sendIntArrayAndHandleAnswer(Socket worker,
                              List<Integer> data,
                              Consumer<Boolean> onAnswer,
@@ -66,6 +75,8 @@ public class WorkersConnector implements AutoCloseable {
     public void close() {
         try {
             serverSocket.close();
-        } catch (IOException ignored) {}
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

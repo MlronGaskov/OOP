@@ -1,7 +1,5 @@
 package ru.nsu.gaskov.prime.inspector.worker;
 
-import ru.nsu.gaskov.prime.inspector.SocketUtils;
-
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -10,6 +8,7 @@ import java.net.NetworkInterface;
 import java.net.Socket;
 import java.net.SocketAddress;
 import java.util.List;
+import ru.nsu.gaskov.prime.inspector.SocketUtils;
 
 /** Manages discovery and communication with the master node. */
 public class MasterConnector implements AutoCloseable {
@@ -18,7 +17,9 @@ public class MasterConnector implements AutoCloseable {
     private final MulticastSocket multicastSocket;
 
     /** Creates a connector listening for master announcements via multicast. */
-    public MasterConnector(String multicastAddress, int multicastPort, NetworkInterface netIf) throws IOException {
+    public MasterConnector(
+            String multicastAddress, int multicastPort, NetworkInterface netIf
+    ) throws IOException {
         multicastSocket = new MulticastSocket(multicastPort);
         InetAddress group = InetAddress.getByName(multicastAddress);
         SocketAddress groupAddr = new InetSocketAddress(group, multicastPort);
@@ -33,7 +34,9 @@ public class MasterConnector implements AutoCloseable {
             try {
                 socket = SocketUtils.openTcpSocketFromMulticast(multicastSocket);
                 break;
-            } catch (IOException ignored) {}
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
         }
         masterSocket = socket;
     }
@@ -62,7 +65,9 @@ public class MasterConnector implements AutoCloseable {
         try {
             masterSocket.close();
             masterSocket = null;
-        } catch (IOException ignored) {}
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

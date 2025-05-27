@@ -1,5 +1,6 @@
 package ru.nsu.gaskov.prime.inspector;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
@@ -10,6 +11,7 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.ServerSocket;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -96,5 +98,71 @@ class IntegrationTest {
         String output = runIntegration(input);
         assertTrue(output.trim().endsWith("true"),
                 () -> "Expected 'true' (all composite), got:\n" + output);
+    }
+
+
+
+    @Test
+    void testNoInputExitsWithError() throws Exception {
+        // no stdin data at all → should exit with code 1
+        String classpath = System.getProperty("java.class.path");
+        String addr = "230.0.0.1";
+        int port = 4446;
+        String ifName = NetworkInterface
+                .getByInetAddress(InetAddress.getLoopbackAddress())
+                .getName();
+
+        int listenPort;
+        try (ServerSocket ss = new ServerSocket(0)) {
+            listenPort = ss.getLocalPort();
+        }
+
+        ProcessBuilder pb = new ProcessBuilder(
+                "java", "-cp", classpath,
+                "ru.nsu.gaskov.prime.inspector.master.Master",
+                addr, String.valueOf(port), ifName,
+                "127.0.0.1", String.valueOf(listenPort), "2000"
+        );
+        // close stdin so Master sees EOF immediately
+        pb.redirectInput(ProcessBuilder.Redirect.PIPE);
+        Process proc = pb.start();
+        proc.getOutputStream().close();
+
+        boolean finished = proc.waitFor(5, TimeUnit.SECONDS);
+        assertTrue(finished, "Master did not exit in time");
+        assertEquals(1, proc.exitValue(), "Expected exit code 1 on no input");
+    }
+
+    @Test
+    void testIncompleteInputExitsWithError() throws Exception {
+        // declare 3 numbers but provide only 2 → should exit with code 1
+        String classpath = System.getProperty("java.class.path");
+        String addr = "230.0.0.1";
+        int port = 4446;
+        String ifName = NetworkInterface
+                .getByInetAddress(InetAddress.getLoopbackAddress())
+                .getName();
+
+        int listenPort;
+        try (ServerSocket ss = new ServerSocket(0)) {
+            listenPort = ss.getLocalPort();
+        }
+
+        ProcessBuilder pb = new ProcessBuilder(
+                "java", "-cp", classpath,
+                "ru.nsu.gaskov.prime.inspector.master.Master",
+                addr, String.valueOf(port), ifName,
+                "127.0.0.1", String.valueOf(listenPort), "2000"
+        );
+        pb.redirectInput(ProcessBuilder.Redirect.PIPE);
+        Process proc = pb.start();
+        // only two numbers after count=3
+        try (PrintStream ps = new PrintStream(proc.getOutputStream())) {
+            ps.print("3 5 7");
+        }
+
+        boolean finished = proc.waitFor(5, TimeUnit.SECONDS);
+        assertTrue(finished, "Master did not exit in time");
+        assertEquals(1, proc.exitValue(), "Expected exit code 1 on incomplete input");
     }
 }

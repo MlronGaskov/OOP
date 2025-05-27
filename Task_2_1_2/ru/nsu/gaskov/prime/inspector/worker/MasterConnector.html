@@ -96,6 +96,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">MasterConnector</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
+<div class="block">Manages discovery and communication with the master node.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -110,7 +111,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,int,java.net.NetworkInterface)" class="member-name-link">MasterConnector</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;multicastAddress,
  int&nbsp;multicastPort,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/NetworkInterface.html" title="class or interface in java.net" class="external-link">NetworkInterface</a>&nbsp;netIf)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a connector listening for master announcements via multicast.</div>
+</div>
 </div>
 </section>
 </li>
@@ -130,16 +133,24 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#closeMasterSocket()" class="member-name-link">closeMasterSocket</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Closes the TCP connection to the master if open.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findMaster()" class="member-name-link">findMaster</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Listens for a master connection announcement and establishes a TCP socket.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#receiveIntList()" class="member-name-link">receiveIntList</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Receives a list of integers from the master.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendBoolean(boolean)" class="member-name-link">sendBoolean</a><wbr>(boolean&nbsp;response)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sends a boolean response to the master.</div>
+</div>
 </div>
 </div>
 </div>
@@ -164,6 +175,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
  int&nbsp;multicastPort,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/NetworkInterface.html" title="class or interface in java.net" class="external-link">NetworkInterface</a>&nbsp;netIf)</span>
                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Creates a connector listening for master announcements via multicast.</div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
@@ -183,6 +195,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <h3>findMaster</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">findMaster</span>()
                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Listens for a master connection announcement and establishes a TCP socket.</div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
@@ -194,6 +207,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <h3>sendBoolean</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendBoolean</span><wbr><span class="parameters">(boolean&nbsp;response)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Sends a boolean response to the master.</div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
@@ -205,6 +219,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <h3>receiveIntList</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">receiveIntList</span>()
                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Receives a list of integers from the master.</div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
@@ -215,6 +230,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <section class="detail" id="closeMasterSocket()">
 <h3>closeMasterSocket</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">closeMasterSocket</span>()</div>
+<div class="block">Closes the TCP connection to the master if open.</div>
 </section>
 </li>
 <li>

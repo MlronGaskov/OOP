@@ -63,16 +63,24 @@ loadScripts(document, 'script');</script>
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html#close()" class="member-name-link">close()</a> - Method in class ru.nsu.gaskov.prime.inspector.worker.<a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html" title="class in ru.nsu.gaskov.prime.inspector.worker">MasterConnector</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html#closeMasterSocket()" class="member-name-link">closeMasterSocket()</a> - Method in class ru.nsu.gaskov.prime.inspector.worker.<a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html" title="class in ru.nsu.gaskov.prime.inspector.worker">MasterConnector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Closes the TCP connection to the master if open.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:D">D</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/DistributedPrimeInspector.html" class="type-name-link" title="class in ru.nsu.gaskov.prime.inspector.master">DistributedPrimeInspector</a> - Class in <a href="ru/nsu/gaskov/prime/inspector/master/package-summary.html">ru.nsu.gaskov.prime.inspector.master</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Distributes primality checks across workers.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/DistributedPrimeInspector.html#%3Cinit%3E(java.lang.String,int,java.lang.String,int,int)" class="member-name-link">DistributedPrimeInspector(String, int, String, int, int)</a> - Constructor for class ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/DistributedPrimeInspector.html" title="class in ru.nsu.gaskov.prime.inspector.master">DistributedPrimeInspector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Creates an inspector discovering workers via multicast.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/DistributedPrimeInspector.CheckResult.html" class="type-name-link" title="class in ru.nsu.gaskov.prime.inspector.master">DistributedPrimeInspector.CheckResult</a> - Record Class in <a href="ru/nsu/gaskov/prime/inspector/master/package-summary.html">ru.nsu.gaskov.prime.inspector.master</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Encapsulates the result of a primality check and untested numbers.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:E">E</h2>
 <dl class="index">
@@ -84,9 +92,13 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:F">F</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html#findMaster()" class="member-name-link">findMaster()</a> - Method in class ru.nsu.gaskov.prime.inspector.worker.<a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html" title="class in ru.nsu.gaskov.prime.inspector.worker">MasterConnector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Listens for a master connection announcement and establishes a TCP socket.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/WorkersConnector.html#findWorkers(int)" class="member-name-link">findWorkers(int)</a> - Method in class ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/WorkersConnector.html" title="class in ru.nsu.gaskov.prime.inspector.master">WorkersConnector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Discovers available workers by sending a multicast and accepting connections until timeout.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:H">H</h2>
 <dl class="index">
@@ -99,11 +111,15 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the value of the <code>hasNonPrime</code> record component.</div>
 </dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/DistributedPrimeInspector.html#hasNonPrime(java.util.List)" class="member-name-link">hasNonPrime(List&lt;Integer&gt;)</a> - Method in class ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/DistributedPrimeInspector.html" title="class in ru.nsu.gaskov.prime.inspector.master">DistributedPrimeInspector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns true if any provided number is non-prime.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/PrimeInspector.html#hasNonPrime(java.util.List)" class="member-name-link">hasNonPrime(List&lt;Integer&gt;)</a> - Method in interface ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/PrimeInspector.html" title="interface in ru.nsu.gaskov.prime.inspector.master">PrimeInspector</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/DistributedPrimeInspector.html#hasNonPrimeWithRest(java.util.List)" class="member-name-link">hasNonPrimeWithRest(List&lt;Integer&gt;)</a> - Method in class ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/DistributedPrimeInspector.html" title="class in ru.nsu.gaskov.prime.inspector.master">DistributedPrimeInspector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Checks numbers for primality.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:I">I</h2>
 <dl class="index">
@@ -115,22 +131,34 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:M">M</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/Master.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Static method in class ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/Master.html" title="class in ru.nsu.gaskov.prime.inspector.master">Master</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Main method: parses connection parameters, reads input numbers, and prints whether any is non-prime.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/Worker.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Static method in class ru.nsu.gaskov.prime.inspector.worker.<a href="ru/nsu/gaskov/prime/inspector/worker/Worker.html" title="class in ru.nsu.gaskov.prime.inspector.worker">Worker</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Starts the worker, discovers masters, receives numbers, checks for composites, and sends results.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/Master.html" class="type-name-link" title="class in ru.nsu.gaskov.prime.inspector.master">Master</a> - Class in <a href="ru/nsu/gaskov/prime/inspector/master/package-summary.html">ru.nsu.gaskov.prime.inspector.master</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Entry point for the master process that reads numbers and checks primality using distributed workers.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/Master.html#%3Cinit%3E()" class="member-name-link">Master()</a> - Constructor for class ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/Master.html" title="class in ru.nsu.gaskov.prime.inspector.master">Master</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html" class="type-name-link" title="class in ru.nsu.gaskov.prime.inspector.worker">MasterConnector</a> - Class in <a href="ru/nsu/gaskov/prime/inspector/worker/package-summary.html">ru.nsu.gaskov.prime.inspector.worker</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Manages discovery and communication with the master node.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html#%3Cinit%3E(java.lang.String,int,java.net.NetworkInterface)" class="member-name-link">MasterConnector(String, int, NetworkInterface)</a> - Constructor for class ru.nsu.gaskov.prime.inspector.worker.<a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html" title="class in ru.nsu.gaskov.prime.inspector.worker">MasterConnector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Creates a connector listening for master announcements via multicast.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:O">O</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html#openTcpSocketFromMulticast(java.net.MulticastSocket)" class="member-name-link">openTcpSocketFromMulticast(MulticastSocket)</a> - Static method in class ru.nsu.gaskov.prime.inspector.<a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html" title="class in ru.nsu.gaskov.prime.inspector">SocketUtils</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Opens a TCP socket after receiving a host:port announcement via multicast.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:P">P</h2>
 <dl class="index">
@@ -147,12 +175,18 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:R">R</h2>
 <dl class="index">
-<dt><a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html#receiveAndHandleBoolean(java.net.Socket,java.util.function.Consumer,java.util.function.Consumer)" class="member-name-link">receiveAndHandleBoolean(Socket, Consumer&lt;Boolean&gt;, Consumer&lt;Exception&gt;)</a> - Static method in class ru.nsu.gaskov.prime.inspector.<a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html" title="class in ru.nsu.gaskov.prime.inspector">SocketUtils</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html#receiveAndHandleBoolean(java.net.Socket,java.util.function.Consumer,java.util.function.Consumer)" class="member-name-link">receiveAndHandleBoolean(Socket, Consumer&lt;Boolean&gt;, Consumer&lt;Throwable&gt;)</a> - Static method in class ru.nsu.gaskov.prime.inspector.<a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html" title="class in ru.nsu.gaskov.prime.inspector">SocketUtils</a></dt>
+<dd>
+<div class="block">Asynchronously receives a boolean from the socket and handles result or errors.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html#receiveIntList()" class="member-name-link">receiveIntList()</a> - Method in class ru.nsu.gaskov.prime.inspector.worker.<a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html" title="class in ru.nsu.gaskov.prime.inspector.worker">MasterConnector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Receives a list of integers from the master.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html#receiveIntList(java.net.Socket)" class="member-name-link">receiveIntList(Socket)</a> - Static method in class ru.nsu.gaskov.prime.inspector.<a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html" title="class in ru.nsu.gaskov.prime.inspector">SocketUtils</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Receives a list of integers from the given socket.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/package-summary.html">ru.nsu.gaskov.prime.inspector</a> - package ru.nsu.gaskov.prime.inspector</dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/package-summary.html">ru.nsu.gaskov.prime.inspector.master</a> - package ru.nsu.gaskov.prime.inspector.master</dt>
@@ -163,17 +197,29 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:S">S</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html#sendBoolean(boolean)" class="member-name-link">sendBoolean(boolean)</a> - Method in class ru.nsu.gaskov.prime.inspector.worker.<a href="ru/nsu/gaskov/prime/inspector/worker/MasterConnector.html" title="class in ru.nsu.gaskov.prime.inspector.worker">MasterConnector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Sends a boolean response to the master.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html#sendBoolean(java.net.Socket,boolean)" class="member-name-link">sendBoolean(Socket, boolean)</a> - Static method in class ru.nsu.gaskov.prime.inspector.<a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html" title="class in ru.nsu.gaskov.prime.inspector">SocketUtils</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Sends a boolean value over the given socket.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html#sendIntArray(java.net.Socket,java.util.List)" class="member-name-link">sendIntArray(Socket, List&lt;Integer&gt;)</a> - Static method in class ru.nsu.gaskov.prime.inspector.<a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html" title="class in ru.nsu.gaskov.prime.inspector">SocketUtils</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/gaskov/prime/inspector/master/WorkersConnector.html#sendIntArrayAndHandleAnswer(java.net.Socket,java.util.List,java.util.function.Consumer,java.util.function.Consumer)" class="member-name-link">sendIntArrayAndHandleAnswer(Socket, List&lt;Integer&gt;, Consumer&lt;Boolean&gt;, Consumer&lt;Exception&gt;)</a> - Method in class ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/WorkersConnector.html" title="class in ru.nsu.gaskov.prime.inspector.master">WorkersConnector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Sends an array of integers to the given socket.</div>
+</dd>
+<dt><a href="ru/nsu/gaskov/prime/inspector/master/WorkersConnector.html#sendIntArrayAndHandleAnswer(java.net.Socket,java.util.List,java.util.function.Consumer,java.util.function.Consumer)" class="member-name-link">sendIntArrayAndHandleAnswer(Socket, List&lt;Integer&gt;, Consumer&lt;Boolean&gt;, Consumer&lt;Throwable&gt;)</a> - Method in class ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/WorkersConnector.html" title="class in ru.nsu.gaskov.prime.inspector.master">WorkersConnector</a></dt>
+<dd>
+<div class="block">Sends an array of integers to a worker and handles its boolean response or errors.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html#sendMulticastMessage(java.lang.String,int,java.lang.String,int)" class="member-name-link">sendMulticastMessage(String, int, String, int)</a> - Static method in class ru.nsu.gaskov.prime.inspector.<a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html" title="class in ru.nsu.gaskov.prime.inspector">SocketUtils</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Sends a discovery message to workers via multicast containing host and TCP port.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html" class="type-name-link" title="class in ru.nsu.gaskov.prime.inspector">SocketUtils</a> - Class in <a href="ru/nsu/gaskov/prime/inspector/package-summary.html">ru.nsu.gaskov.prime.inspector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Utility methods for TCP and multicast socket communication.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html#%3Cinit%3E()" class="member-name-link">SocketUtils()</a> - Constructor for class ru.nsu.gaskov.prime.inspector.<a href="ru/nsu/gaskov/prime/inspector/SocketUtils.html" title="class in ru.nsu.gaskov.prime.inspector">SocketUtils</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -194,13 +240,19 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:W">W</h2>
 <dl class="index">
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/Worker.html" class="type-name-link" title="class in ru.nsu.gaskov.prime.inspector.worker">Worker</a> - Class in <a href="ru/nsu/gaskov/prime/inspector/worker/package-summary.html">ru.nsu.gaskov.prime.inspector.worker</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Worker process that listens for master connections and checks numbers for primality.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/worker/Worker.html#%3Cinit%3E()" class="member-name-link">Worker()</a> - Constructor for class ru.nsu.gaskov.prime.inspector.worker.<a href="ru/nsu/gaskov/prime/inspector/worker/Worker.html" title="class in ru.nsu.gaskov.prime.inspector.worker">Worker</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/WorkersConnector.html" class="type-name-link" title="class in ru.nsu.gaskov.prime.inspector.master">WorkersConnector</a> - Class in <a href="ru/nsu/gaskov/prime/inspector/master/package-summary.html">ru.nsu.gaskov.prime.inspector.master</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Manages discovery and communication with worker nodes over sockets.</div>
+</dd>
 <dt><a href="ru/nsu/gaskov/prime/inspector/master/WorkersConnector.html#%3Cinit%3E(java.lang.String,int,java.lang.String,int)" class="member-name-link">WorkersConnector(String, int, String, int)</a> - Constructor for class ru.nsu.gaskov.prime.inspector.master.<a href="ru/nsu/gaskov/prime/inspector/master/WorkersConnector.html" title="class in ru.nsu.gaskov.prime.inspector.master">WorkersConnector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Initializes connector with multicast discovery and a listening server socket.</div>
+</dd>
 </dl>
 <a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a></main>
 </div>

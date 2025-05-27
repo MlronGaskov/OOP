@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.net.NetworkInterface;
 import java.util.List;
 
+/** Worker process that listens for master connections and checks numbers for primality. */
 public class Worker {
 
+    /** Starts the worker, discovers masters, receives numbers, checks for composites, and sends results. */
     public static void main(String[] args) {
         if (args.length != 3) {
             System.err.println("Usage: java Worker <multicastAddress> <multicastPort> <networkInterfaceName>");

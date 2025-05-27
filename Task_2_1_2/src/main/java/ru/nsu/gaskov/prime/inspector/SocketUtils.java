@@ -3,14 +3,22 @@ package ru.nsu.gaskov.prime.inspector;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.MulticastSocket;
+import java.net.Socket;
+import java.net.InetAddress;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
 import java.util.function.Consumer;
 
+/** Utility methods for TCP and multicast socket communication. */
 public class SocketUtils {
 
+    /** Opens a TCP socket after receiving a host:port announcement via multicast. */
     public static Socket openTcpSocketFromMulticast(MulticastSocket multicastSocket) throws IOException {
         byte[] buf = new byte[256];
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
@@ -28,12 +36,14 @@ public class SocketUtils {
         return new Socket(host, port);
     }
 
+    /** Sends a boolean value over the given socket. */
     public static void sendBoolean(Socket socket, boolean value) throws IOException {
         DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
         dos.writeBoolean(value);
         dos.flush();
     }
 
+    /** Receives a list of integers from the given socket. */
     public static List<Integer> receiveIntList(Socket socket) throws IOException {
         DataInputStream dis = new DataInputStream(socket.getInputStream());
         int count = dis.readInt();
@@ -44,6 +54,7 @@ public class SocketUtils {
         return list;
     }
 
+    /** Sends a discovery message to workers via multicast containing host and TCP port. */
     public static void sendMulticastMessage(String multicastAddress, int multicastPort,
                                             String host, int tcpPort) throws IOException {
         try (DatagramSocket socket = new DatagramSocket()) {
@@ -55,6 +66,7 @@ public class SocketUtils {
         }
     }
 
+    /** Sends an array of integers to the given socket. */
     public static void sendIntArray(Socket socket, List<Integer> data) throws IOException {
         DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
         dos.writeInt(data.size());
@@ -64,17 +76,24 @@ public class SocketUtils {
         dos.flush();
     }
 
+    /** Asynchronously receives a boolean from the socket and handles result or errors. */
     public static void receiveAndHandleBoolean(Socket socket,
                                                Consumer<Boolean> onAnswer,
-                                               Consumer<Exception> onException) {
-        new Thread(() -> {
-            try {
-                DataInputStream dis = new DataInputStream(socket.getInputStream());
-                boolean answer = dis.readBoolean();
-                onAnswer.accept(answer);
-            } catch (Exception e) {
-                onException.accept(e);
-            }
-        }).start();
+                                               Consumer<Throwable> onThrowable) {
+        CompletableFuture
+                .supplyAsync(() -> {
+                    try {
+                        DataInputStream dis = new DataInputStream(socket.getInputStream());
+                        return dis.readBoolean();
+                    } catch (Exception e) {
+                        throw new CompletionException(e);
+                    }
+                })
+                .thenAccept(onAnswer)
+                .exceptionally(ex -> {
+                    onThrowable.accept(ex);
+                    return null;
+                });
     }
+
 }

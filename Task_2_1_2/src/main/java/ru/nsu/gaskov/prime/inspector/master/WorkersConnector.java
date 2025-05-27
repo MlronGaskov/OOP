@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+/** Manages discovery and communication with worker nodes over sockets. */
 public class WorkersConnector implements AutoCloseable {
 
     private final String multicastAddress;
@@ -18,6 +19,7 @@ public class WorkersConnector implements AutoCloseable {
     private final int listenPort;
     private final ServerSocket serverSocket;
 
+    /** Initializes connector with multicast discovery and a listening server socket. */
     public WorkersConnector(String multicastAddress,
                             int multicastPort,
                             String host,
@@ -29,6 +31,7 @@ public class WorkersConnector implements AutoCloseable {
         serverSocket = new ServerSocket(listenPort);
     }
 
+    /** Discovers available workers by sending a multicast and accepting connections until timeout. */
     public List<Socket> findWorkers(int timeoutMillis) throws IOException {
         SocketUtils.sendMulticastMessage(multicastAddress, multicastPort, host, listenPort);
 
@@ -50,12 +53,13 @@ public class WorkersConnector implements AutoCloseable {
         return workers;
     }
 
+    /** Sends an array of integers to a worker and handles its boolean response or errors. */
     public void sendIntArrayAndHandleAnswer(Socket worker,
                              List<Integer> data,
                              Consumer<Boolean> onAnswer,
-                             Consumer<Exception> onException) throws IOException {
+                             Consumer<Throwable> onThrowable) throws IOException {
         SocketUtils.sendIntArray(worker, data);
-        SocketUtils.receiveAndHandleBoolean(worker, onAnswer, onException);
+        SocketUtils.receiveAndHandleBoolean(worker, onAnswer, onThrowable);
     }
 
     @Override

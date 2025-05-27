@@ -8,11 +8,13 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/** Distributes primality checks across workers. */
 public class DistributedPrimeInspector implements PrimeInspector, AutoCloseable {
 
     private final WorkersConnector connector;
     private final int timeoutMillis;
 
+    /** Creates an inspector discovering workers via multicast. */
     public DistributedPrimeInspector(String multicastAddress,
                                      int multicastPort,
                                      String host,
@@ -22,6 +24,7 @@ public class DistributedPrimeInspector implements PrimeInspector, AutoCloseable 
         this.timeoutMillis = timeoutMillis;
     }
 
+    /** Returns true if any provided number is non-prime. */
     @Override
     public boolean hasNonPrime(List<Integer> numbers) {
         while (!numbers.isEmpty()) {
@@ -39,6 +42,7 @@ public class DistributedPrimeInspector implements PrimeInspector, AutoCloseable 
         connector.close();
     }
 
+    /** Checks numbers for primality. Returns untested numbers as well. */
     public CheckResult hasNonPrimeWithRest(List<Integer> numbers) {
         List<Socket> workers;
         try {
@@ -100,6 +104,7 @@ public class DistributedPrimeInspector implements PrimeInspector, AutoCloseable 
         return new CheckResult(foundComposite.get(), untested);
     }
 
+    /** Encapsulates the result of a primality check and untested numbers. */
     public record CheckResult(boolean hasNonPrime, List<Integer> untestedNumbers) {
     }
 }

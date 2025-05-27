@@ -3,11 +3,19 @@ package ru.nsu.gaskov.prime.inspector.master;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
+/**
+ * Entry point for the master process that reads numbers and checks primality using distributed workers.
+ */
 public class Master {
+
+    /**
+     * Main method: parses connection parameters, reads input numbers, and prints whether any is non-prime.
+     */
     public static void main(String[] args) {
-        if (args.length < 6) {
-            System.err.println("Usage: java Master <multicastAddress> <multicastPort> <host> <listenPort> <timeoutMillis> <num1> <num2> ...");
+        if (args.length < 5) {
+            System.err.println("Usage: java Master <multicastAddress> <multicastPort> <host> <listenPort> <timeoutMillis>");
             System.exit(1);
         }
 
@@ -27,13 +35,16 @@ public class Master {
         }
 
         List<Integer> numbers = new ArrayList<>();
-        for (int i = 5; i < args.length; i++) {
-            try {
-                numbers.add(Integer.parseInt(args[i]));
-            } catch (NumberFormatException e) {
-                System.err.println("Invalid number: " + args[i]);
-                System.exit(1);
-            }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter numbers:");
+        while (scanner.hasNextInt()) {
+            numbers.add(scanner.nextInt());
+        }
+        scanner.close();
+
+        if (numbers.isEmpty()) {
+            System.err.println("No numbers provided via stdin.");
+            System.exit(1);
         }
 
         try (DistributedPrimeInspector inspector = new DistributedPrimeInspector(
@@ -48,4 +59,3 @@ public class Master {
         }
     }
 }
-

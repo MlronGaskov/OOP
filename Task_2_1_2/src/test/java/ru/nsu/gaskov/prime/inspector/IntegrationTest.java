@@ -78,7 +78,7 @@ class IntegrationTest {
 
     @Test
     void testCompositeDetected() throws Exception {
-        String input = "5 2 3 4 5 7";
+        String input = "5 1 3 4 5 7";
         String output = runIntegration(input);
         assertTrue(output.trim().endsWith("true"),
                 () -> "Expected 'true' (composite present), got:\n" + output);
@@ -104,7 +104,6 @@ class IntegrationTest {
 
     @Test
     void testNoInputExitsWithError() throws Exception {
-        // no stdin data at all → should exit with code 1
         String classpath = System.getProperty("java.class.path");
         String addr = "230.0.0.1";
         int port = 4446;
@@ -123,7 +122,6 @@ class IntegrationTest {
                 addr, String.valueOf(port), ifName,
                 "127.0.0.1", String.valueOf(listenPort), "2000"
         );
-        // close stdin so Master sees EOF immediately
         pb.redirectInput(ProcessBuilder.Redirect.PIPE);
         Process proc = pb.start();
         proc.getOutputStream().close();
@@ -135,7 +133,6 @@ class IntegrationTest {
 
     @Test
     void testIncompleteInputExitsWithError() throws Exception {
-        // declare 3 numbers but provide only 2 → should exit with code 1
         String classpath = System.getProperty("java.class.path");
         String addr = "230.0.0.1";
         int port = 4446;
@@ -156,7 +153,6 @@ class IntegrationTest {
         );
         pb.redirectInput(ProcessBuilder.Redirect.PIPE);
         Process proc = pb.start();
-        // only two numbers after count=3
         try (PrintStream ps = new PrintStream(proc.getOutputStream())) {
             ps.print("3 5 7");
         }

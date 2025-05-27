@@ -89,4 +89,12 @@ class IntegrationTest {
         assertTrue(output.trim().endsWith("false"),
                 () -> "Expected 'false' (all primes), got:\n" + output);
     }
+
+    @Test
+    void testAllComposite() throws Exception {
+        String input = "6 1000 10000 744 595485 7323234 434343112";
+        String output = runIntegration(input);
+        assertTrue(output.trim().endsWith("true"),
+                () -> "Expected 'true' (all composite), got:\n" + output);
+    }
 }

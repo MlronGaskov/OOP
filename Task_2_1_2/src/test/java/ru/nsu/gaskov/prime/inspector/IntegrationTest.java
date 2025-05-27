@@ -40,6 +40,11 @@ class IntegrationTest {
     }
 
     private String runIntegration(String inputNumbers) throws Exception {
+        ByteArrayOutputStream masterOut = new ByteArrayOutputStream();
+        System.setIn(new ByteArrayInputStream(inputNumbers.getBytes(StandardCharsets.UTF_8)));
+        System.setOut(new PrintStream(masterOut));
+        System.setErr(new PrintStream(new ByteArrayOutputStream()));
+
         String addr = "230.0.0.1";
         int port = 4446;
         String ifName = NetworkInterface
@@ -51,11 +56,6 @@ class IntegrationTest {
             listenPort = ss.getLocalPort();
         }
 
-        ByteArrayOutputStream masterOut = new ByteArrayOutputStream();
-        System.setIn(new ByteArrayInputStream(inputNumbers.getBytes(StandardCharsets.UTF_8)));
-        System.setOut(new PrintStream(masterOut));
-        System.setErr(new PrintStream(new ByteArrayOutputStream()));
-
         Thread workerThread = new Thread(() ->
                 Worker.main(new String[]{ addr, String.valueOf(port), ifName })
         );
@@ -65,13 +65,11 @@ class IntegrationTest {
         Thread.sleep(500);
 
         Master.main(new String[]{
-                addr,
-                String.valueOf(port),
-                ifName,
-                "127.0.0.1",
-                String.valueOf(listenPort),
-                "2000"
-        });
+            addr,
+            String.valueOf(port),
+            ifName,
+            "127.0.0.1",
+            String.valueOf(listenPort), "2000"});
 
         return masterOut.toString(StandardCharsets.UTF_8);
     }

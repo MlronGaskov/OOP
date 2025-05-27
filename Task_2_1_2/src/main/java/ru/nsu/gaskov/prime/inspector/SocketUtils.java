@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.MulticastSocket;
-import java.net.Socket;
 import java.net.InetAddress;
+import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,9 @@ import java.util.function.Consumer;
 public class SocketUtils {
 
     /** Opens a TCP socket after receiving a host:port announcement via multicast. */
-    public static Socket openTcpSocketFromMulticast(MulticastSocket multicastSocket) throws IOException {
+    public static Socket openTcpSocketFromMulticast(
+            MulticastSocket multicastSocket
+    ) throws IOException {
         byte[] buf = new byte[256];
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
         multicastSocket.receive(packet);
@@ -28,7 +30,9 @@ public class SocketUtils {
         System.out.println(msg);
         String[] parts = msg.trim().split(":");
         if (parts.length != 2) {
-            throw new IOException("Invalid multicast message format, expected host:port but got: " + msg);
+            throw new IOException(
+                    "Invalid multicast message format, expected host:port but got: " + msg
+            );
         }
 
         String host = parts[0];

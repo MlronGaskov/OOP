@@ -33,7 +33,10 @@ class SocketUtilsTest {
 
     static class FakeMulticastSocket extends MulticastSocket {
         private final String message;
-        FakeMulticastSocket(String message) throws IOException { super(); this.message = message; }
+        FakeMulticastSocket(String message) throws IOException {
+            super();
+            this.message = message;
+        }
         @Override public void receive(DatagramPacket p) throws IOException {
             byte[] data = message.getBytes(StandardCharsets.UTF_8);
             System.arraycopy(data, 0, p.getData(), 0, data.length);
@@ -44,17 +47,26 @@ class SocketUtilsTest {
     static class FakeSocket extends Socket {
         private final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         private InputStream in = new ByteArrayInputStream(new byte[0]);
-        void setInput(byte[] data) { in = new ByteArrayInputStream(data); }
-        @Override public InputStream getInputStream() { return in; }
-        @Override public OutputStream getOutputStream() { return byteArrayOutputStream; }
-        byte[] getOutputBytes() { return byteArrayOutputStream.toByteArray(); }
+        void setInput(byte[] data) {
+            in = new ByteArrayInputStream(data);
+        }
+        @Override public InputStream getInputStream() {
+            return in;
+        }
+        @Override public OutputStream getOutputStream() {
+            return byteArrayOutputStream;
+        }
+        byte[] getOutputBytes() {
+            return byteArrayOutputStream.toByteArray();
+        }
     }
 
     @Test
     void testSendAndReceivePrimitives() throws IOException {
         FakeSocket sock = new FakeSocket();
         SocketUtils.sendBoolean(sock, true);
-        try (DataInputStream dis = new DataInputStream(new ByteArrayInputStream(sock.getOutputBytes()))) {
+        try (DataInputStream dis =
+                     new DataInputStream(new ByteArrayInputStream(sock.getOutputBytes()))) {
             assertTrue(dis.readBoolean());
         }
         sock = new FakeSocket();
@@ -87,19 +99,24 @@ class SocketUtilsTest {
                 assertTrue(client.isConnected());
                 assertTrue(serverSide.isConnected());
                 client.close();
-            } finally { exec.shutdownNow(); }
+            } finally {
+                exec.shutdownNow();
+            }
         }
     }
 
     @Test
     void testReceiveAndHandleBoolean_Success() throws InterruptedException {
         FakeSocket sock = new FakeSocket();
-        sock.setInput(new byte[]{1});
+        sock.setInput(new byte[] {1});
         CountDownLatch latch = new CountDownLatch(1);
         AtomicBoolean result = new AtomicBoolean(false);
 
         SocketUtils.receiveAndHandleBoolean(sock,
-                b -> { result.set(b); latch.countDown(); },
+                b -> {
+                    result.set(b);
+                    latch.countDown();
+                },
                 t -> fail("Не ожидали ошибки"));
 
         assertTrue(latch.await(1, TimeUnit.SECONDS));
